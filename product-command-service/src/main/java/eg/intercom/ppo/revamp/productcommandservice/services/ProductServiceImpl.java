@@ -1,7 +1,6 @@
 package eg.intercom.ppo.revamp.productcommandservice.services;
 
 import eg.intercom.ppo.revamp.productcommandservice.enums.ProductEventType;
-import eg.intercom.ppo.revamp.productcommandservice.events.ProductEvent;
 import eg.intercom.ppo.revamp.productcommandservice.mappers.ProductMapper;
 import eg.intercom.ppo.revamp.productcommandservice.models.Product;
 import eg.intercom.ppo.revamp.productcommandservice.repos.ProductRepo;
