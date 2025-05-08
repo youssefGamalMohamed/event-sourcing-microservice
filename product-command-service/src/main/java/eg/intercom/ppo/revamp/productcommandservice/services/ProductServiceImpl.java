@@ -1,5 +1,7 @@
 package eg.intercom.ppo.revamp.productcommandservice.services;
 
+import eg.intercom.ppo.revamp.productcommandservice.enums.ProductEventType;
+import eg.intercom.ppo.revamp.productcommandservice.events.ProductEvent;
 import eg.intercom.ppo.revamp.productcommandservice.mappers.ProductMapper;
 import eg.intercom.ppo.revamp.productcommandservice.models.Product;
 import eg.intercom.ppo.revamp.productcommandservice.repos.ProductRepo;
@@ -14,10 +16,12 @@ public class ProductServiceImpl implements ProductServiceIfc {
 
     private final ProductRepo productRepo;
     private final ProductMapper productMapper;
+    private final ProductEventProducerIfc productEventProducer;
 
-    public ProductServiceImpl(ProductRepo productRepo, ProductMapper productMapper) {
+    public ProductServiceImpl(ProductRepo productRepo, ProductMapper productMapper, ProductEventProducerIfc productEventProducer) {
         this.productRepo = productRepo;
         this.productMapper = productMapper;
+        this.productEventProducer = productEventProducer;
     }
 
     @Override
@@ -27,6 +31,16 @@ public class ProductServiceImpl implements ProductServiceIfc {
         Product newProduct = productRepo.save(product);
 
         log.info("Product created with id = {}", newProduct.getId());
+
+        log.info("Will Publish Product Created Event");
+
+        // publish product created event
+        productEventProducer.publish(
+                ProductEvent.builder()
+                        .eventType(ProductEventType.CREATED)
+                        .product(productMapper.toDto(newProduct))
+                        .build()
+        );
 
         return newProduct;
     }
