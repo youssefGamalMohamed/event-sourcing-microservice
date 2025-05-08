@@ -35,12 +35,7 @@ public class ProductServiceImpl implements ProductServiceIfc {
         log.info("Will Publish Product Created Event");
 
         // publish product created event
-        productEventProducer.publish(
-                ProductEvent.builder()
-                        .eventType(ProductEventType.CREATED)
-                        .product(productMapper.toDto(newProduct))
-                        .build()
-        );
+        productEventProducer.publish(productMapper.toEvent(newProduct, ProductEventType.CREATED));
 
         return newProduct;
     }
@@ -53,6 +48,10 @@ public class ProductServiceImpl implements ProductServiceIfc {
         productMapper.updateFrom(product, existingProduct);
         Product updatedProduct = productRepo.save(existingProduct);
         log.info("Product updated with id = {}", updatedProduct.getId());
+
+        // publish product created event
+        productEventProducer.publish(productMapper.toEvent(updatedProduct, ProductEventType.UPDATED));
+
         return updatedProduct;
     }
 
