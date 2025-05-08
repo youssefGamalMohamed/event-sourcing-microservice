@@ -2,8 +2,8 @@ services:
   mongodb:
     image: 'mongo:latest'
     environment:
-      - 'MONGO_INITDB_DATABASE=product-query-db'
-      - 'MONGO_INITDB_ROOT_PASSWORD=P@ssw0rd@123'
-      - 'MONGO_INITDB_ROOT_USERNAME=admin-products-query-db'
+      - 'MONGO_INITDB_DATABASE=productQueryDb'
+      - 'MONGO_INITDB_ROOT_PASSWORD=Password123'
+      - 'MONGO_INITDB_ROOT_USERNAME=adminProductsQueryDB'
     ports:
-      - '27017'
+      - '27017:27017'
