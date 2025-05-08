@@ -6,10 +6,7 @@ import eg.intercom.ppo.revamp.productcommandservice.models.Product;
 import eg.intercom.ppo.revamp.productcommandservice.services.ProductServiceIfc;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -35,5 +32,17 @@ public class ProductController {
         log.info("Created product: {}", createdProduct);
 
         return createdProduct;
+    }
+
+    @PutMapping("/products/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateProduct(@PathVariable String id, @RequestBody ProductDto product) {
+        log.info("Updating product with id: {} with new data: {}", id, product);
+
+        Product productEntity = productMapper.toEntity(product);
+        log.info("Mapped product DTO to entity: {}", productEntity);
+        productService.updateProduct(id, productEntity);
+        log.info("Updated product with id: {}", id);
+
     }
 }
