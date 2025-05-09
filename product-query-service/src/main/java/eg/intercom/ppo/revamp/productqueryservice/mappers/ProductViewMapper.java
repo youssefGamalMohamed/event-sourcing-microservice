@@ -1,6 +1,7 @@
 package eg.intercom.ppo.revamp.productqueryservice.mappers;
 
 import eg.intercom.ppo.revamp.productcommandservice.events.ProductEvent;
+import eg.intercom.ppo.revamp.productqueryservice.dtos.ProductViewDto;
 import eg.intercom.ppo.revamp.productqueryservice.models.ProductView;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -21,5 +22,8 @@ public interface ProductViewMapper {
     @Mapping(source = "product.lastModifiedDate", target = "lastModifiedDate")
     @Mapping(source = "product.lastModifiedBy", target = "lastModifiedBy")
     ProductView toProductView(ProductEvent productEvent);
+
+    @Mapping(source = "productView.originalId", target = "id")
+    ProductViewDto toDto(ProductView productView);
 
 }
