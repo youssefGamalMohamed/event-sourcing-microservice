@@ -1,5 +1,7 @@
 package eg.intercom.ppo.revamp.productqueryservice.controllers;
 
+import eg.intercom.ppo.revamp.productqueryservice.dtos.ProductViewDto;
+import eg.intercom.ppo.revamp.productqueryservice.mappers.ProductViewMapper;
 import eg.intercom.ppo.revamp.productqueryservice.models.ProductView;
 import eg.intercom.ppo.revamp.productqueryservice.services.ProductViewService;
 import lombok.extern.slf4j.Slf4j;
@@ -18,18 +20,20 @@ public class ProductViewController {
 
 
     private final ProductViewService productViewService;
+    private final ProductViewMapper productViewMapper;
 
-    public ProductViewController(ProductViewService productViewService) {
+    public ProductViewController(ProductViewService productViewService, ProductViewMapper productViewMapper) {
         this.productViewService = productViewService;
+        this.productViewMapper = productViewMapper;
     }
 
 
-    @GetMapping("/products/{originalId}")
+    @GetMapping("/products/{id}/history")
     @ResponseStatus(HttpStatus.OK)
-    public Page<ProductView> findByAllByOriginalId(@PathVariable(name = "originalId") String originalId, @ParameterObject Pageable pageable) {
-        log.info("findById called with originalId: {},pageable:{}", originalId, pageable);
-        Page<ProductView> productViewPage = productViewService.findAllByOriginalId(originalId, pageable);
-        log.info("ProductView found with id: {}, TotalElement:{}", originalId, productViewPage.getTotalElements());
-        return productViewPage;
+    public Page<ProductViewDto> findByAllByOriginalId(@PathVariable(name = "id") String id, @ParameterObject Pageable pageable) {
+        log.info("findById called with id: {},pageable:{}", id, pageable);
+        Page<ProductView> productViewPage = productViewService.findAllByOriginalId(id, pageable);
+        log.info("ProductView found with id: {}, TotalElement:{}", id, productViewPage.getTotalElements());
+        return productViewPage.map(productViewMapper::toDto);
     }
 }
