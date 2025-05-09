@@ -26,10 +26,10 @@ public class ProductViewController {
 
     @GetMapping("/products/{originalId}")
     @ResponseStatus(HttpStatus.OK)
-    public Page<ProductView> findByAllByOriginalId(@PathVariable(name = "originalId") String id, @ParameterObject Pageable pageable) {
-        log.info("findById called with id: {},pageable:{}", id, pageable);
-        Page<ProductView> productViewPage = productViewService.findAllById(id, pageable);
-        log.info("ProductView found with id: {}, TotalElement:{}", id, productViewPage.getTotalElements());
+    public Page<ProductView> findByAllByOriginalId(@PathVariable(name = "originalId") String originalId, @ParameterObject Pageable pageable) {
+        log.info("findById called with originalId: {},pageable:{}", originalId, pageable);
+        Page<ProductView> productViewPage = productViewService.findAllByOriginalId(originalId, pageable);
+        log.info("ProductView found with id: {}, TotalElement:{}", originalId, productViewPage.getTotalElements());
         return productViewPage;
     }
 }
