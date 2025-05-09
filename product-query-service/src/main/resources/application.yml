@@ -1,0 +1,33 @@
+# Spring Boot Application Configuration
+spring:
+  application:
+    name: product-query-service
+
+  # MongoDB Configuration
+  data:
+    mongodb:
+      uri: mongodb://adminProductsQueryDB:Password123@localhost:27017/productQueryDb?authSource=admin
+      host: localhost
+      port: 27017
+      database: productQueryDb
+      username: adminProductsQueryDB
+      password: Password123
+
+
+  # Kafka Configuration
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring:
+          deserializer:
+            value:
+              delegate:
+                # make ErrorHandlingDeserializer delegate to JsonDeserializer to deserialize the value
+                class: org.springframework.kafka.support.serializer.JsonDeserializer
+          json:
+            trusted:
+              # To help deserialization of the event that comes from the producer
+              packages: java.util,java.lang,eg.intercom.ppo.revamp.productcommandservice.events
