@@ -30,7 +30,7 @@ public class ProductViewController {
 
     @GetMapping("/products/{id}/history")
     @ResponseStatus(HttpStatus.OK)
-    public Page<ProductViewDto> findByAllByOriginalId(@PathVariable(name = "id") String id, @ParameterObject Pageable pageable) {
+    public Page<ProductViewDto> findAllHistoryByOriginalId(@PathVariable(name = "id") String id, @ParameterObject Pageable pageable) {
         log.info("findById called with id: {},pageable:{}", id, pageable);
         Page<ProductView> productViewPage = productViewService.findAllByOriginalId(id, pageable);
         log.info("ProductView found with id: {}, TotalElement:{}", id, productViewPage.getTotalElements());
