@@ -10,7 +10,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Document(collection = "products")
 @Data
@@ -20,7 +19,10 @@ import java.util.UUID;
 public class ProductView {
 
     @Id
-    private UUID id;
+    private String id;
+
+    @Field
+    private String originalId;
 
     private String name;
 
