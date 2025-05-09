@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.NoSuchElementException;
+
 @Service
 @Slf4j
 public class ProductViewServiceImpl implements ProductViewService {
@@ -31,5 +33,14 @@ public class ProductViewServiceImpl implements ProductViewService {
         Page<ProductView> productViews = productViewRepo.findAllByOriginalId(originalId, pageable);
         log.info("ProductViews found with originalId: {}, count: {}", originalId, productViews.getTotalElements());
         return productViews;
+    }
+
+    @Override
+    public ProductView findByOriginalIdAndWithLastHistory(String originalId) {
+        log.info("findByOriginalIdAndWithLastHistory called with originalId: {}", originalId);
+        ProductView productView = productViewRepo.findFirstByOriginalIdOrderByLastModifiedDateDesc(originalId)
+                        .orElseThrow(() -> new NoSuchElementException("Product view not found with originalId: " + originalId));
+        log.info("ProductView found with originalId: {}, id: {}", originalId, productView.getId());
+        return productView;
     }
 }
