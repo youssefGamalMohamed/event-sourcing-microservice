@@ -36,4 +36,13 @@ public class ProductViewController {
         log.info("ProductView found with id: {}, TotalElement:{}", id, productViewPage.getTotalElements());
         return productViewPage.map(productViewMapper::toDto);
     }
+
+    @GetMapping("/products/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ProductViewDto findByOriginalIdAndWithLastHistory(@PathVariable(name = "id") String id) {
+        log.info("findById called with id: {}", id);
+        ProductView productView = productViewService.findByOriginalIdAndWithLastHistory(id);
+        log.info("ProductView found with id: {}", id);
+        return productViewMapper.toDto(productView);
+    }
 }
