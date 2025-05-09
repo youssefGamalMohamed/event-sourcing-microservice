@@ -3,6 +3,8 @@ package eg.intercom.ppo.revamp.productqueryservice.services;
 import eg.intercom.ppo.revamp.productqueryservice.models.ProductView;
 import eg.intercom.ppo.revamp.productqueryservice.repos.ProductViewRepo;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,11 @@ public class ProductViewServiceImpl implements ProductViewService {
     }
 
     @Override
+    @CacheEvict(
+            value = "productViewCache",
+            key = "#result.originalId",
+            condition = "#result.eventType == 'UPDATED' || #result.eventType == 'DELETED'"
+    )
     public ProductView addProductView(ProductView productView) {
         log.info("addProductView called with productView: {}", productView);
         ProductView savedProductView = productViewRepo.save(productView);
@@ -36,6 +43,7 @@ public class ProductViewServiceImpl implements ProductViewService {
     }
 
     @Override
+    @Cacheable(value = "productViewCache", key = "#originalId")
     public ProductView findByOriginalIdAndWithLastHistory(String originalId) {
         log.info("findByOriginalIdAndWithLastHistory called with originalId: {}", originalId);
         ProductView productView = productViewRepo.findFirstByOriginalIdOrderByLastModifiedDateDesc(originalId)
