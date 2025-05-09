@@ -10,4 +10,6 @@ public interface ProductViewService {
 
     Page<ProductView> findAllByOriginalId(String id, Pageable pageable);
 
+    ProductView findByOriginalIdAndWithLastHistory(String originalId);
+
 }
