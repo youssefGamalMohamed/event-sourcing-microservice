@@ -9,8 +9,9 @@ import org.mapstruct.Mapping;
 public interface ProductViewMapper {
 
 
+    @Mapping(ignore = true, target = "id")
     @Mapping(source = "eventType", target = "eventType")
-    @Mapping(source = "product.id", target = "id")
+    @Mapping(source = "product.id", target = "originalId")
     @Mapping(source = "product.name", target = "name")
     @Mapping(source = "product.description", target = "description")
     @Mapping(source = "product.price", target = "price")
