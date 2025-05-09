@@ -3,6 +3,8 @@ package eg.intercom.ppo.revamp.productqueryservice.services;
 import eg.intercom.ppo.revamp.productqueryservice.models.ProductView;
 import eg.intercom.ppo.revamp.productqueryservice.repos.ProductViewRepo;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,6 +22,14 @@ public class ProductViewServiceImpl implements ProductViewService {
         log.info("addProductView called with productView: {}", productView);
         ProductView savedProductView = productViewRepo.save(productView);
         log.info("ProductView saved with id: {}", savedProductView.getId());
-        return savedProductView;
+        return productView;
+    }
+
+    @Override
+    public Page<ProductView> findAllByOriginalId(String id, Pageable pageable) {
+        log.info("findAllByOriginalId called with id: {},pageable:{}", id, pageable);
+        Page<ProductView> productViews = productViewRepo.findAllByOriginalId(id, pageable);
+        log.info("ProductViews found with originalId: {}, count: {}", id, productViews.getTotalElements());
+        return productViews;
     }
 }
