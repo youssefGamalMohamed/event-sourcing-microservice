@@ -2,7 +2,6 @@
 spring:
   application:
     name: product-query-service
-
   # MongoDB Configuration
   data:
     mongodb:
@@ -31,3 +30,9 @@ spring:
             trusted:
               # To help deserialization of the event that comes from the producer
               packages: java.util,java.lang,eg.intercom.ppo.revamp.productcommandservice.events
+
+# Server Configuration
+server:
+  port: 8082
+  servlet:
+    context-path: /ecommerce/api/v1
