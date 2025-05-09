@@ -8,6 +8,6 @@ public interface ProductViewService {
 
     ProductView addProductView(ProductView productView);
 
-    Page<ProductView> findAllByOriginalId(String id, Pageable pageable);
+    Page<ProductView> findAllById(String id, Pageable pageable);
 
 }

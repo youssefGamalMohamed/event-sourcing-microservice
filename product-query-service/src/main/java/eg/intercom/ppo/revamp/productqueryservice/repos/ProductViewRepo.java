@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductViewRepo extends MongoRepository<ProductView, String> {
 
-    Page<ProductView> findAllByOriginalId(String originalId, Pageable pageable);
+    Page<ProductView> findAllById(String originalId, Pageable pageable);
 }

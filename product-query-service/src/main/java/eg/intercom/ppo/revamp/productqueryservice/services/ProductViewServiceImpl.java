@@ -26,9 +26,9 @@ public class ProductViewServiceImpl implements ProductViewService {
     }
 
     @Override
-    public Page<ProductView> findAllByOriginalId(String id, Pageable pageable) {
+    public Page<ProductView> findAllById(String id, Pageable pageable) {
         log.info("findAllByOriginalId called with id: {},pageable:{}", id, pageable);
-        Page<ProductView> productViews = productViewRepo.findAllByOriginalId(id, pageable);
+        Page<ProductView> productViews = productViewRepo.findAllById(id, pageable);
         log.info("ProductViews found with originalId: {}, count: {}", id, productViews.getTotalElements());
         return productViews;
     }

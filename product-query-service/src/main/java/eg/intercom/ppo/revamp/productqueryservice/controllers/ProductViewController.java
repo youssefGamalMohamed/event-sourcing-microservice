@@ -1,4 +1,4 @@
-package eg.intercom.ppo.revamp.productqueryservice;
+package eg.intercom.ppo.revamp.productqueryservice.controllers;
 
 import eg.intercom.ppo.revamp.productqueryservice.models.ProductView;
 import eg.intercom.ppo.revamp.productqueryservice.services.ProductViewService;
@@ -28,7 +28,7 @@ public class ProductViewController {
     @ResponseStatus(HttpStatus.OK)
     public Page<ProductView> findByAllByOriginalId(@PathVariable(name = "originalId") String id, @ParameterObject Pageable pageable) {
         log.info("findById called with id: {},pageable:{}", id, pageable);
-        Page<ProductView> productViewPage = productViewService.findAllByOriginalId(id, pageable);
+        Page<ProductView> productViewPage = productViewService.findAllById(id, pageable);
         log.info("ProductView found with id: {}, TotalElement:{}", id, productViewPage.getTotalElements());
         return productViewPage;
     }

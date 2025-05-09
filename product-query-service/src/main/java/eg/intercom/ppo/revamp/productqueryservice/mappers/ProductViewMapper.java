@@ -1,4 +1,4 @@
-package eg.intercom.ppo.revamp.productqueryservice.services;
+package eg.intercom.ppo.revamp.productqueryservice.mappers;
 
 import eg.intercom.ppo.revamp.productcommandservice.events.ProductEvent;
 import eg.intercom.ppo.revamp.productqueryservice.models.ProductView;
@@ -10,7 +10,7 @@ public interface ProductViewMapper {
 
 
     @Mapping(source = "eventType", target = "eventType")
-    @Mapping(source = "product.id", target = "originalId")
+    @Mapping(source = "product.id", target = "id")
     @Mapping(source = "product.name", target = "name")
     @Mapping(source = "product.description", target = "description")
     @Mapping(source = "product.price", target = "price")
