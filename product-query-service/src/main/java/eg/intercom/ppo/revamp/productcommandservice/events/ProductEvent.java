@@ -1,6 +1,5 @@
-package eg.intercom.ppo.revamp.productqueryservice.events;
+package eg.intercom.ppo.revamp.productcommandservice.events;
 
-import eg.intercom.ppo.revamp.productqueryservice.enums.ProductEventType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

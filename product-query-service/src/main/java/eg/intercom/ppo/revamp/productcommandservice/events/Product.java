@@ -1,16 +1,18 @@
-package eg.intercom.ppo.revamp.productqueryservice.events;
+package eg.intercom.ppo.revamp.productcommandservice.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class Product implements Serializable {
 
 
     private String id;

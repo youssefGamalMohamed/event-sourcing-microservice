@@ -1,4 +1,4 @@
-package eg.intercom.ppo.revamp.productqueryservice.enums;
+package eg.intercom.ppo.revamp.productcommandservice.events;
 
 
 public enum ProductEventType {
