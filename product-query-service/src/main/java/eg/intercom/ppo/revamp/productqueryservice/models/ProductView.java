@@ -18,11 +18,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ProductView {
 
-//    @Id
-//    private String id;
-
     @Id
     private String id;
+
+    private String originalId;
 
     private String name;
 
