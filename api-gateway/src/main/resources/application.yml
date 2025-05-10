@@ -29,12 +29,28 @@ spring:
             # to the backend path /ecommerce/api/v1/products
             - RewritePath=/ecommerce/api/v1/products-command, /ecommerce/api/v1/products
 
+        # --- Application API Route for Product Command Service (PUT) ---
+
+        # Route for PUT requests (Update Product)
+        # Incoming request: PUT http://localhost:9999/ecommerce/api/v1/products-command/{id}
+        # Target backend:     PUT http://localhost:8081/ecommerce/api/v1/products/{id}
+        - id: product_command_service_put_update # Unique ID for the route
+          uri: http://localhost:8081 # Target backend service URL (Command Service)
+          predicates: # Conditions to match the incoming request
+            - Path=/ecommerce/api/v1/products-command/{id} # Match the path pattern on the gateway, capturing the ID
+            - Method=PUT # Match the HTTP method
+          filters: # Actions to apply to the request/response
+            # Capture the ID segment from the incoming path and rewrite the path
+            # Rewrites /ecommerce/api/v1/products-command/123 to /ecommerce/api/v1/products/123
+            - RewritePath=/ecommerce/api/v1/products-command/(?<segment>.*), /ecommerce/api/v1/products/${segment}
+
+
 # Server Configuration
 server:
   port: 9999 # Gateway listening port
 
 
-# Logging Configuration (Optional, keep if you want detailed gateway logs)
+# Logging Configuration
 logging:
   level:
     root: info
