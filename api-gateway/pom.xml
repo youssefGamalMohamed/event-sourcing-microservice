@@ -31,9 +31,17 @@
 		<spring-cloud.version>2024.0.1</spring-cloud.version>
 	</properties>
 	<dependencies>
+		<!-- *** Changed to the standard Spring Cloud Gateway starter (WebFlux based) *** -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-gateway-mvc</artifactId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+		</dependency>
+
+		<!-- Add Spring Boot Starter Actuator - often useful in gateways for health/info endpoints -->
+		<!-- This starter brings in WebFlux support if gateway is present -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 		<dependency>
