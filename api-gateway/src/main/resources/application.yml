@@ -14,13 +14,47 @@ spring:
 
 
       routes:
+        # --- Application API Route for Product Query Service - GET History (Most Specific Query Path First) ---
+
+        # Route for GET requests to get the history/events by ID
+        # Incoming request: GET http://localhost:9999/ecommerce/api/v1/products-query/{id}/history
+        # Target backend:     GET http://localhost:8082/ecommerce/api/v1/products/{id}/history
+        - id: product_query_service_get_history # Unique ID
+          uri: http://localhost:8082 # Target backend service URL (Query Service - Port 8082)
+          predicates: # Conditions
+            # Match the specific path pattern for history lookup
+            - Path=/ecommerce/api/v1/products-query/{id}/history # Match the history path pattern
+            - Method=GET # Match GET method
+          filters: # Actions
+            # Rewrite the path: /ecommerce/api/v1/products-query/123/history -> /ecommerce/api/v1/products/123/history
+            # Note: This assumes your backend history endpoint also uses /products/{id}/history
+            - RewritePath=/ecommerce/api/v1/products-query/(?<segment>.*), /ecommerce/api/v1/products/${segment}
+
+
+        # --- Application API Route for Product Query Service - GET Single Item (Less Specific Query Path Second) ---
+
+        # Route for GET requests to get the latest state by ID
+        # Incoming request: GET http://localhost:9999/ecommerce/api/v1/products-query/{id}
+        # Target backend:     GET http://localhost:8082/ecommerce/api/v1/products/{id}
+        - id: product_query_service_get_one # Unique ID
+          uri: http://localhost:8082 # Target backend service URL (Query Service - Port 8082)
+          predicates: # Conditions
+            # Match the path pattern for a single ID lookup
+            - Path=/ecommerce/api/v1/products-query/{id} # Match the main path pattern
+            - Method=GET # Match GET method
+          filters: # Actions
+            # Rewrite the path: /ecommerce/api/v1/products-query/123 -> /ecommerce/api/v1/products/123
+            - RewritePath=/ecommerce/api/v1/products-query/(?<segment>.*), /ecommerce/api/v1/products/${segment}
+
+
         # --- Application API Route for Product Command Service (POST) ---
 
         # Route for POST requests (Create Product)
         # Incoming request: POST http://localhost:9999/ecommerce/api/v1/products-command
         # Target backend:     POST http://localhost:8081/ecommerce/api/v1/products
+        # Order doesn't strictly matter relative to Query routes if base paths are distinct
         - id: product_command_service_post_create # Unique ID for the route
-          uri: http://localhost:8081 # Target backend service URL (Command Service)
+          uri: http://localhost:8081 # Target backend service URL (Command Service - Port 8081)
           predicates: # Conditions to match the incoming request
             - Path=/ecommerce/api/v1/products-command # Match the exact path on the gateway
             - Method=POST # Match the HTTP method
@@ -35,13 +69,13 @@ spring:
         # Incoming request: PUT http://localhost:9999/ecommerce/api/v1/products-command/{id}
         # Target backend:     PUT http://localhost:8081/ecommerce/api/v1/products/{id}
         - id: product_command_service_put_update # Unique ID for the route
-          uri: http://localhost:8081 # Target backend service URL (Command Service)
+          uri: http://localhost:8081 # Target backend service URL (Command Service - Port 8081)
           predicates: # Conditions to match the incoming request
             - Path=/ecommerce/api/v1/products-command/{id} # Match the path pattern on the gateway, capturing the ID
             - Method=PUT # Match the HTTP method
           filters: # Actions to apply to the request/response
             # Capture the ID segment from the incoming path and rewrite the path
-            # Rewrites /ecommerce/api/v1/products-command/123 to /ecommerce/api/v1/products/123
+            # Example: /ecommerce/api/v1/products-command/123 -> /ecommerce/api/v1/products/123
             - RewritePath=/ecommerce/api/v1/products-command/(?<segment>.*), /ecommerce/api/v1/products/${segment}
 
 
@@ -50,10 +84,10 @@ server:
   port: 9999 # Gateway listening port
 
 
-# Logging Configuration
+# Logging Configuration (Using your preferred levels)
 logging:
   level:
-    root: info
+    root: info # Default level for logs
     org:
       springframework:
         cloud:
@@ -68,4 +102,4 @@ logging:
             web: INFO # Enable tracing for web autoconfiguration
     reactor:
       netty: INFO # Enable tracing for Reactor Netty
-    # redisratelimiter: TRACE # Uncomment if you add Redis Rate Limiter later
+    # redisratelimiter: INFO # Uncomment and set to INFO if you add Redis Rate Limiter later
