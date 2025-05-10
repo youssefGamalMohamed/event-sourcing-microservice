@@ -6,26 +6,28 @@ spring:
   # Api Gateway Configuration
   cloud:
     gateway:
+      # Global configuration for the gateway
       httpserver:
         wiretap: true # Useful for debugging request/response body
       httpclient:
         wiretap: true # Useful for debugging request/response headers
-      mvc:
-        routes:
-          # --- Application API Route for Product Command Service (POST) ---
 
-          # Route for POST requests (Create Product)
-          # Incoming request: POST http://localhost:9999/ecommerce/api/v1/products-command
-          # Target backend:     POST http://localhost:8081/ecommerce/api/v1/products
-          - id: product_command_service_post_create # Unique ID for the route
-            uri: http://localhost:8081 # Target backend service URL (Command Service)
-            predicates: # Conditions to match the incoming request
-              - Path=/ecommerce/api/v1/products-command # Match the exact path on the gateway
-              - Method=POST # Match the HTTP method
-            filters: # Actions to apply to the request/response
-              # Rewrite the incoming path /ecommerce/api/v1/products-command
-              # to the backend path /ecommerce/api/v1/products
-              - RewritePath=/ecommerce/api/v1/products-command, /ecommerce/api/v1/products
+
+      routes:
+        # --- Application API Route for Product Command Service (POST) ---
+
+        # Route for POST requests (Create Product)
+        # Incoming request: POST http://localhost:9999/ecommerce/api/v1/products-command
+        # Target backend:     POST http://localhost:8081/ecommerce/api/v1/products
+        - id: product_command_service_post_create # Unique ID for the route
+          uri: http://localhost:8081 # Target backend service URL (Command Service)
+          predicates: # Conditions to match the incoming request
+            - Path=/ecommerce/api/v1/products-command # Match the exact path on the gateway
+            - Method=POST # Match the HTTP method
+          filters: # Actions to apply to the request/response
+            # Rewrite the incoming path /ecommerce/api/v1/products-command
+            # to the backend path /ecommerce/api/v1/products
+            - RewritePath=/ecommerce/api/v1/products-command, /ecommerce/api/v1/products
 
 # Server Configuration
 server:
