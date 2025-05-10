@@ -37,18 +37,19 @@ server:
 # Logging Configuration (Optional, keep if you want detailed gateway logs)
 logging:
   level:
+    root: info
     org:
       springframework:
         cloud:
-          gateway: TRACE # Enable tracing for gateway routing
+          gateway: DEBUG # Enable tracing for gateway routing
         http:
           server:
-            reactive: TRACE # Enable tracing for Reactor Netty server
+            reactive: INFO # Enable tracing for Reactor Netty server
         web:
-          reactive: TRACE # Enable tracing for WebFlux
+          reactive: INFO # Enable tracing for WebFlux
         boot:
           autoconfigure:
-            web: TRACE # Enable tracing for web autoconfiguration
+            web: INFO # Enable tracing for web autoconfiguration
     reactor:
-      netty: TRACE # Enable tracing for Reactor Netty
+      netty: INFO # Enable tracing for Reactor Netty
     # redisratelimiter: TRACE # Uncomment if you add Redis Rate Limiter later
