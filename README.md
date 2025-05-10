@@ -4,6 +4,12 @@ This project is a **microservice-based e-commerce system** built with **Spring B
 
 ---
 
+## 🧭 Architecture Design Diagram
+
+![E-commerce Architecture](./Event-Sourcing-Architecre.png)
+
+---
+
 ## 📂 Project Structure
 
 ```
