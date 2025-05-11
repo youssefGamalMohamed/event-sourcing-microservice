@@ -93,9 +93,14 @@ spring:
             - name: RequestRateLimiter
               args:
                 # Assuming a single KeyResolver bean is defined and can be auto-wired
+                key-resolver: "#{@ ipAddressKeyResolver}"
                 redis-rate-limiter.replenishRate: 5 # Allow 5 requests per second
                 redis-rate-limiter.burstCapacity: 10 # Allow bursts up to 10 requests
                 redis-rate-limiter.requestedTokens: 1 # Explicitly state each request consumes 1 token
+  data:
+    redis:
+      host: localhost
+      port: 6380 # Redis server port (mapped from Docker)
 
 
 # Server Configuration
@@ -121,4 +126,4 @@ logging:
             web: INFO # Enable tracing for web autoconfiguration
     reactor:
       netty: INFO # Enable tracing for Reactor Netty
-    # redisratelimiter: INFO # Uncomment and set to INFO if you add Redis Rate Limiter later
+#    redisratelimiter: INFO # Uncomment and set to INFO if you add Redis Rate Limiter later
