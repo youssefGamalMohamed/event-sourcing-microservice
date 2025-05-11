@@ -22,13 +22,17 @@ spring:
         - id: product_query_service_get_history # Unique ID
           uri: http://localhost:8082 # Target backend service URL (Query Service - Port 8082)
           predicates: # Conditions
-            # Match the specific path pattern for history lookup
             - Path=/ecommerce/api/v1/products-query/{id}/history # Match the history path pattern
             - Method=GET # Match GET method
           filters: # Actions
-            # Rewrite the path: /ecommerce/api/v1/products-query/123/history -> /ecommerce/api/v1/products/123/history
-            # Note: This assumes your backend history endpoint also uses /products/{id}/history
             - RewritePath=/ecommerce/api/v1/products-query/(?<segment>.*), /ecommerce/api/v1/products/${segment}
+            # --- Add Rate Limiting Filter ---
+            - name: RequestRateLimiter
+              args:
+                # Assuming a single KeyResolver bean is defined and can be auto-wired
+                redis-rate-limiter.replenishRate: 50 # Allow 50 requests per second
+                redis-rate-limiter.burstCapacity: 100 # Allow bursts up to 100 requests
+                redis-rate-limiter.requestedTokens: 1 # Explicitly state each request consumes 1 token
 
 
         # --- Application API Route for Product Query Service - GET Single Item (Less Specific Query Path Second) ---
@@ -39,12 +43,17 @@ spring:
         - id: product_query_service_get_one # Unique ID
           uri: http://localhost:8082 # Target backend service URL (Query Service - Port 8082)
           predicates: # Conditions
-            # Match the path pattern for a single ID lookup
             - Path=/ecommerce/api/v1/products-query/{id} # Match the main path pattern
             - Method=GET # Match GET method
           filters: # Actions
-            # Rewrite the path: /ecommerce/api/v1/products-query/123 -> /ecommerce/api/v1/products/123
             - RewritePath=/ecommerce/api/v1/products-query/(?<segment>.*), /ecommerce/api/v1/products/${segment}
+            # --- Add Rate Limiting Filter ---
+            - name: RequestRateLimiter
+              args:
+                # Assuming a single KeyResolver bean is defined and can be auto-wired
+                redis-rate-limiter.replenishRate: 100 # Allow 100 requests per second
+                redis-rate-limiter.burstCapacity: 200 # Allow bursts up to 200 requests
+                redis-rate-limiter.requestedTokens: 1 # Explicitly state each request consumes 1 token
 
 
         # --- Application API Route for Product Command Service (POST) ---
@@ -52,16 +61,21 @@ spring:
         # Route for POST requests (Create Product)
         # Incoming request: POST http://localhost:9999/ecommerce/api/v1/products-command
         # Target backend:     POST http://localhost:8081/ecommerce/api/v1/products
-        # Order doesn't strictly matter relative to Query routes if base paths are distinct
         - id: product_command_service_post_create # Unique ID for the route
           uri: http://localhost:8081 # Target backend service URL (Command Service - Port 8081)
-          predicates: # Conditions to match the incoming request
+          predicates: # Conditions
             - Path=/ecommerce/api/v1/products-command # Match the exact path on the gateway
             - Method=POST # Match the HTTP method
-          filters: # Actions to apply to the request/response
-            # Rewrite the incoming path /ecommerce/api/v1/products-command
-            # to the backend path /ecommerce/api/v1/products
+          filters: # Actions
             - RewritePath=/ecommerce/api/v1/products-command, /ecommerce/api/v1/products
+            # --- Add Rate Limiting Filter ---
+            - name: RequestRateLimiter
+              args:
+                # Assuming a single KeyResolver bean is defined and can be auto-wired
+                redis-rate-limiter.replenishRate: 5 # Allow 5 requests per second (commands often rate limited stricter)
+                redis-rate-limiter.burstCapacity: 10 # Allow bursts up to 10 requests
+                redis-rate-limiter.requestedTokens: 1 # Explicitly state each request consumes 1 token
+
 
         # --- Application API Route for Product Command Service (PUT) ---
 
@@ -70,13 +84,18 @@ spring:
         # Target backend:     PUT http://localhost:8081/ecommerce/api/v1/products/{id}
         - id: product_command_service_put_update # Unique ID for the route
           uri: http://localhost:8081 # Target backend service URL (Command Service - Port 8081)
-          predicates: # Conditions to match the incoming request
+          predicates: # Conditions
             - Path=/ecommerce/api/v1/products-command/{id} # Match the path pattern on the gateway, capturing the ID
             - Method=PUT # Match the HTTP method
-          filters: # Actions to apply to the request/response
-            # Capture the ID segment from the incoming path and rewrite the path
-            # Example: /ecommerce/api/v1/products-command/123 -> /ecommerce/api/v1/products/123
+          filters: # Actions
             - RewritePath=/ecommerce/api/v1/products-command/(?<segment>.*), /ecommerce/api/v1/products/${segment}
+            # --- Add Rate Limiting Filter ---
+            - name: RequestRateLimiter
+              args:
+                # Assuming a single KeyResolver bean is defined and can be auto-wired
+                redis-rate-limiter.replenishRate: 5 # Allow 5 requests per second
+                redis-rate-limiter.burstCapacity: 10 # Allow bursts up to 10 requests
+                redis-rate-limiter.requestedTokens: 1 # Explicitly state each request consumes 1 token
 
 
 # Server Configuration
