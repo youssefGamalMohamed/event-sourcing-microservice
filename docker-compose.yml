@@ -24,3 +24,32 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:22.0.1
+    hostname: centralized-keycloak
+    container_name: centralized-keycloak
+    ports:
+      - "8080:8080" # Keycloak admin console
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL_HOST: keycloak-postgres-db
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: keycloakpassword
+      KC_DB_NAME: keycloak
+    depends_on:
+      - postgres
+    command: start-dev
+
+  postgres:
+    image: postgres:15
+    hostname: keycloak-postgres-db
+    container_name: keycloak-postgres-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloakpassword
+      POSTGRES_DB: keycloak
