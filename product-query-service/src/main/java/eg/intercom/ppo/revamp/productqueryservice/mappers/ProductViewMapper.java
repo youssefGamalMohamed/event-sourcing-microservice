@@ -3,27 +3,44 @@ package eg.intercom.ppo.revamp.productqueryservice.mappers;
 import eg.intercom.ppo.revamp.productcommandservice.events.ProductEvent;
 import eg.intercom.ppo.revamp.productqueryservice.dtos.ProductViewDto;
 import eg.intercom.ppo.revamp.productqueryservice.models.ProductView;
+
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
 public interface ProductViewMapper {
+    
+    ProductViewMapper INSTANCE = Mappers.getMapper(ProductViewMapper.class);
 
-
-    @Mapping(ignore = true, target = "id")
-    @Mapping(source = "eventType", target = "eventType")
-    @Mapping(source = "product.id", target = "originalId")
-    @Mapping(source = "product.name", target = "name")
-    @Mapping(source = "product.description", target = "description")
-    @Mapping(source = "product.price", target = "price")
-    @Mapping(source = "product.quantity", target = "quantity")
-    @Mapping(source = "product.creationDate", target = "creationDate")
-    @Mapping(source = "product.createdBy", target = "createdBy")
-    @Mapping(source = "product.lastModifiedDate", target = "lastModifiedDate")
-    @Mapping(source = "product.lastModifiedBy", target = "lastModifiedBy")
+    // ✅ ProductEvent → ProductView
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "eventType", source = "eventType")
+    @Mapping(target = "originalId", source = "id")
+    @Mapping(target = "name", source = "name")
+    @Mapping(target = "description", source = "description")
+    @Mapping(target = "price", source = "price")
+    @Mapping(target = "quantity", source = "quantity")
+    @Mapping(target = "creationDate", expression = "java(map(productEvent.getCreationDate()))")
+    @Mapping(target = "createdBy", source = "createdBy")
+    @Mapping(target = "lastModifiedDate", expression = "java(map(productEvent.getLastModifiedDate()))")
+    @Mapping(target = "lastModifiedBy", source = "lastModifiedBy")
     ProductView toProductView(ProductEvent productEvent);
 
-    @Mapping(source = "productView.originalId", target = "id")
+    // ✅ ProductView → ProductViewDto
+    @Mapping(target = "id", source = "productView.originalId")
     ProductViewDto toDto(ProductView productView);
 
+    // === Conversion methods ===
+    default LocalDateTime map(Instant instant) {
+        return instant != null ? LocalDateTime.ofInstant(instant, ZoneOffset.UTC) : null;
+    }
+
+    default Instant map(LocalDateTime localDateTime) {
+        return localDateTime != null ? localDateTime.toInstant(ZoneOffset.UTC) : null;
+    }
 }

@@ -1,5 +1,6 @@
 package eg.intercom.ppo.revamp.productcommandservice.services;
 
+
 import eg.intercom.ppo.revamp.productcommandservice.enums.ProductEventType;
 import eg.intercom.ppo.revamp.productcommandservice.mappers.ProductMapper;
 import eg.intercom.ppo.revamp.productcommandservice.models.Product;
@@ -34,7 +35,7 @@ public class ProductServiceImpl implements ProductServiceIfc {
         log.info("Will Publish Product Created Event");
 
         // publish product created event
-        productEventProducer.publish(productMapper.toEvent(newProduct, ProductEventType.CREATED));
+        productEventProducer.publish(productMapper.toEvent(newProduct, ProductEventType.CREATED.toString()));
 
         return newProduct;
     }
@@ -49,7 +50,7 @@ public class ProductServiceImpl implements ProductServiceIfc {
         log.info("Product updated with id = {}", updatedProduct.getId());
 
         // publish product created event
-        productEventProducer.publish(productMapper.toEvent(updatedProduct, ProductEventType.UPDATED));
+        productEventProducer.publish(productMapper.toEvent(updatedProduct, ProductEventType.UPDATED.toString()));
 
         return updatedProduct;
     }

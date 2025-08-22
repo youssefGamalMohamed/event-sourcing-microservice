@@ -60,9 +60,9 @@ spring:
 
         # Route for POST requests (Create Product)
         # Incoming request: POST http://localhost:9999/ecommerce/api/v1/products-command
-        # Target backend:     POST http://localhost:8081/ecommerce/api/v1/products
+        # Target backend:     POST http://localhost:8088/ecommerce/api/v1/products
         - id: product_command_service_post_create # Unique ID for the route
-          uri: http://localhost:8081 # Target backend service URL (Command Service - Port 8081)
+          uri: http://localhost:8088 # Target backend service URL (Command Service - Port 8088)
           predicates: # Conditions
             - Path=/ecommerce/api/v1/products-command # Match the exact path on the gateway
             - Method=POST # Match the HTTP method
@@ -81,9 +81,9 @@ spring:
 
         # Route for PUT requests (Update Product)
         # Incoming request: PUT http://localhost:9999/ecommerce/api/v1/products-command/{id}
-        # Target backend:     PUT http://localhost:8081/ecommerce/api/v1/products/{id}
+        # Target backend:     PUT http://localhost:8088/ecommerce/api/v1/products/{id}
         - id: product_command_service_put_update # Unique ID for the route
-          uri: http://localhost:8081 # Target backend service URL (Command Service - Port 8081)
+          uri: http://localhost:8088 # Target backend service URL (Command Service - Port 8088)
           predicates: # Conditions
             - Path=/ecommerce/api/v1/products-command/{id} # Match the path pattern on the gateway, capturing the ID
             - Method=PUT # Match the HTTP method

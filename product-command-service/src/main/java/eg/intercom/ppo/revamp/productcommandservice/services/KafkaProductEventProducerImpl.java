@@ -1,10 +1,16 @@
 package eg.intercom.ppo.revamp.productcommandservice.services;
 
-import eg.intercom.ppo.revamp.productcommandservice.events.ProductEvent;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
+
+import eg.intercom.ppo.revamp.productcommandservice.events.ProductEvent;
 
 @Slf4j
 @Service
@@ -22,7 +28,21 @@ public class KafkaProductEventProducerImpl implements ProductEventProducerIfc {
     @Override
     public void publish(ProductEvent productEvent) {
         log.info("Publishing product event: {}", productEvent);
-        kafkaTemplate.send(topicName, productEvent);
-        log.debug("Product event published successfully");
+        
+        // Use productId (or UUID) as the key to ensure partitioning consistency
+        String messageKey = productEvent.getId() != null ? productEvent.getId().toString() : UUID.randomUUID().toString();
+
+        CompletableFuture<SendResult<String, ProductEvent>> future =
+                kafkaTemplate.send(topicName, messageKey, productEvent);
+
+        future.whenComplete((result, ex) -> {
+            if (ex == null) {
+                log.info("✅ Sent message=[{}] with offset=[{}]",
+                        productEvent, result.getRecordMetadata().offset());
+            } else {
+                log.error("❌ Unable to send message=[{}] due to: {}",
+                        productEvent, ex.getMessage());
+            }
+        });
     }
 }

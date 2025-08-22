@@ -1,11 +1,10 @@
 package eg.intercom.ppo.revamp.productcommandservice.dtos;
 
-import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Builder;
-
 import java.time.LocalDateTime;
 
-@Builder
+import io.swagger.v3.oas.annotations.media.Schema;
+
+//@Builder
 @Schema(description = "Product Data Transfer Object", name = "Product")
 public record ProductDto(
         String id,
