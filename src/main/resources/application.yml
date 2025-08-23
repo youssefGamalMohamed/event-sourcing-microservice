@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ecommerce-microservice
+
+server:
+  port: 8089
