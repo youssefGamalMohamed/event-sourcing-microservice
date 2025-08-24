@@ -90,6 +90,6 @@
     }
   ],
   "name": "ProductEvent",
-  "namespace": "eg.intercom.ppo.revamp.productcommandservice.events",
+  "namespace": "com.youssef.gamal.ecommerce.microservice.product.events",
   "type": "record"
 }
