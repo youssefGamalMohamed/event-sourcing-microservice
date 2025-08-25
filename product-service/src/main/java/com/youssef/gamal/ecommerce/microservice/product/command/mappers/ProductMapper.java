@@ -10,7 +10,7 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 import com.youssef.gamal.ecommerce.microservice.product.command.dtos.ProductDto;
-import com.youssef.gamal.ecommerce.microservice.product.events.ProductEvent;
+import com.youssef.gamal.ecommerce.microservice.product.shared.events.*;
 import com.youssef.gamal.ecommerce.microservice.product.command.models.Product;
 
 @Mapper(componentModel = "spring")

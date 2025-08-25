@@ -10,7 +10,7 @@ import org.mapstruct.factory.Mappers;
 
 import com.youssef.gamal.ecommerce.microservice.product.query.dtos.ProductViewDto;
 import com.youssef.gamal.ecommerce.microservice.product.query.models.ProductView;
-import com.youssef.gamal.ecommerce.microservice.product.events.*;
+import com.youssef.gamal.ecommerce.microservice.product.shared.events.*;
 
 @Mapper(componentModel = "spring")
 public interface ProductViewMapper {

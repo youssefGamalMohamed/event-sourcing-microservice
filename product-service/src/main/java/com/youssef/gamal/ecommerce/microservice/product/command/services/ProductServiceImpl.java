@@ -2,6 +2,8 @@ package com.youssef.gamal.ecommerce.microservice.product.command.services;
 
 
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.youssef.gamal.ecommerce.microservice.product.command.enums.ProductEventType;
@@ -17,6 +19,8 @@ public class ProductServiceImpl implements ProductServiceIfc {
 
     private final ProductRepo productRepo;
     private final ProductMapper productMapper;
+    
+    @Qualifier("rabbitMQProductEventProducerImpl")
     private final ProductEventProducerIfc productEventProducer;
 
     public ProductServiceImpl(ProductRepo productRepo, ProductMapper productMapper, ProductEventProducerIfc productEventProducer) {
