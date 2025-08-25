@@ -1,0 +1,88 @@
+# Spring Boot Application Configuration
+spring:
+  application:
+    name: product-service
+
+  # --- SQL Database (Postgres) ---
+  datasource:
+    url: jdbc:postgresql://localhost:5432/products-command-db
+    username: admin-products-command-db
+    password: P@ssw0rd@123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # --- MongoDB (from query service) ---
+  data:
+    mongodb:
+      uri: mongodb://adminProductsQueryDB:Password123@localhost:27017/productQueryDb?authSource=admin
+      host: localhost
+      port: 27017
+      database: productQueryDb
+      username: adminProductsQueryDB
+      password: Password123
+
+    # Redis (from query service)
+    redis:
+      host: localhost
+      port: 6379
+
+  # --- Redis Cache (from query service) ---
+  cache:
+    type: redis
+
+  # --- Kafka Configuration (merged producer + consumer) ---
+  kafka:
+    bootstrap-servers: "127.0.0.1:9092"
+
+    # Producer (from command service)
+    producer:
+      key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
+      value-serializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
+      properties:
+        schema:
+          registry:
+            url: "http://127.0.0.1:8081"
+
+    # Consumer (from query service)
+    consumer:
+      group-id: "product-query-consumer-group"
+      keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+      valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
+      properties:
+        schema:
+          registry:
+            url: "http://127.0.0.1:8081"
+        specific:
+          avro:
+            reader: "true"
+
+# --- Server Config ---
+server:
+  port: 8088  # kept from command service
+  servlet:
+    context-path: /ecommerce/api/v1
+
+# --- Broker Topics ---
+broker:
+  topics:
+    products-topic: products-event
+
+# --- Event Driven Topic Names (from query service) ---
+kafka:
+  event-names:
+    product-event: products-event
+
+# --- Logging ---
+logging:
+  level:
+    org:
+      springframework:
+        kafka: DEBUG
+        cache: TRACE

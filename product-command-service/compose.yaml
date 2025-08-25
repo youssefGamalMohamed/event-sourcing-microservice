@@ -1,9 +1,0 @@
-services:
-  postgres:
-    image: 'postgres:latest'
-    environment:
-      - 'POSTGRES_DB=products-command-db'
-      - 'POSTGRES_PASSWORD=P@ssw0rd@123'
-      - 'POSTGRES_USER=admin-products-command-db'
-    ports:
-      - '5432:5432'
