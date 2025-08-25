@@ -20,7 +20,7 @@ spring:
         # Incoming request: GET http://localhost:9999/ecommerce/api/v1/products-query/{id}/history
         # Target backend:     GET http://localhost:8082/ecommerce/api/v1/products/{id}/history
         - id: product_query_service_get_history # Unique ID
-          uri: http://localhost:8082 # Target backend service URL (Query Service - Port 8082)
+          uri: http://localhost:8088 # Target backend service URL (Query Service - Port 8082)
           predicates: # Conditions
             - Path=/ecommerce/api/v1/products-query/{id}/history # Match the history path pattern
             - Method=GET # Match GET method
@@ -41,7 +41,7 @@ spring:
         # Incoming request: GET http://localhost:9999/ecommerce/api/v1/products-query/{id}
         # Target backend:     GET http://localhost:8082/ecommerce/api/v1/products/{id}
         - id: product_query_service_get_one # Unique ID
-          uri: http://localhost:8082 # Target backend service URL (Query Service - Port 8082)
+          uri: http://localhost:8088 # Target backend service URL (Query Service - Port 8082)
           predicates: # Conditions
             - Path=/ecommerce/api/v1/products-query/{id} # Match the main path pattern
             - Method=GET # Match GET method
