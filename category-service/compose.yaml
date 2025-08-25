@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-category-query
+    environment:
+      - MONGO_INITDB_DATABASE=categoryQueryDB
+      - MONGO_INITDB_ROOT_USERNAME=adminMongoQueryDB
+      - MONGO_INITDB_ROOT_PASSWORD=password123
+    ports:
+      - "27018:27017"
+
+  postgres:
+    image: postgres:latest
+    container_name: postgresdb-category-command
+    environment:
+      - POSTGRES_DB=category-command-db
+      - POSTGRES_USER=adminPostgresCommandDB
+      - POSTGRES_PASSWORD=P@ssw0rd
+    ports:
+      - "5433:5432"
+
+  redis:
+    image: redis:latest
+    container_name: redis-cache-category-query
+    ports:
+      - "6381:6379"
+    command: ["redis-server", "--appendonly", "yes"]

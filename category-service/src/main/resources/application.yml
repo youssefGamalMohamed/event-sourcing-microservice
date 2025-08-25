@@ -1,0 +1,58 @@
+# ----- Spring Config ------
+spring:
+  application:
+    name: category-service
+  # --- SQL Database (Postgres) ---
+  datasource:
+    url: jdbc:postgresql://localhost:5433/category-command-db
+    username: adminPostgresCommandDB
+    password: password123
+    driver-class-name: org.postgresql.Driver
+
+  # --- Jpa Config ---------
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # --- Mongo DB Query DB --------
+  data:
+    mongodb:
+      uri: mongodb://adminMongoQueryDB:P@ssw0rd@localhost:27018/categoryQueryDB?authSource=admin
+      host: localhost
+      port: 27018
+      database: categoryQueryDB
+      username: adminMongoQueryDB
+      password: P@ssw0rd
+
+  # --- Redis Caching  --------
+    redis:
+      host: localhost
+      port: 6381
+
+  cache:
+    type: redis
+
+  #-------- RabbitMQ --------------
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: myuser
+    password: secret
+
+# ----- Server Configs -----
+server:
+  port: 7070
+  servlet:
+    context-path: /ecommerce/api/v1
+
+# --- Logging ---
+logging:
+  level:
+    org:
+      springframework:
+        kafka: DEBUG
+        cache: TRACE
