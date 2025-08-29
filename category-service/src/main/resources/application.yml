@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5433/category-command-db
     username: adminPostgresCommandDB
-    password: password123
+    password: P@ssw0rd
     driver-class-name: org.postgresql.Driver
 
   # --- Jpa Config ---------
@@ -21,12 +21,12 @@ spring:
   # --- Mongo DB Query DB --------
   data:
     mongodb:
-      uri: mongodb://adminMongoQueryDB:P@ssw0rd@localhost:27018/categoryQueryDB?authSource=admin
+      uri: mongodb://adminMongoQueryDB:password123@localhost:27018/categoryQueryDB?authSource=admin
       host: localhost
       port: 27018
       database: categoryQueryDB
       username: adminMongoQueryDB
-      password: P@ssw0rd
+      password: password123
 
   # --- Redis Caching  --------
     redis:

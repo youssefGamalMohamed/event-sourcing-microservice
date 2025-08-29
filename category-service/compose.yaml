@@ -5,9 +5,9 @@ services:
     image: mongo:latest
     container_name: mongodb-category-query
     environment:
-      - MONGO_INITDB_DATABASE=categoryQueryDB
-      - MONGO_INITDB_ROOT_USERNAME=adminMongoQueryDB
-      - MONGO_INITDB_ROOT_PASSWORD=password123
+      MONGO_INITDB_DATABASE: categoryQueryDB
+      MONGO_INITDB_ROOT_USERNAME: adminMongoQueryDB
+      MONGO_INITDB_ROOT_PASSWORD: password123
     ports:
       - "27018:27017"
 
