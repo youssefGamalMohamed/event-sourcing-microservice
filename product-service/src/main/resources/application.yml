@@ -38,37 +38,37 @@ spring:
     type: redis
 
   # RabbitMQ
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: myuser
-    password: secret
+  # rabbitmq:
+  #   host: localhost
+  #   port: 5672
+  #   username: myuser
+  #   password: secret
 
   # --- Kafka Configuration (merged producer + consumer) ---
-#  kafka:
-#    bootstrap-servers: "127.0.0.1:9092"
-#
-#    # Producer (from command service)
-#    producer:
-#      key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
-#      value-serializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
-#      properties:
-#        schema:
-#          registry:
-#            url: "http://127.0.0.1:8081"
+  kafka:
+   bootstrap-servers: "127.0.0.1:9092"
+
+   # Producer (from command service)
+   producer:
+     key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
+     value-serializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
+     properties:
+       schema:
+         registry:
+           url: "http://127.0.0.1:8081"
 
     # Consumer (from query service)
-#    consumer:
-#      group-id: "product-query-consumer-group"
-#      keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
-#      valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
-#      properties:
-#        schema:
-#          registry:
-#            url: "http://127.0.0.1:8081"
-#        specific:
-#          avro:
-#            reader: "true"
+   consumer:
+     group-id: "product-query-consumer-group"
+     keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+     valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
+     properties:
+       schema:
+         registry:
+           url: "http://127.0.0.1:8081"
+       specific:
+         avro:
+           reader: "true"
 
 # --- Server Config ---
 server:
@@ -77,14 +77,14 @@ server:
     context-path: /ecommerce/api/v1
 
 ## --- Broker Topics ---
-#broker:
-#  topics:
-#    products-topic: products-event
+broker:
+ topics:
+   products-topic: products-event
 
 # --- Event Driven Topic Names (from query service) ---
-#kafka:
-#  event-names:
-#    product-event: products-event
+kafka:
+ event-names:
+   product-event: products-event
 
 rabbitmq:
     queues-names:

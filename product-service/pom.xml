@@ -21,17 +21,17 @@
         <java.version>17</java.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
         <springdoc.openapi.version>2.8.5</springdoc.openapi.version>
-<!--        <io.confluent.version>7.4.0</io.confluent.version>
-        <org.apache.avro.version>1.11.0</org.apache.avro.version>-->
+       <io.confluent.version>7.4.0</io.confluent.version>
+        <org.apache.avro.version>1.11.0</org.apache.avro.version>
     </properties>
 
     <!-- to pull confluent dependecies -->
-<!--    <repositories>
+   <repositories>
         <repository>
             <id>confluent</id>
             <url>https://packages.confluent.io/maven/</url>
         </repository>
-    </repositories>-->
+    </repositories>
 
     <dependencies>
         <!-- JPA + Postgres -->
@@ -108,7 +108,7 @@
         </dependency>
 
         <!-- Kafka -->
-<!--        <dependency>
+       <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
@@ -116,7 +116,7 @@
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka-test</artifactId>
             <scope>test</scope>
-        </dependency>-->
+        </dependency>
 
         <!-- MapStruct -->
         <dependency>
@@ -133,7 +133,7 @@
         </dependency>
 
         <!-- Avro + Schema Registry -->
-<!--        <dependency>
+       <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>kafka-avro-serializer</artifactId>
             <version>${io.confluent.version}</version>
@@ -147,10 +147,10 @@
             <groupId>org.apache.avro</groupId>
             <artifactId>avro</artifactId>
             <version>${org.apache.avro.version}</version>
-        </dependency>-->
+        </dependency>
         
         <!-- RabbitMQ -->
-        <dependency>
+<!--        <dependency>
 	      <groupId>org.springframework.boot</groupId>
 	      <artifactId>spring-boot-starter-amqp</artifactId>
 	    </dependency>
@@ -158,7 +158,7 @@
 	      <groupId>org.springframework.amqp</groupId>
 	      <artifactId>spring-rabbit-test</artifactId>
 	      <scope>test</scope>
-	    </dependency>
+	    </dependency>-->
 	    
     </dependencies>
 
@@ -198,7 +198,7 @@
             </plugin>
 
             <!-- Avro Plugin -->
-<!--            <plugin>
+           <plugin>
                 <groupId>org.apache.avro</groupId>
                 <artifactId>avro-maven-plugin</artifactId>
                 <version>${org.apache.avro.version}</version>
@@ -216,7 +216,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>-->
+            </plugin>
         </plugins>
     </build>
 

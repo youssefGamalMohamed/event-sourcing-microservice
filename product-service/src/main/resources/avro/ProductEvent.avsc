@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "ProductEvent",
-  "namespace": "com.youssef.gamal.ecommerce.microservice.product.events",
+  "namespace": "com.youssef.gamal.ecommerce.microservice.product.shared.events",
   "fields": [
     { "name": "id", "type": "string" },
     { "name": "eventType", "type": "string" },
