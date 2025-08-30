@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "CategoryEvent",
+  "namespace": "com.youssef.gamal.ecommerce.microservice.category.shared.events",
+  "fields": [
+    { "name": "id", "type": "string" },
+    { "name": "eventType", "type": "string" },
+
+    { "name": "name", "type": "string" },
+
+    { "name": "creationDate", "type": ["null", { "type": "long", "logicalType": "timestamp-millis" }], "default": null },
+    { "name": "createdBy", "type": ["null", "string"], "default": null },
+    { "name": "lastModifiedDate", "type": ["null", { "type": "long", "logicalType": "timestamp-millis" }], "default": null },
+    { "name": "lastModifiedBy", "type": ["null", "string"], "default": null },
+
+    { "name": "timestamp", "type": "long" }
+  ]
+}
