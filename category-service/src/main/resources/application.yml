@@ -81,6 +81,14 @@ server:
   servlet:
     context-path: /ecommerce/api/v1
 
+
+# Swagger UI
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
 # --- Logging ---
 logging:
   level:
