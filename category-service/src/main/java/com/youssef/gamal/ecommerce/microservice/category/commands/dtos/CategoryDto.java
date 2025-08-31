@@ -8,7 +8,8 @@ public record CategoryDto(
         LocalDateTime creationDate,
         String createdBy,
         LocalDateTime lastModifiedDate,
-        String lastModifiedBy
+        String lastModifiedBy,
+        String eventType
 ) {
 
 }

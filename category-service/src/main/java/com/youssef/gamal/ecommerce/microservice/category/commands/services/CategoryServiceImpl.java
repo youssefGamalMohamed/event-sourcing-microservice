@@ -42,7 +42,9 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
 	    
 	    Category savedCategory = categoryRepo.save(existingCategory);
 	    log.info("Category Updated Successfully: {}", savedCategory);
-
+	    
+	    // publish event to kafka
+	    categoryEventProducerIfc.publish(categoryMapper.toEvent(savedCategory, CategoryEventType.UPDATED.toString()));
 	    return savedCategory;
 	}
 

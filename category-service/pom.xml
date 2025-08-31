@@ -140,6 +140,13 @@
             <version>${springdoc.openapi.version}</version>
         </dependency>
         
+        
+        <!-- Redis (from second POM) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
 	</dependencies>
 
 	<build>

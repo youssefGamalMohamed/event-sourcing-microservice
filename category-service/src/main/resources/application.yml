@@ -72,12 +72,8 @@ spring:
  ## --- Broker Topics ---
 broker:
   topics:
-    categories-topic: categories-event
+    categories-topic: categories-topic
 
- # --- Event Driven Topic Names (from query service) ---
-kafka:
-  event-names:
-    category-event: category-event
 
 # ----- Server Configs -----
 server:
