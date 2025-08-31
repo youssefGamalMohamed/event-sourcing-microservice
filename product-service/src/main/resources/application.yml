@@ -79,12 +79,8 @@ server:
 ## --- Broker Topics ---
 broker:
  topics:
-   products-topic: products-event
+   products-topic: products-topic
 
-# --- Event Driven Topic Names (from query service) ---
-kafka:
- event-names:
-   product-event: products-event
 
 rabbitmq:
     queues-names:

@@ -22,7 +22,7 @@ public class ProductEventConsumerServiceImpl {
         this.productViewMapper = productViewMapper;
     }
 
-    @KafkaListener(topics = "${kafka.event-names.product-event}", groupId = "${spring.kafka.consumer.group-id}")
+    @KafkaListener(topics = "${broker.topics.products-topic}", groupId = "${spring.kafka.consumer.group-id}")
 //    @RabbitListener(queues = {"${rabbitmq.queues-names.product_queue}"})
     public void consumeProductEvent(ProductEvent productEvent) {
         log.info("✅ Received product event: {}", productEvent);
