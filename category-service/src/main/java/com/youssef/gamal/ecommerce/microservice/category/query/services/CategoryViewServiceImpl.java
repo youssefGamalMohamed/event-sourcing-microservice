@@ -3,6 +3,7 @@ package com.youssef.gamal.ecommerce.microservice.category.query.services;
 import java.util.NoSuchElementException;
 
 import com.youssef.gamal.ecommerce.microservice.category.commands.enums.CategoryEventType;
+import jakarta.transaction.Transactional;
 import org.springframework.cache.annotation.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,21 +24,26 @@ public class CategoryViewServiceImpl implements CategoryViewServiceIfc {
     private final CategoryViewRepo categoryRepo;
 
     @Override
+    @Transactional
     @Caching(
             put = {
                     @CachePut(
-                        key = "#result.originalId",
-                        condition = "#result.eventType == 'CREATED' || #result.eventType == 'UPDATED'"
+                            key = "#result.originalId",
+                            condition = "#eventType.toString() == 'CREATED' || #eventType.toString() == 'UPDATED'"
                     )
             },
             evict = {
-                    @CacheEvict(key = "#result.originalId", condition = "#result.eventType == 'DELETED'")
+                    @CacheEvict(key = "#categoryView.originalId", condition = "#eventType.toString() == 'DELETED'")
             }
     )
-    public CategoryView addCategorytView(CategoryView categoryView) {
-        log.info("addCategorytView called with categoryView: {}", categoryView);
+    public CategoryView saveCategoryView(CategoryView categoryView, CategoryEventType eventType) {
+        log.info("saveCategoryView called with categoryView: {} , eventType: {}", categoryView, eventType);
+
+        categoryView.setEventType(eventType.toString()); // ✅ ensure DB consistency
         CategoryView savedCategoryView = categoryRepo.save(categoryView);
-        log.info("CategoryView saved with id: {}", savedCategoryView.getId());
+
+        log.info("[CATEGORY_VIEW:SAVE] id={}, originalId={}, eventType={}", savedCategoryView.getId(), savedCategoryView.getOriginalId(), eventType);
+
         return savedCategoryView;
     }
 
@@ -50,7 +56,7 @@ public class CategoryViewServiceImpl implements CategoryViewServiceIfc {
     }
 
     @Override
-    @Cacheable(key = "#originalId")
+    @Cacheable(key = "#originalId", unless = "#result == null") // cache element when element != null
     public CategoryView findByOriginalIdAndWithLastHistory(String originalId) {
         log.info("findByOriginalIdAndWithLastHistory called with originalId: {}", originalId);
 

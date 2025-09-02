@@ -1,5 +1,6 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.services;
 
+import com.youssef.gamal.ecommerce.microservice.category.commands.enums.CategoryEventType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -7,8 +8,8 @@ import com.youssef.gamal.ecommerce.microservice.category.query.models.CategoryVi
 
 
 public interface CategoryViewServiceIfc {
-	
-	CategoryView addCategorytView(CategoryView categoryView);
+
+    CategoryView saveCategoryView(CategoryView categoryView, CategoryEventType eventType);
 
     Page<CategoryView> findAllByOriginalId(String id, Pageable pageable);
 
