@@ -1,6 +1,7 @@
 package com.youssef.gamal.ecommerce.microservice.product.command.services;
 
 
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -30,6 +31,7 @@ public class ProductServiceImpl implements ProductServiceIfc {
     }
 
     @Override
+    @Transactional
     public Product createProduct(Product product) {
         log.info("Creating product: {}", product);
 
@@ -46,6 +48,7 @@ public class ProductServiceImpl implements ProductServiceIfc {
     }
 
     @Override
+    @Transactional
     public Product updateProduct(String id, Product product) {
         log.info("Updating product with id: {} with new data: {}", id, product);
         Product existingProduct = productRepo.findById(id)
