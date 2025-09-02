@@ -1,7 +1,7 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.services;
 
 import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
-import com.youssef.gamal.ecommerce.microservice.category.commands.enums.CategoryEventType;
+import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
 import com.youssef.gamal.ecommerce.microservice.category.commands.mappers.CategoryMapper;
 import com.youssef.gamal.ecommerce.microservice.category.commands.repos.CategoryRepo;
 import jakarta.transaction.Transactional;

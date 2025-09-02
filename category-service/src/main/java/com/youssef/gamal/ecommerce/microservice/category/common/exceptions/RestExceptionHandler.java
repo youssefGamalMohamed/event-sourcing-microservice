@@ -1,6 +1,5 @@
-package com.youssef.gamal.ecommerce.microservice.category.commands.exceptions;
+package com.youssef.gamal.ecommerce.microservice.category.common.exceptions;
 
-import com.youssef.gamal.ecommerce.microservice.category.commands.enums.CommandServiceErrorsEnum;
 import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.exceptions.models.ErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
@@ -14,14 +13,14 @@ import java.util.NoSuchElementException;
 
 @RestControllerAdvice
 @Slf4j
-public class RestCommandExceptionHandler {
+public class RestExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleException(Exception ex, HttpServletRequest request) {
         log.error("Handling generic exception:", ex);
         return createErrorResponse(
                 HttpStatus.INTERNAL_SERVER_ERROR,
-                CommandServiceErrorsEnum.INTERNAL_SERVER_ERROR,
+                CategoryServiceErrorsEnum.INTERNAL_SERVER_ERROR,
                 request.getRequestURI()
         );
     }
@@ -31,14 +30,14 @@ public class RestCommandExceptionHandler {
         log.error("Handling NoSuchElementException:", ex);
         return createErrorResponse(
                 HttpStatus.NOT_FOUND,
-                CommandServiceErrorsEnum.CATEGORY_NOT_FOUND,
+                CategoryServiceErrorsEnum.CATEGORY_NOT_FOUND,
                 request.getRequestURI()
         );
     }
 
     private ResponseEntity<ErrorResponse> createErrorResponse(
             HttpStatus status,
-            CommandServiceErrorsEnum commandError,
+            CategoryServiceErrorsEnum commandError,
             String path) {
 
         ErrorResponse errorResponse = ErrorResponse.builder()

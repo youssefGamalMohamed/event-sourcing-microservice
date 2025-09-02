@@ -1,4 +1,4 @@
-package com.youssef.gamal.ecommerce.microservice.category.commands.enums;
+package com.youssef.gamal.ecommerce.microservice.category.common.enums;
 
 
 import java.util.Optional;

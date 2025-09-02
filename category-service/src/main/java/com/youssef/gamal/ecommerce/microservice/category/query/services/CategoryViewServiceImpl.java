@@ -2,7 +2,7 @@ package com.youssef.gamal.ecommerce.microservice.category.query.services;
 
 import java.util.NoSuchElementException;
 
-import com.youssef.gamal.ecommerce.microservice.category.commands.enums.CategoryEventType;
+import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
 import jakarta.transaction.Transactional;
 import org.springframework.cache.annotation.*;
 import org.springframework.data.domain.Page;
