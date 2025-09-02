@@ -38,7 +38,7 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
 	    log.info("CategoryServiceImpl -> update(id={}, updatedCategory={})", id, updatedCategory);
 
 	    Category existingCategory = categoryRepo.findById(id)
-	            .orElseThrow(() -> new RuntimeException("Category not found with id: " + id));
+	            .orElseThrow(() -> new NoSuchElementException("Category not found with id: " + id));
 
 	    // update category
 	    categoryMapper.updateFrom(updatedCategory, existingCategory);
