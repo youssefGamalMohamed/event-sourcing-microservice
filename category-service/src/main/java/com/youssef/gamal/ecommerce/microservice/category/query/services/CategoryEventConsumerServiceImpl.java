@@ -4,7 +4,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 import com.youssef.gamal.ecommerce.microservice.category.query.mappers.CategoryViewMapper;
-import com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent;
+import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;

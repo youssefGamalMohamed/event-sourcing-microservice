@@ -41,4 +41,14 @@ public class CategoryController {
         log.info("CategoryController -> update() completed successfully with result={}", savedDto);
         return ResponseEntity.ok(savedDto);
     }
+
+    @DeleteMapping("/categories/{id}")
+    public ResponseEntity<Void> delete(@PathVariable(name = "id") String id) {
+        log.info("CategoryController -> delete() called with id={}", id);
+
+        categoryService.delete(id);
+
+        log.info("CategoryController -> delete() completed successfully for id={}", id);
+        return ResponseEntity.noContent().build(); // returns HTTP 204
+    }
 }

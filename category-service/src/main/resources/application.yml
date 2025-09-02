@@ -104,7 +104,9 @@ management:
 # --- Logging ---
 logging:
   level:
-    org:
-      springframework:
-        kafka: DEBUG
-        cache: TRACE
+    org.springframework.kafka: DEBUG
+    org.springframework.cache: TRACE
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    org.springframework.data.mongodb.repository.query: DEBUG
+    org.mongodb.driver.protocol.command: DEBUG
+    org.mongodb.driver.connection: DEBUG

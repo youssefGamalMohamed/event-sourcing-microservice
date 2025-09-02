@@ -6,4 +6,5 @@ public interface CategoryServiceIfc {
 	
 	Category save(Category category);
 	Category update(String id, Category updatedCategory);
+    void delete(String id);
 }
