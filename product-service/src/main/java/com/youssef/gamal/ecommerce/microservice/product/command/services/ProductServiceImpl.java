@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.youssef.gamal.ecommerce.microservice.product.command.enums.ProductEventType;
+import com.youssef.gamal.ecommerce.microservice.product.common.enums.ProductEventType;
 import com.youssef.gamal.ecommerce.microservice.product.command.mappers.ProductMapper;
 import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
 import com.youssef.gamal.ecommerce.microservice.product.command.repos.ProductRepo;
