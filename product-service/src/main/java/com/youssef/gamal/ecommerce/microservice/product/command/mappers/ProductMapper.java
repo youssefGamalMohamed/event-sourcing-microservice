@@ -4,28 +4,28 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.commands.ProductCommandDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
-import com.youssef.gamal.ecommerce.microservice.product.command.dtos.ProductDto;
 import com.youssef.gamal.ecommerce.microservice.product.shared.events.*;
-import com.youssef.gamal.ecommerce.microservice.product.command.models.Product;
+import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
 
 @Mapper(componentModel = "spring")
 public interface ProductMapper {
 
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
-    ProductDto toDto(Product product);
+    ProductCommandDto toDto(Product product);
 
     @Mapping(target = "creationDate", ignore = true)
     @Mapping(target = "createdBy", ignore = true)
     @Mapping(target = "lastModifiedDate", ignore = true)
     @Mapping(target = "lastModifiedBy", ignore = true)
     @Mapping(target = "id", ignore = true)
-    Product toEntity(ProductDto productDto);
+    Product toEntity(ProductCommandDto productDto);
 
     @Mapping(target = "creationDate", ignore = true)
     @Mapping(target = "createdBy", ignore = true)

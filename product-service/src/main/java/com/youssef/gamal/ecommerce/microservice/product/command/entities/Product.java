@@ -1,4 +1,4 @@
-package com.youssef.gamal.ecommerce.microservice.product.command.models;
+package com.youssef.gamal.ecommerce.microservice.product.command.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

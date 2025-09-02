@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.youssef.gamal.ecommerce.microservice.product.command.enums.ProductEventType;
 import com.youssef.gamal.ecommerce.microservice.product.command.mappers.ProductMapper;
-import com.youssef.gamal.ecommerce.microservice.product.command.models.Product;
+import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
 import com.youssef.gamal.ecommerce.microservice.product.command.repos.ProductRepo;
 
 import java.util.NoSuchElementException;

@@ -1,6 +1,6 @@
 package com.youssef.gamal.ecommerce.microservice.product.command.services;
 
-import com.youssef.gamal.ecommerce.microservice.product.command.models.Product;
+import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
 
 public interface ProductServiceIfc {
 

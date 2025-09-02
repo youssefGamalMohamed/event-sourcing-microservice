@@ -163,6 +163,14 @@
             <groupId>io.zipkin.reporter2</groupId>
             <artifactId>zipkin-reporter-brave</artifactId>
         </dependency>
+
+        <!-- Shared Module for DTO -->
+        <dependency>
+            <groupId>com.youssef.gamal.ecommerce.microservice</groupId>
+            <artifactId>shared-module</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>
