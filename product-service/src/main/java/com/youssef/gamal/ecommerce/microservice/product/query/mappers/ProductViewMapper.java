@@ -4,11 +4,11 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.query.ProductViewDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-import com.youssef.gamal.ecommerce.microservice.product.query.dtos.ProductViewDto;
 import com.youssef.gamal.ecommerce.microservice.product.query.models.ProductView;
 import com.youssef.gamal.ecommerce.microservice.product.shared.events.*;
 

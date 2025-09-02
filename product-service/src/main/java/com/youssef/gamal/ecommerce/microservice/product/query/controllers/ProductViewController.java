@@ -1,5 +1,6 @@
 package com.youssef.gamal.ecommerce.microservice.product.query.controllers;
 
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.query.ProductViewDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.youssef.gamal.ecommerce.microservice.product.query.dtos.ProductViewDto;
 import com.youssef.gamal.ecommerce.microservice.product.query.mappers.ProductViewMapper;
 import com.youssef.gamal.ecommerce.microservice.product.query.models.ProductView;
 import com.youssef.gamal.ecommerce.microservice.product.query.services.ProductViewService;
