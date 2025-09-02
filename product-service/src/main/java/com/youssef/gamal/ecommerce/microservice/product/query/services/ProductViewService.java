@@ -1,5 +1,6 @@
 package com.youssef.gamal.ecommerce.microservice.product.query.services;
 
+import com.youssef.gamal.ecommerce.microservice.product.common.enums.ProductEventType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -7,7 +8,7 @@ import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductVi
 
 public interface ProductViewService {
 
-    ProductView addProductView(ProductView productView);
+    ProductView savedProductView(ProductView productView, ProductEventType productEventType);
 
     Page<ProductView> findAllByOriginalId(String id, Pageable pageable);
 
