@@ -101,6 +101,12 @@ management:
       endpoint: http://localhost:9411/api/v2/spans # Zipkin server URL
 
 
+# ----- Eureka Discovery Client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
 # --- Logging ---
 logging:
   level:
