@@ -30,7 +30,7 @@ public class CategoryController {
     }
 
     @PutMapping("/categories/{id}")
-    public ResponseEntity<CategoryCommandDto> update(@PathVariable String id,
+    public ResponseEntity<CategoryCommandDto> update(@PathVariable(name = "id") String id,
                                               @RequestBody CategoryCommandDto categoryDto) {
         log.info("CategoryController -> update() called with id={}, categoryDto={}", id, categoryDto);
 
