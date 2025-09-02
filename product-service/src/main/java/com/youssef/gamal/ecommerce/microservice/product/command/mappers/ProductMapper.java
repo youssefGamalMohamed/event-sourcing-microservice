@@ -4,13 +4,13 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+import com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent;
 import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.commands.ProductCommandDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
-import com.youssef.gamal.ecommerce.microservice.product.shared.events.*;
 import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
 
 @Mapper(componentModel = "spring")

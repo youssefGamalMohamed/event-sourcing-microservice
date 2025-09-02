@@ -1,5 +1,6 @@
 package com.youssef.gamal.ecommerce.microservice.product.command.services;
 
+import com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.UUID;
@@ -10,7 +11,6 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 
-import com.youssef.gamal.ecommerce.microservice.product.shared.events.ProductEvent;
 
 @Slf4j
 @Service

@@ -1,6 +1,7 @@
 package com.youssef.gamal.ecommerce.microservice.product.command.services;
 
-import com.youssef.gamal.ecommerce.microservice.product.shared.events.*;
+
+import com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent;
 
 public interface ProductEventProducerIfc {
 
