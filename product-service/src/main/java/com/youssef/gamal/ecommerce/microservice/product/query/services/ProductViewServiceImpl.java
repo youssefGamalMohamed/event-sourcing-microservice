@@ -1,7 +1,7 @@
 package com.youssef.gamal.ecommerce.microservice.product.query.services;
 
 import com.youssef.gamal.ecommerce.microservice.product.common.enums.ProductEventType;
-import com.youssef.gamal.ecommerce.microservice.product.integrations.interfaces.CategoryIntegrationServiceIfc;
+import com.youssef.gamal.ecommerce.microservice.product.integrations.category.rest.implementation.CategoryIntegrationServiceIfc;
 import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
 import com.youssef.gamal.ecommerce.microservice.product.query.repos.ProductViewRepo;
 import jakarta.transaction.Transactional;
