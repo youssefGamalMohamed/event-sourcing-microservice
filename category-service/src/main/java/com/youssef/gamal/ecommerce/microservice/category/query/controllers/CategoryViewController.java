@@ -1,6 +1,6 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.controllers;
 
-import com.youssef.gamal.ecommerce.microservice.shart_module.rest.dtos.category.query.CategoryViewDto;
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryViewDto;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

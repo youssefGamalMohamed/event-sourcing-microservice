@@ -15,7 +15,7 @@
 
     <!-- Define all modules (sub-projects) -->
     <modules>
-        <module>shart-module</module>
+        <module>shared-module</module>
         <module>category-service</module>
     </modules>
 

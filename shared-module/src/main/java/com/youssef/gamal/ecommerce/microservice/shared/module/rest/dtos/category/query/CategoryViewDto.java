@@ -1,4 +1,4 @@
-package com.youssef.gamal.ecommerce.microservice.shart_module.rest.dtos.category.query;
+package com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

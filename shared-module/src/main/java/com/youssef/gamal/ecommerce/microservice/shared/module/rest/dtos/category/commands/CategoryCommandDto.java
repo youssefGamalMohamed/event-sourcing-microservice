@@ -1,4 +1,4 @@
-package com.youssef.gamal.ecommerce.microservice.shart_module.rest.dtos.category.commands;
+package com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.commands;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

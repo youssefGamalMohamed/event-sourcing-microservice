@@ -3,7 +3,7 @@ package com.youssef.gamal.ecommerce.microservice.category.commands.controllers;
 import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
 import com.youssef.gamal.ecommerce.microservice.category.commands.mappers.CategoryMapper;
 import com.youssef.gamal.ecommerce.microservice.category.commands.services.CategoryServiceIfc;
-import com.youssef.gamal.ecommerce.microservice.shart_module.rest.dtos.category.commands.CategoryCommandDto;
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.commands.CategoryCommandDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

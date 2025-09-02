@@ -1,4 +1,4 @@
-package com.youssef.gamal.ecommerce.microservice.shart_module;
+package com.youssef.gamal.ecommerce.microservice.shared.module;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
