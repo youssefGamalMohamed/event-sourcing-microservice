@@ -3,31 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <!-- Basic project metadata -->
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Inherit dependency + plugin management from Spring Boot parent -->
+    <!-- Inherit from your custom parent POM -->
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.5</version>
-        <relativePath/> <!-- Always resolve parent from central repo -->
+        <groupId>com.youssef.gamal.ecommerce.microservice</groupId>
+        <artifactId>ecommerce-microservice</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <!-- Project identifiers -->
-    <groupId>com.youssef.gamal.ecommerce.microservice</groupId>
     <artifactId>product-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>product-service</name>
-    <description>product-service</description>
+    <description>Product Service for Ecommerce Application</description>
 
-    <!-- Properties (centralized version management) -->
+    <!-- Properties specific to this module -->
     <properties>
-        <java.version>17</java.version> <!-- Java version -->
-        <org.mapstruct.version>1.6.3</org.mapstruct.version> <!-- MapStruct -->
-        <springdoc.openapi.version>2.8.5</springdoc.openapi.version> <!-- SpringDoc -->
-        <io.confluent.version>7.4.0</io.confluent.version> <!-- Confluent (Kafka Avro, Schema Registry) -->
-        <org.apache.avro.version>1.11.0</org.apache.avro.version> <!-- Apache Avro -->
+        <org.mapstruct.version>1.6.3</org.mapstruct.version>
+        <springdoc.openapi.version>2.8.5</springdoc.openapi.version>
+        <io.confluent.version>7.4.0</io.confluent.version>
+        <org.apache.avro.version>1.11.0</org.apache.avro.version>
     </properties>
 
     <!-- Repository for Confluent dependencies -->
@@ -39,7 +35,7 @@
     </repositories>
 
     <dependencies>
-        <!-- JPA (Hibernate + Spring Data) + Postgres database -->
+        <!-- JPA + Postgres -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -47,28 +43,28 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <scope>runtime</scope> <!-- Only needed at runtime -->
+            <scope>runtime</scope>
         </dependency>
 
-        <!-- MongoDB for NoSQL support -->
+        <!-- MongoDB -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
 
-        <!-- Redis caching support -->
+        <!-- Redis -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
-        <!-- Web layer (Spring MVC + Jackson + Embedded Tomcat) -->
+        <!-- Web layer -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Docker Compose integration for Spring Boot -->
+        <!-- Docker Compose integration -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-docker-compose</artifactId>
@@ -76,30 +72,25 @@
             <optional>true</optional>
         </dependency>
 
-
-
-        <!-- Spring Actuator for monitoring endpoints -->
+        <!-- Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        
-        
-        <!-- Lombok for boilerplate code reduction (getters, setters, builders, etc.) -->
+
+        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
 
-        <!-- Unit + Integration testing support -->
+        <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!-- Testcontainers (for integration testing with real containers) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-testcontainers</artifactId>
@@ -121,7 +112,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Kafka core support -->
+        <!-- Kafka -->
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
@@ -132,21 +123,21 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- MapStruct for DTO <-> Entity mapping -->
+        <!-- MapStruct -->
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>${org.mapstruct.version}</version>
         </dependency>
 
-        <!-- SpringDoc OpenAPI UI for Swagger docs -->
+        <!-- SpringDoc OpenAPI -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>${springdoc.openapi.version}</version>
         </dependency>
 
-        <!-- Kafka Avro serializer/deserializer + Schema Registry client -->
+        <!-- Kafka Avro + Schema Registry -->
         <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>kafka-avro-serializer</artifactId>
@@ -163,34 +154,20 @@
             <version>${org.apache.avro.version}</version>
         </dependency>
 
-        <!-- RabbitMQ support (commented out for now, can be enabled if needed) -->
-        <!--
+        <!-- Micrometer + Zipkin -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.amqp</groupId>
-            <artifactId>spring-rabbit-test</artifactId>
-            <scope>test</scope>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter-brave</artifactId>
         </dependency>
-        -->
-        
-        
-       <!-- Zipkin and Micrometer -->
-       <dependency>
-          <groupId>io.micrometer</groupId>
-          <artifactId>micrometer-tracing-bridge-brave</artifactId>
-       </dependency>
-       <dependency>
-          <groupId>io.zipkin.reporter2</groupId>
-          <artifactId>zipkin-reporter-brave</artifactId>
-       </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Compiler plugin: enables Lombok + MapStruct annotation processing -->
+            <!-- Compiler plugin with annotation processing -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -209,22 +186,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Spring Boot plugin: makes the app executable as a fat JAR -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <!-- Exclude Lombok from the final artifact -->
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-
-            <!-- Avro code generation plugin -->
+            <!-- Avro code generation -->
             <plugin>
                 <groupId>org.apache.avro</groupId>
                 <artifactId>avro-maven-plugin</artifactId>
@@ -232,14 +194,12 @@
                 <executions>
                     <execution>
                         <id>generate-avro-sources</id>
-                        <phase>generate-sources</phase> <!-- Run before compilation -->
+                        <phase>generate-sources</phase>
                         <goals>
                             <goal>schema</goal>
                         </goals>
                         <configuration>
-                            <!-- Directory where Avro schemas are stored -->
                             <sourceDirectory>${project.basedir}/src/main/resources/avro</sourceDirectory>
-                            <!-- Output directory for generated Java classes -->
                             <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
                             <stringType>String</stringType>
                         </configuration>

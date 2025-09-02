@@ -17,6 +17,7 @@
     <modules>
         <module>shared-module</module>
         <module>category-service</module>
+        <module>product-service</module>
     </modules>
 
     <properties>
