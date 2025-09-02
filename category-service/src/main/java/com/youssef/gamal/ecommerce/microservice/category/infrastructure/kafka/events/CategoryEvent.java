@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.youssef.gamal.ecommerce.microservice.category.shared.events;
+package com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events;
 
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -6040948011290878640L;
+  private static final long serialVersionUID = -35219404025034914L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CategoryEvent\",\"namespace\":\"com.youssef.gamal.ecommerce.microservice.category.shared.events\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eventType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"creationDate\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"createdBy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"lastModifiedDate\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"lastModifiedBy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"timestamp\",\"type\":\"long\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CategoryEvent\",\"namespace\":\"com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eventType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"creationDate\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"createdBy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"lastModifiedDate\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"lastModifiedBy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"timestamp\",\"type\":\"long\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -287,8 +287,8 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
    * Creates a new CategoryEvent RecordBuilder.
    * @return A new CategoryEvent RecordBuilder
    */
-  public static com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder newBuilder() {
-    return new com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder();
+  public static com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder newBuilder() {
+    return new com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder();
   }
 
   /**
@@ -296,11 +296,11 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
    * @param other The existing builder to copy.
    * @return A new CategoryEvent RecordBuilder
    */
-  public static com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder newBuilder(com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder other) {
+  public static com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder newBuilder(com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder other) {
     if (other == null) {
-      return new com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder();
+      return new com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder();
     } else {
-      return new com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder(other);
+      return new com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder(other);
     }
   }
 
@@ -309,11 +309,11 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
    * @param other The existing instance to copy.
    * @return A new CategoryEvent RecordBuilder
    */
-  public static com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder newBuilder(com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent other) {
+  public static com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder newBuilder(com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent other) {
     if (other == null) {
-      return new com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder();
+      return new com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder();
     } else {
-      return new com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder(other);
+      return new com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder(other);
     }
   }
 
@@ -342,7 +342,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder other) {
+    private Builder(com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -382,7 +382,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
      * Creates a Builder by copying an existing CategoryEvent instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent other) {
+    private Builder(com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -432,7 +432,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder setId(java.lang.String value) {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder setId(java.lang.String value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -452,7 +452,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder clearId() {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -472,7 +472,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'eventType'.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder setEventType(java.lang.String value) {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder setEventType(java.lang.String value) {
       validate(fields()[1], value);
       this.eventType = value;
       fieldSetFlags()[1] = true;
@@ -492,7 +492,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'eventType' field.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder clearEventType() {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder clearEventType() {
       eventType = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -512,7 +512,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder setName(java.lang.String value) {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder setName(java.lang.String value) {
       validate(fields()[2], value);
       this.name = value;
       fieldSetFlags()[2] = true;
@@ -532,7 +532,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder clearName() {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder clearName() {
       name = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -552,7 +552,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'creationDate'.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder setCreationDate(java.time.Instant value) {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder setCreationDate(java.time.Instant value) {
       validate(fields()[3], value);
       this.creationDate = value;
       fieldSetFlags()[3] = true;
@@ -572,7 +572,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'creationDate' field.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder clearCreationDate() {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder clearCreationDate() {
       creationDate = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -592,7 +592,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'createdBy'.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder setCreatedBy(java.lang.String value) {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder setCreatedBy(java.lang.String value) {
       validate(fields()[4], value);
       this.createdBy = value;
       fieldSetFlags()[4] = true;
@@ -612,7 +612,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'createdBy' field.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder clearCreatedBy() {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder clearCreatedBy() {
       createdBy = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -632,7 +632,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'lastModifiedDate'.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder setLastModifiedDate(java.time.Instant value) {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder setLastModifiedDate(java.time.Instant value) {
       validate(fields()[5], value);
       this.lastModifiedDate = value;
       fieldSetFlags()[5] = true;
@@ -652,7 +652,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'lastModifiedDate' field.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder clearLastModifiedDate() {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder clearLastModifiedDate() {
       lastModifiedDate = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -672,7 +672,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'lastModifiedBy'.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder setLastModifiedBy(java.lang.String value) {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder setLastModifiedBy(java.lang.String value) {
       validate(fields()[6], value);
       this.lastModifiedBy = value;
       fieldSetFlags()[6] = true;
@@ -692,7 +692,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'lastModifiedBy' field.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder clearLastModifiedBy() {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder clearLastModifiedBy() {
       lastModifiedBy = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -712,7 +712,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'timestamp'.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder setTimestamp(long value) {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder setTimestamp(long value) {
       validate(fields()[7], value);
       this.timestamp = value;
       fieldSetFlags()[7] = true;
@@ -732,7 +732,7 @@ public class CategoryEvent extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'timestamp' field.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent.Builder clearTimestamp() {
+    public com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent.Builder clearTimestamp() {
       fieldSetFlags()[7] = false;
       return this;
     }
