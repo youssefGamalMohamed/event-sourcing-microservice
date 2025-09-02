@@ -46,4 +46,12 @@ public class ProductController {
         log.info("Updated product with id: {}", id);
 
     }
+
+    @DeleteMapping("/products/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteProduct(@PathVariable(name = "id") String id) {
+        log.info("Deleting product with id: {}", id);
+        productService.deleteProduct(id);
+        log.info("Deleted product with id: {}", id);
+    }
 }

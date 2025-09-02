@@ -63,5 +63,20 @@ public class ProductServiceImpl implements ProductServiceIfc {
         return updatedProduct;
     }
 
+    @Override
+    @Transactional
+    public void deleteProduct(String id) {
+        log.info("Deleting product with id: {}", id);
+
+        Product existingProduct = productRepo.findById(id)
+                        .orElseThrow(() -> new NoSuchElementException("Product not found with id: " + id));
+
+        productRepo.deleteById(id);
+        log.info("Product deleted with id = {}", id);
+
+        log.info("Will Publish Product Deleted Event");
+        productEventProducer.publish(productMapper.toEvent(existingProduct, ProductEventType.DELETED.toString()));
+    }
+
 
 }
