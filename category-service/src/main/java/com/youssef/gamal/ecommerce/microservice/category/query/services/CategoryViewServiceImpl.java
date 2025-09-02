@@ -9,7 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.youssef.gamal.ecommerce.microservice.category.query.models.CategoryView;
+import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
 import com.youssef.gamal.ecommerce.microservice.category.query.repos.CategoryViewRepo;
 
 import lombok.RequiredArgsConstructor;

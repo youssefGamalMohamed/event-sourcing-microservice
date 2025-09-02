@@ -4,7 +4,7 @@ import com.youssef.gamal.ecommerce.microservice.category.commands.enums.Category
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.youssef.gamal.ecommerce.microservice.category.query.models.CategoryView;
+import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
 
 
 public interface CategoryViewServiceIfc {

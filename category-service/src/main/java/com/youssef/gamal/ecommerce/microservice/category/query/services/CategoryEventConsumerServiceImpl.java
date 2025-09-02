@@ -3,7 +3,7 @@ package com.youssef.gamal.ecommerce.microservice.category.query.services;
 import com.youssef.gamal.ecommerce.microservice.category.commands.enums.CategoryEventType;
 import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
 import com.youssef.gamal.ecommerce.microservice.category.query.mappers.CategoryViewMapper;
-import com.youssef.gamal.ecommerce.microservice.category.query.models.CategoryView;
+import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;

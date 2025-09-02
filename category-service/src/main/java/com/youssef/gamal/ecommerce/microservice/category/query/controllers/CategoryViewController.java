@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.youssef.gamal.ecommerce.microservice.category.query.mappers.CategoryViewMapper;
-import com.youssef.gamal.ecommerce.microservice.category.query.models.CategoryView;
+import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
 import com.youssef.gamal.ecommerce.microservice.category.query.services.CategoryViewServiceIfc;
 
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.youssef.gamal.ecommerce.microservice.category.query.models;
+package com.youssef.gamal.ecommerce.microservice.category.query.entities;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
