@@ -1,4 +1,4 @@
-package com.youssef.gamal.ecommerce.microservice.product.query.models;
+package com.youssef.gamal.ecommerce.microservice.product.query.entities;
 
 
 import java.io.Serializable;

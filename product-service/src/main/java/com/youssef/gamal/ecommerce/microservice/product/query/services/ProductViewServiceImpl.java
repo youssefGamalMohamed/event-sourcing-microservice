@@ -7,7 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.youssef.gamal.ecommerce.microservice.product.query.models.ProductView;
+import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
 import com.youssef.gamal.ecommerce.microservice.product.query.repos.ProductViewRepo;
 
 import java.util.NoSuchElementException;

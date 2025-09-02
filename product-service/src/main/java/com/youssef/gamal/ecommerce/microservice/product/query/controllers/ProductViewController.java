@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.youssef.gamal.ecommerce.microservice.product.query.mappers.ProductViewMapper;
-import com.youssef.gamal.ecommerce.microservice.product.query.models.ProductView;
+import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
 import com.youssef.gamal.ecommerce.microservice.product.query.services.ProductViewService;
 
 @RestController

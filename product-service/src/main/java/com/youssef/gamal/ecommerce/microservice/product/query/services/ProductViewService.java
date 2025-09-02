@@ -3,7 +3,7 @@ package com.youssef.gamal.ecommerce.microservice.product.query.services;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.youssef.gamal.ecommerce.microservice.product.query.models.ProductView;
+import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
 
 public interface ProductViewService {
 

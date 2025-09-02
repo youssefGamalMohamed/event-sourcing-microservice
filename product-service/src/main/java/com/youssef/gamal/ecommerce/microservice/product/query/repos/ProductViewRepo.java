@@ -5,7 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.youssef.gamal.ecommerce.microservice.product.query.models.ProductView;
+import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
 
 import java.util.Optional;
 
