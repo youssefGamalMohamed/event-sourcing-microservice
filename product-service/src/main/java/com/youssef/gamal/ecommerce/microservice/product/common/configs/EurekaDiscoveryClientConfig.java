@@ -1,4 +1,4 @@
-package com.youssef.gamal.ecommerce.microservice.product.query.configs;
+package com.youssef.gamal.ecommerce.microservice.product.common.configs;
 
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Configuration;

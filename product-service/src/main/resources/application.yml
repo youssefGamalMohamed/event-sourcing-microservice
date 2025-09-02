@@ -101,6 +101,14 @@ rabbitmq:
     routing-keys:
         product_service_routing_key: product_service_routing_key
 
+
+# ----- Eureka Discovery Client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
 # --- Logging ---
 logging:
   level:

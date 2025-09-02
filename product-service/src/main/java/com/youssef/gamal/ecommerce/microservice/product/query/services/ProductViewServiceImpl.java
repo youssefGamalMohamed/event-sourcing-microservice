@@ -1,6 +1,7 @@
 package com.youssef.gamal.ecommerce.microservice.product.query.services;
 
 import com.youssef.gamal.ecommerce.microservice.product.common.enums.ProductEventType;
+import com.youssef.gamal.ecommerce.microservice.product.integrations.interfaces.CategoryIntegrationServiceIfc;
 import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
 import com.youssef.gamal.ecommerce.microservice.product.query.repos.ProductViewRepo;
 import jakarta.transaction.Transactional;
@@ -20,6 +21,7 @@ import java.util.NoSuchElementException;
 public class ProductViewServiceImpl implements ProductViewService {
 
     private final ProductViewRepo productViewRepo;
+    private final CategoryIntegrationServiceIfc categoryIntegrationService;
 
     @Override
     @Transactional
@@ -51,6 +53,8 @@ public class ProductViewServiceImpl implements ProductViewService {
         log.info("findAllByOriginalId called with originalId: {}, pageable: {}", originalId, pageable);
         Page<ProductView> productViews = productViewRepo.findAllByOriginalId(originalId, pageable);
         log.info("ProductViews found with originalId: {}, count: {}", originalId, productViews.getTotalElements());
+
+        categoryIntegrationService.findCategoryById("f4024a60-f5f5-4a52-bd91-ce249f5675ef");
         return productViews;
     }
 
