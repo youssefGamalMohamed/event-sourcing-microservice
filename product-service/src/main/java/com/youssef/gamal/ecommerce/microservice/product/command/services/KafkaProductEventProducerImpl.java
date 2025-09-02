@@ -30,7 +30,7 @@ public class KafkaProductEventProducerImpl implements ProductEventProducerIfc {
        log.info("Publishing product event: {}", productEvent);
        
        // Use productId (or UUID) as the key to ensure partitioning consistency
-       String messageKey = productEvent.getId() != null ? productEvent.getId().toString() : UUID.randomUUID().toString();
+       String messageKey = productEvent.getId() != null ? productEvent.getId() : UUID.randomUUID().toString();
 
        CompletableFuture<SendResult<String, ProductEvent>> future =
                kafkaTemplate.send(topicName, messageKey, productEvent);

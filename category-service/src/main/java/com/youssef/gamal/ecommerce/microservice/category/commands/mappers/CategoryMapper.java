@@ -4,11 +4,10 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+import com.youssef.gamal.ecommerce.microservice.shart_module.rest.dtos.category.commands.CategoryCommandDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
-
-import com.youssef.gamal.ecommerce.microservice.category.commands.dtos.CategoryDto;
 import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
 import com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent;
 
@@ -21,10 +20,10 @@ public interface CategoryMapper {
     @Mapping(target = "lastModifiedDate", ignore = true)
     @Mapping(target = "lastModifiedBy", ignore = true)
     @Mapping(target = "id", ignore = true)
-	Category toEntity(CategoryDto categoryDto);
+	Category toEntity(CategoryCommandDto categoryCommandDto);
 	
 
-	CategoryDto toDto(Category categoryDto);
+	CategoryCommandDto toDto(Category category);
 	
     @Mapping(target = "creationDate", ignore = true)
     @Mapping(target = "createdBy", ignore = true)

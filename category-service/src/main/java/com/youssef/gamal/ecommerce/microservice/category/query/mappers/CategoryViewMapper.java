@@ -4,11 +4,11 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+import com.youssef.gamal.ecommerce.microservice.shart_module.rest.dtos.category.query.CategoryViewDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-import com.youssef.gamal.ecommerce.microservice.category.commands.dtos.CategoryDto;
 import com.youssef.gamal.ecommerce.microservice.category.query.models.CategoryView;
 import com.youssef.gamal.ecommerce.microservice.category.shared.events.CategoryEvent;
 
@@ -31,7 +31,7 @@ public interface CategoryViewMapper {
 
     // ✅ CategoryView → CategoryViewDto
     @Mapping(target = "id", source = "categoryView.originalId")
-    CategoryDto toDto(CategoryView categoryView);
+    CategoryViewDto toDto(CategoryView categoryView);
 
     // === Conversion methods ===
     default LocalDateTime map(Instant instant) {

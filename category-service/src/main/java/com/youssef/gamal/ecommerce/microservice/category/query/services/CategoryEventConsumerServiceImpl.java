@@ -21,7 +21,7 @@ public class CategoryEventConsumerServiceImpl {
 
     @PostConstruct
     public void initiFunc() {
-    	log.info(new String("=").repeat(100));
+    	log.info("=".repeat(100));
     }
 
     @KafkaListener(topics = "${broker.topics.categories-topic}", groupId = "${spring.kafka.consumer.group-id}")
