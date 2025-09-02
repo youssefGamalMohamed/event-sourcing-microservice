@@ -1,0 +1,18 @@
+# App Config
+spring:
+  application:
+    name: discovery-service
+
+
+
+# Server Configs
+server:
+  port: 8761
+
+# Eureka Server Config
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    wait-time-in-ms-when-sync-empty: 0
