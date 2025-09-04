@@ -1,17 +1,7 @@
-version: "3"
+version: "3.9"
 
 services:
-  # rabbitmq:
-  #   image: rabbitmq:3.13-management-alpine
-  #   hostname: rabbitmq
-  #   container_name: rabbitmq
-  #   environment:
-  #     RABBITMQ_DEFAULT_USER: myuser
-  #     RABBITMQ_DEFAULT_PASS: secret
-  #   ports:
-  #     - "5672:5672"   # broker port
-  #     - "15672:15672" # management UI
-
+  # Kafka Stack
   zookeeper:
     image: confluentinc/cp-zookeeper:5.4.0
     hostname: zookeeper
@@ -21,7 +11,9 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
-  
+    depends_on:
+      - zipkin
+
   broker:
     image: confluentinc/cp-server:5.4.0
     hostname: broker
@@ -30,6 +22,7 @@ services:
       - zookeeper
     ports:
       - "9092:9092"
+      - "29092:29092"
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
@@ -44,7 +37,7 @@ services:
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
       CONFLUENT_METRICS_ENABLE: "true"
       CONFLUENT_SUPPORT_CUSTOMER_ID: "anonymous"
-  
+
   kafka-tools:
     image: confluentinc/cp-schema-registry:5.4.0
     hostname: kafka-tools
@@ -53,7 +46,7 @@ services:
     depends_on:
       - broker
       - schema-registry
-  
+
   schema-registry:
     image: confluentinc/cp-schema-registry:5.4.0
     hostname: schema-registry
@@ -66,7 +59,7 @@ services:
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: "zookeeper:2181"
-  
+
   control-center:
     image: confluentinc/cp-enterprise-control-center:5.4.0
     hostname: control-center
@@ -86,10 +79,46 @@ services:
       CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
       CONFLUENT_METRICS_TOPIC_REPLICATION: 1
       PORT: 9021
-      
-      
+
   zipkin:
-    image: 'openzipkin/zipkin:latest'
+    image: 'openzipkin/zipkin:3'
     ports:
       - '9411:9411'
 
+  # Consolidated Databases
+  mongodb-db:
+    image: mongo:latest
+    container_name: mongodb-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: appuser
+      MONGO_INITDB_ROOT_PASSWORD: mypassword
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      - POSTGRES_DB=app-command-db
+      - POSTGRES_USER=appuser
+      - POSTGRES_PASSWORD=mypassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis-stack-main:
+    image: redis/redis-stack:latest
+    container_name: redis-stack-main
+    ports:
+      - "6379:6379"
+      - "8001:8001"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  mongo_data:
+  redis_data:

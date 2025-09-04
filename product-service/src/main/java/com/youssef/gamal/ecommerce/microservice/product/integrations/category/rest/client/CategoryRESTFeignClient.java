@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "category-service", path = "/ecommerce/api/v1")
+@FeignClient(value = "category-service", path = "/ecommerce/api/v1")
 public interface CategoryRESTFeignClient {
 
     // ---------- COMMAND SIDE ----------

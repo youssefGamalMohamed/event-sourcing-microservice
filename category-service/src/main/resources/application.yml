@@ -2,11 +2,12 @@
 spring:
   application:
     name: category-service
+
   # --- SQL Database (Postgres) ---
   datasource:
-    url: jdbc:postgresql://localhost:5433/category-command-db
-    username: adminPostgresCommandDB
-    password: P@ssw0rd
+    url: jdbc:postgresql://localhost:5432/app-command-db
+    username: appuser
+    password: mypassword
     driver-class-name: org.postgresql.Driver
 
   # --- Jpa Config ---------
@@ -17,59 +18,55 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          create_namespaces: true
+        default_schema: category_schema   # 👈 ensure schema isolation
 
   # --- Mongo DB Query DB --------
   data:
     mongodb:
-      uri: mongodb://adminMongoQueryDB:password123@localhost:27018/categoryQueryDB?authSource=admin
+      uri: mongodb://appuser:mypassword@localhost:27017/categoryQueryDB?authSource=admin
       host: localhost
-      port: 27018
+      port: 27017
       database: categoryQueryDB
-      username: adminMongoQueryDB
-      password: password123
+      username: appuser
+      password: mypassword
 
-  # --- Redis Caching  --------
+    # --- Redis Caching  --------
     redis:
       host: localhost
-      port: 6381
+      port: 6379
 
   cache:
     type: redis
 
-  #-------- RabbitMQ --------------
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: myuser
-    password: secret
-
   # --- Kafka Configuration (merged producer + consumer) ---
   kafka:
-   bootstrap-servers: "127.0.0.1:9092"
-  
-   # Producer (from command service)
-   producer:
-     key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
-     value-serializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
-     properties:
-       schema:
-         registry:
-           url: "http://127.0.0.1:8081"
-  
-    # Consumer (from query service)
-   consumer:
-     group-id: "category-query-consumer-group"
-     keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
-     valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
-     properties:
-       schema:
-         registry:
-           url: "http://127.0.0.1:8081"
-       specific:
-         avro:
-           reader: "true"
+    bootstrap-servers: "localhost:9092"
 
- ## --- Broker Topics ---
+    # Producer (from command service)
+    producer:
+      key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
+      value-serializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
+      properties:
+        schema:
+          registry:
+            url: "http://localhost:8081"
+
+    # Consumer (from query service)
+    consumer:
+      group-id: "category-query-consumer-group"
+      keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+      valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
+      properties:
+        schema:
+          registry:
+            url: "http://localhost:8081"
+        specific:
+          avro:
+            reader: "true"
+
+# --- Broker Topics ---
 broker:
   topics:
     categories-topic: categories-topic
@@ -89,8 +86,8 @@ springdoc:
   api-docs:
     path: /v3/api-docs
 
-    
-# ---- Zipkin and Tracing Configs ----    
+
+# ---- Zipkin and Tracing Configs ----
 management:
   tracing:
     enabled: true
@@ -101,11 +98,12 @@ management:
       endpoint: http://localhost:9411/api/v2/spans # Zipkin server URL
 
 
-# ----- Eureka Discovery Client
+# ----- Eureka Discovery Client -----
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
 
 # --- Logging ---
 logging:

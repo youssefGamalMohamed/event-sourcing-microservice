@@ -5,9 +5,10 @@ spring:
 
   # --- SQL Database (Postgres) ---
   datasource:
-    url: jdbc:postgresql://localhost:5432/products-command-db
-    username: admin-products-command-db
-    password: P@ssw0rd@123
+    # Connects to postgres-db (exposed at 5432 on host)
+    url: jdbc:postgresql://localhost:5432/app-command-db
+    username: appuser
+    password: mypassword
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -17,58 +18,55 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          create_namespaces: true    # 👈 ensure schema auto-created
+        default_schema: product_schema
 
-  # --- MongoDB (from query service) ---
+  # --- MongoDB (Query side) ---
   data:
     mongodb:
-      uri: mongodb://adminProductsQueryDB:Password123@localhost:27017/productQueryDb?authSource=admin
+      # Connects to mongodb-db (exposed at 27017 on host)
+      uri: mongodb://appuser:mypassword@localhost:27017/productQueryDb?authSource=admin
       host: localhost
       port: 27017
       database: productQueryDb
-      username: adminProductsQueryDB
-      password: Password123
+      username: appuser
+      password: mypassword
 
-    # Redis (from query service)
+    # --- Redis (for caching/query service) ---
     redis:
-      host: localhost
+      host: localhost   # redis-stack-main exposed at 6379
       port: 6379
 
-  # --- Redis Cache (from query service) ---
+  # --- Redis Cache ---
   cache:
     type: redis
 
-  # RabbitMQ
-  # rabbitmq:
-  #   host: localhost
-  #   port: 5672
-  #   username: myuser
-  #   password: secret
-
-  # --- Kafka Configuration (merged producer + consumer) ---
+  # --- Kafka Configuration ---
   kafka:
-   bootstrap-servers: "127.0.0.1:9092"
+    bootstrap-servers: "127.0.0.1:9092" # broker service exposed on host
 
-   # Producer (from command service)
-   producer:
-     key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
-     value-serializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
-     properties:
-       schema:
-         registry:
-           url: "http://127.0.0.1:8081"
+    # Producer (command side)
+    producer:
+      key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
+      value-serializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
+      properties:
+        schema:
+          registry:
+            url: "http://127.0.0.1:8081" # schema-registry exposed on host
 
-    # Consumer (from query service)
-   consumer:
-     group-id: "product-query-consumer-group"
-     keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
-     valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
-     properties:
-       schema:
-         registry:
-           url: "http://127.0.0.1:8081"
-       specific:
-         avro:
-           reader: "true"
+    # Consumer (query side)
+    consumer:
+      group-id: "product-query-consumer-group"
+      keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+      valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
+      properties:
+        schema:
+          registry:
+            url: "http://127.0.0.1:8081"
+        specific:
+          avro:
+            reader: "true"
 
 # --- Server Config ---
 server:
@@ -76,38 +74,39 @@ server:
   servlet:
     context-path: /ecommerce/api/v1
 
-## --- Broker Topics ---
+# --- Broker Topics ---
 broker:
- topics:
-   products-topic: products-topic
+  topics:
+    products-topic: products-topic
 
-   
-# ---- Zipkin and Tracing Configs ----    
+# --- Zipkin and Tracing Configs ---
 management:
   tracing:
     enabled: true
     sampling:
-      probability: 1.0 # 100% traces (adjust for production, e.g. 0.1)
+      probability: 1.0 # 100% traces (adjust for prod, e.g. 0.1)
+  endpoints:
+    web:
+      exposure:
+        include: "*"   # expose all actuator endpoints
   zipkin:
     tracing:
-      endpoint: http://localhost:9411/api/v2/spans # Zipkin server URL
+      endpoint: http://localhost:9411/api/v2/spans # zipkin exposed in compose
 
-
+# --- RabbitMQ (if used later) ---
 rabbitmq:
-    queues-names:
-        product_queue: product_queue
-    exchange-names:
-        ecommerce_exchange: ecommerce_exchange  
-    routing-keys:
-        product_service_routing_key: product_service_routing_key
+  queues-names:
+    product_queue: product_queue
+  exchange-names:
+    ecommerce_exchange: ecommerce_exchange
+  routing-keys:
+    product_service_routing_key: product_service_routing_key
 
-
-# ----- Eureka Discovery Client
+# --- Eureka Discovery Client ---
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
 
 # --- Logging ---
 logging:

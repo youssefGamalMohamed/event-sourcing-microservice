@@ -1,18 +1,25 @@
-# App Config
 spring:
   application:
     name: discovery-service
 
-
-
-# Server Configs
+# HTTP server port
 server:
   port: 8761
 
-# Eureka Server Config
+# Eureka server settings
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: false  # Do not register itself
+    fetch-registry: false        # Do not fetch registry
   server:
     wait-time-in-ms-when-sync-empty: 0
+
+# Micrometer + Zipkin tracing
+#management:
+#  tracing:
+#    enabled: true
+#    sampling:
+#      probability: 1.0   # Capture all traces (adjust in prod)
+#  zipkin:
+#    tracing:
+#      endpoint: http://localhost:9411/api/v2/spans
