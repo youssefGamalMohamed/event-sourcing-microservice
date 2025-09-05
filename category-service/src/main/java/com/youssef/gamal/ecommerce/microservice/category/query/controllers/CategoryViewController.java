@@ -1,6 +1,8 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.controllers;
 
 import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.ErrorResponse;
+import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.InternalServerErrorResponse;
+import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.NotFoundResponse;
 import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
 import com.youssef.gamal.ecommerce.microservice.category.query.mappers.CategoryViewMapper;
 import com.youssef.gamal.ecommerce.microservice.category.query.services.CategoryViewServiceIfc;
@@ -46,53 +48,15 @@ public class CategoryViewController {
                     description = "Category history retrieved successfully",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = CategoryViewDto.class),
-                            examples = @ExampleObject(
-                                    name = "Category History Response",
-                                    value = """
-                                            {
-                                              "content": [
-                                                {
-                                                  "id": "123e4567-e89b-12d3-a456-426614174000",
-                                                  "originalId": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
-                                                  "name": "Electronics",
-                                                  "creationDate": "2025-09-05T10:30:00",
-                                                  "createdBy": "admin",
-                                                  "lastModifiedDate": "2025-09-05T11:00:00",
-                                                  "lastModifiedBy": "admin",
-                                                  "eventType": "CREATED"
-                                                }
-                                              ],
-                                              "totalElements": 1,
-                                              "totalPages": 1,
-                                              "size": 20,
-                                              "number": 0
-                                            }
-                                            """
-                            )
+                            schema = @Schema(implementation = Page.class)
                     )
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Internal server error",
                     content = @Content(
-                            schema = @Schema(implementation = ErrorResponse.class),
-                            mediaType = MediaType.APPLICATION_JSON_VALUE,
-                            examples = {
-                                    @ExampleObject(
-                                            name = "Internal Server Error",
-                                            summary = "Example internal server error response",
-                                            value = """
-                                                    {
-                                                        "timestamp": "2025-09-05T11:45:00",
-                                                        "status": 500,
-                                                        "message": "An unexpected error occurred. Please contact support.",
-                                                        "serviceCode": "1001",
-                                                        "path": "/categories/a1b2c3d4-e5f6-7890-1234-567890abcdef"
-                                                    }
-                                                    """
-                                    )
-                            }
+                            schema = @Schema(implementation = InternalServerErrorResponse.class),
+                            mediaType = MediaType.APPLICATION_JSON_VALUE
                     )
             )
     })
@@ -123,67 +87,23 @@ public class CategoryViewController {
                     description = "Category retrieved successfully",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = CategoryViewDto.class),
-                            examples = @ExampleObject(
-                                    value = """
-                                            {
-                                              "id": "123e4567-e89b-12d3-a456-426614174000",
-                                              "originalId": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
-                                              "name": "Electronics",
-                                              "creationDate": "2025-09-05T10:30:00",
-                                              "createdBy": "admin",
-                                              "lastModifiedDate": "2025-09-05T11:00:00",
-                                              "lastModifiedBy": "admin",
-                                              "eventType": "UPDATED"
-                                            }
-                                            """
-                            )
+                            schema = @Schema(implementation = CategoryViewDto.class)
                     )
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "Category not found",
                     content = @Content(
-                            schema = @Schema(implementation = ErrorResponse.class),
-                            mediaType = MediaType.APPLICATION_JSON_VALUE,
-                            examples = {
-                                    @ExampleObject(
-                                            name = "Category Not Found",
-                                            summary = "Example category not found response",
-                                            value = """
-                                                    {
-                                                        "timestamp": "2025-09-05T11:45:00",
-                                                        "status": 404,
-                                                        "message": "The requested category could not be found.",
-                                                        "serviceCode": "1002",
-                                                        "path": "/categories/123e4567-e89b-12d3-a456-426614174000"
-                                                    }
-                                                    """
-                                    )
-                            }
+                            schema = @Schema(implementation = NotFoundResponse.class),
+                            mediaType = MediaType.APPLICATION_JSON_VALUE
                     )
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Internal server error",
                     content = @Content(
-                            schema = @Schema(implementation = ErrorResponse.class),
-                            mediaType = MediaType.APPLICATION_JSON_VALUE,
-                            examples = {
-                                    @ExampleObject(
-                                            name = "Internal Server Error",
-                                            summary = "Example internal server error response",
-                                            value = """
-                                                    {
-                                                        "timestamp": "2025-09-05T11:45:00",
-                                                        "status": 500,
-                                                        "message": "An unexpected error occurred. Please contact support.",
-                                                        "serviceCode": "1001",
-                                                        "path": "/categories/a1b2c3d4-e5f6-7890-1234-567890abcdef"
-                                                    }
-                                                    """
-                                    )
-                            }
+                            schema = @Schema(implementation = InternalServerErrorResponse.class),
+                            mediaType = MediaType.APPLICATION_JSON_VALUE
                     )
             )
     })
