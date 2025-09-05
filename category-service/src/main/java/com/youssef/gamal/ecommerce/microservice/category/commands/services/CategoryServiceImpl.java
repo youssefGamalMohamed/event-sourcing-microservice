@@ -4,7 +4,7 @@ import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Categ
 import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
 import com.youssef.gamal.ecommerce.microservice.category.commands.mappers.CategoryMapper;
 import com.youssef.gamal.ecommerce.microservice.category.commands.repos.CategoryRepo;
-import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.CategoryAlreadyExistException;
+import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.AlreadyExistException;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +30,7 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
                 .ifPresent(existing -> {
                     log.warn("CategoryServiceImpl -> save(name: {}, existingId: {}) already exists",
                             existing.getName(), existing.getId());
-                    throw new CategoryAlreadyExistException(existing.getName());
+                    throw new AlreadyExistException(existing.getName());
                 });
 
         Category savedCategory = categoryRepo.save(category);
@@ -55,7 +55,7 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
                 .ifPresent(found -> {
                     log.warn("CategoryServiceImpl -> update(name: {}, id: {}) already exists in another category",
                             found.getName(), found.getId());
-                    throw new CategoryAlreadyExistException(updatedCategory.getName());
+                    throw new AlreadyExistException(updatedCategory.getName());
                 });
 
         // update category fields

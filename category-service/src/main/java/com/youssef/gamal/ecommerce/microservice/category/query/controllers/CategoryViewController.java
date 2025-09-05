@@ -1,10 +1,10 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.controllers;
 
+import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.ErrorResponse;
 import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
 import com.youssef.gamal.ecommerce.microservice.category.query.mappers.CategoryViewMapper;
 import com.youssef.gamal.ecommerce.microservice.category.query.services.CategoryViewServiceIfc;
 import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryViewDto;
-import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.exceptions.models.ErrorResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
