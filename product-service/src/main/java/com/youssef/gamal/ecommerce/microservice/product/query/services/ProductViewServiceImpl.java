@@ -1,8 +1,8 @@
 package com.youssef.gamal.ecommerce.microservice.product.query.services;
 
 import com.youssef.gamal.ecommerce.microservice.product.common.enums.ProductEventType;
-import com.youssef.gamal.ecommerce.microservice.product.query.integrations.category.rest.implementation.CategoryQueryIntegrationServiceIfc;
 import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
+import com.youssef.gamal.ecommerce.microservice.product.query.integrations.category.rest.implementation.CategoryQueryIntegrationServiceIfc;
 import com.youssef.gamal.ecommerce.microservice.product.query.repos.ProductViewRepo;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -54,7 +54,6 @@ public class ProductViewServiceImpl implements ProductViewService {
         Page<ProductView> productViews = productViewRepo.findAllByOriginalId(originalId, pageable);
         log.info("ProductViews found with originalId: {}, count: {}", originalId, productViews.getTotalElements());
 
-        categoryIntegrationService.findCategoryById("b510f839-0ebd-4240-8545-cec4e3e0908e");
         return productViews;
     }
 
@@ -66,7 +65,8 @@ public class ProductViewServiceImpl implements ProductViewService {
         ProductView productView = productViewRepo.findFirstByOriginalIdOrderByLastModifiedDateDesc(originalId)
                 .orElseThrow(() -> new NoSuchElementException("Product view not found with originalId: " + originalId));
 
-        // ✅ Return 404 if the last event was DELETE
+        // ✅ Return 404 if the last event was DELETE.
+        // This leverages the shared RestExceptionHandler to map NoSuchElementException to a 404 response.
         if (ProductEventType.DELETED.toString().equalsIgnoreCase(productView.getEventType())) {
             log.warn("Product with originalId {} was deleted. Throwing NoSuchElementException", originalId);
             throw new NoSuchElementException("Product view not found with originalId: " + originalId);
