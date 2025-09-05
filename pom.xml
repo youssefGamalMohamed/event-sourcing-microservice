@@ -15,6 +15,7 @@
 
     <!-- Define all modules (sub-projects) -->
     <modules>
+        <module>shared-module</module>
         <module>category-service</module>
         <module>product-service</module>
         <module>discovery-service</module>
