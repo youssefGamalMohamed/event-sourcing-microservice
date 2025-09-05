@@ -108,7 +108,7 @@ eureka:
 # --- Logging ---
 logging:
   level:
-    org.springframework.kafka: DEBUG
+    org.springframework.kafka: INFO
     org.springframework.cache: TRACE
     org.springframework.data.mongodb.core.MongoTemplate: DEBUG
     org.springframework.data.mongodb.repository.query: DEBUG
