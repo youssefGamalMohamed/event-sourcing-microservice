@@ -34,7 +34,7 @@ public class RestExceptionHandler {
         return createErrorResponse(
                 HttpStatus.NOT_FOUND,
                 CategoryServiceErrorsEnum.CATEGORY_NOT_FOUND,
-                CategoryServiceErrorsEnum.CATEGORY_NOT_FOUND.toString(),
+                ex.getMessage(),
                 request.getRequestURI()
         );
     }
