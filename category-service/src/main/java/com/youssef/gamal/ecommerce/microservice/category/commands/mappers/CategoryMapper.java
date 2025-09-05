@@ -1,15 +1,15 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.mappers;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-
+import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
+import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
 import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.commands.CategoryCommandDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
-import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
-import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
+
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 
 @Mapper(componentModel = "spring")
@@ -20,20 +20,19 @@ public interface CategoryMapper {
     @Mapping(target = "lastModifiedDate", ignore = true)
     @Mapping(target = "lastModifiedBy", ignore = true)
     @Mapping(target = "id", ignore = true)
-	Category toEntity(CategoryCommandDto categoryCommandDto);
-	
+    Category toEntity(CategoryCommandDto categoryCommandDto);
 
-	CategoryCommandDto toDto(Category category);
-	
+
+    CategoryCommandDto toDto(Category category);
+
     @Mapping(target = "creationDate", ignore = true)
     @Mapping(target = "createdBy", ignore = true)
     @Mapping(target = "lastModifiedDate", ignore = true)
     @Mapping(target = "lastModifiedBy", ignore = true)
     @Mapping(target = "id", ignore = true)
     void updateFrom(Category source, @MappingTarget Category target);
-    
-    
-    
+
+
     // ✅ Explicitly map LocalDateTime → Instant using conversion functions
     @Mapping(target = "creationDate", expression = "java(map(product.getCreationDate()))")
     @Mapping(target = "lastModifiedDate", expression = "java(map(product.getLastModifiedDate()))")

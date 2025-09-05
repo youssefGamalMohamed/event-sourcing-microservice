@@ -3,26 +3,27 @@ package com.youssef.gamal.ecommerce.microservice.category.commands.controllers;
 import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
 import com.youssef.gamal.ecommerce.microservice.category.commands.mappers.CategoryMapper;
 import com.youssef.gamal.ecommerce.microservice.category.commands.services.CategoryServiceIfc;
-import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.*;
+import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.ConflictErrorResponse;
+import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.InternalServerErrorResponse;
+import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.NotFoundResponse;
+import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.ValidationErrorResponse;
 import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.commands.CategoryCommandDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.headers.Header;
 import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import jakarta.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -187,8 +188,6 @@ public class CategoryController {
         log.info("CategoryController -> update() completed successfully with result={}", savedDto);
         return ResponseEntity.ok(savedDto);
     }
-
-
 
 
     @DeleteMapping("/categories/{id}")

@@ -2,8 +2,8 @@ package com.youssef.gamal.ecommerce.microservice.category.query.services;
 
 import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
 import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
-import com.youssef.gamal.ecommerce.microservice.category.query.mappers.CategoryViewMapper;
 import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
+import com.youssef.gamal.ecommerce.microservice.category.query.mappers.CategoryViewMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -23,13 +23,13 @@ public class CategoryEventConsumerServiceImpl {
         log.info("✅ Received category event: {}", categoryEvent);
         CategoryEventType.fromValue(categoryEvent.getEventType())
                 .ifPresentOrElse(eventType -> {
-                    CategoryView view = categoryViewMapper.toView(categoryEvent);
-                    categoryViewServiceIfc.saveCategoryView(view, eventType);
-                }, () -> {
-                    log.error("❌ Invalid event type: {} , id: {}", categoryEvent.getEventType(), categoryEvent.getId());
-                    // TODO: send event to kafka to send email for admin to detect non-normal behaviours for event validations
-                }
-        );
+                            CategoryView view = categoryViewMapper.toView(categoryEvent);
+                            categoryViewServiceIfc.saveCategoryView(view, eventType);
+                        }, () -> {
+                            log.error("❌ Invalid event type: {} , id: {}", categoryEvent.getEventType(), categoryEvent.getId());
+                            // TODO: send event to kafka to send email for admin to detect non-normal behaviours for event validations
+                        }
+                );
 
     }
 

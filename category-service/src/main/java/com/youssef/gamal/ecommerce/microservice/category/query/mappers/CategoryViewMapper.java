@@ -1,21 +1,20 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.mappers;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-
+import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
+import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
 import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryViewDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
-import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 
 @Mapper(componentModel = "spring")
 public interface CategoryViewMapper {
-    
+
     CategoryViewMapper INSTANCE = Mappers.getMapper(CategoryViewMapper.class);
 
     // ✅ CategoryEvent → CategoryView

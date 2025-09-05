@@ -1,9 +1,9 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.services;
 
 import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
-import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
 import com.youssef.gamal.ecommerce.microservice.category.commands.mappers.CategoryMapper;
 import com.youssef.gamal.ecommerce.microservice.category.commands.repos.CategoryRepo;
+import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
 import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.AlreadyExistException;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -17,9 +17,9 @@ import java.util.NoSuchElementException;
 @Slf4j
 public class CategoryServiceImpl implements CategoryServiceIfc {
 
-	private final CategoryRepo categoryRepo;
-	private final CategoryMapper categoryMapper;
-	private final CategoryEventProducerIfc categoryEventProducerIfc;
+    private final CategoryRepo categoryRepo;
+    private final CategoryMapper categoryMapper;
+    private final CategoryEventProducerIfc categoryEventProducerIfc;
 
     @Override
     @Transactional(Transactional.TxType.REQUIRED) // default

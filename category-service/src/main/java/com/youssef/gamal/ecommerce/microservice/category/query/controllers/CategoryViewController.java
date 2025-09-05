@@ -1,6 +1,5 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.controllers;
 
-import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.ErrorResponse;
 import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.InternalServerErrorResponse;
 import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.NotFoundResponse;
 import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
@@ -10,20 +9,21 @@ import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
 

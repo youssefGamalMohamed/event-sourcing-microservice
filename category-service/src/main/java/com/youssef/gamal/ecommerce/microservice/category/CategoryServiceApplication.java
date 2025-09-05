@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients(basePackages = "com.youssef.gamal.ecommerce.microservice.category.*")
 public class CategoryServiceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CategoryServiceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CategoryServiceApplication.class, args);
+    }
 }

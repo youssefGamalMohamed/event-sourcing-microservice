@@ -1,10 +1,9 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.repos;
 
 
+import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
 
 import java.util.Optional;
 
