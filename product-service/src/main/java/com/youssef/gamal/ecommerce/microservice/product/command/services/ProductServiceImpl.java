@@ -1,18 +1,16 @@
 package com.youssef.gamal.ecommerce.microservice.product.command.services;
 
-
+import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
+import com.youssef.gamal.ecommerce.microservice.product.command.mappers.ProductMapper;
+import com.youssef.gamal.ecommerce.microservice.product.command.repos.ProductRepo;
+import com.youssef.gamal.ecommerce.microservice.product.common.enums.ProductEventType;
+import com.youssef.gamal.ecommerce.microservice.product.common.exceptions.AlreadyExistException;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
-
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.youssef.gamal.ecommerce.microservice.product.common.enums.ProductEventType;
-import com.youssef.gamal.ecommerce.microservice.product.command.mappers.ProductMapper;
-import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
-import com.youssef.gamal.ecommerce.microservice.product.command.repos.ProductRepo;
-
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -20,8 +18,6 @@ public class ProductServiceImpl implements ProductServiceIfc {
 
     private final ProductRepo productRepo;
     private final ProductMapper productMapper;
-    
-    @Qualifier("rabbitMQProductEventProducerImpl")
     private final ProductEventProducerIfc productEventProducer;
 
     public ProductServiceImpl(ProductRepo productRepo, ProductMapper productMapper, ProductEventProducerIfc productEventProducer) {
@@ -35,13 +31,16 @@ public class ProductServiceImpl implements ProductServiceIfc {
     public Product createProduct(Product product) {
         log.info("Creating product: {}", product);
 
-        Product newProduct = productRepo.save(product);
+        // Check for existing product with the same name before saving.
+        Optional<Product> existingProduct = productRepo.findByName(product.getName());
+        if (existingProduct.isPresent()) {
+            throw new AlreadyExistException(product.getName());
+        }
 
+        Product newProduct = productRepo.save(product);
         log.info("Product created with id = {}", newProduct.getId());
 
         log.info("Will Publish Product Created Event");
-
-        // publish product created event
         productEventProducer.publish(productMapper.toEvent(newProduct, ProductEventType.CREATED.toString()));
 
         return newProduct;
@@ -53,11 +52,22 @@ public class ProductServiceImpl implements ProductServiceIfc {
         log.info("Updating product with id: {} with new data: {}", id, product);
         Product existingProduct = productRepo.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Product not found with id: " + id));
+
+        // Check if the new name is different from the existing name.
+        if (!existingProduct.getName().equals(product.getName())) {
+            // Check for a product with the new name.
+            Optional<Product> productWithNewName = productRepo.findByName(product.getName());
+            // If a product with the new name exists and it's not the current product being updated, throw an exception.
+            if (productWithNewName.isPresent() && !productWithNewName.get().getId().equals(id)) {
+                throw new AlreadyExistException(product.getName());
+            }
+        }
+
         productMapper.updateFrom(product, existingProduct);
         Product updatedProduct = productRepo.save(existingProduct);
         log.info("Product updated with id = {}", updatedProduct.getId());
 
-        // publish product created event
+        log.info("Will Publish Product Updated Event");
         productEventProducer.publish(productMapper.toEvent(updatedProduct, ProductEventType.UPDATED.toString()));
 
         return updatedProduct;
@@ -69,7 +79,7 @@ public class ProductServiceImpl implements ProductServiceIfc {
         log.info("Deleting product with id: {}", id);
 
         Product existingProduct = productRepo.findById(id)
-                        .orElseThrow(() -> new NoSuchElementException("Product not found with id: " + id));
+                .orElseThrow(() -> new NoSuchElementException("Product not found with id: " + id));
 
         productRepo.deleteById(id);
         log.info("Product deleted with id = {}", id);
@@ -77,6 +87,4 @@ public class ProductServiceImpl implements ProductServiceIfc {
         log.info("Will Publish Product Deleted Event");
         productEventProducer.publish(productMapper.toEvent(existingProduct, ProductEventType.DELETED.toString()));
     }
-
-
 }
