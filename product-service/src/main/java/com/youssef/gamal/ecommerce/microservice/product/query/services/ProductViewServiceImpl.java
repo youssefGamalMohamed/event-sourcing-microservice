@@ -54,7 +54,7 @@ public class ProductViewServiceImpl implements ProductViewService {
         Page<ProductView> productViews = productViewRepo.findAllByOriginalId(originalId, pageable);
         log.info("ProductViews found with originalId: {}, count: {}", originalId, productViews.getTotalElements());
 
-        categoryIntegrationService.findCategoryById("c57f4546-2cb0-4cdc-9dab-9914432aa86c");
+        categoryIntegrationService.findCategoryById("b510f839-0ebd-4240-8545-cec4e3e0908e");
         return productViews;
     }
 

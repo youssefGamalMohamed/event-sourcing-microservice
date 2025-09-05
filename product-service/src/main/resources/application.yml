@@ -113,5 +113,5 @@ logging:
   level:
     org:
       springframework:
-        kafka: DEBUG
+        kafka: INFO
         cache: TRACE
