@@ -30,10 +30,9 @@ public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private String id;
-	
+
+    @Column(unique = true, nullable = false)
 	private String name;
-	
-	
 
     @CreatedDate
     @Column(updatable = false)
