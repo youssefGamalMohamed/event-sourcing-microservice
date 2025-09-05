@@ -17,4 +17,5 @@ public class ErrorResponse {
     private String serviceCode;
     private String path;
     private String message;
+    private String detailedMessage;
 }
