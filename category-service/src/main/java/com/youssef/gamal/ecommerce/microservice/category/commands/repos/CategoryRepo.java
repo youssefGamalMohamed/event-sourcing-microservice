@@ -6,7 +6,10 @@ import org.springframework.stereotype.Repository;
 
 import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
 
+import java.util.Optional;
+
 @Repository
 public interface CategoryRepo extends JpaRepository<Category, String> {
 
+    Optional<Category> findByName(String name);
 }
