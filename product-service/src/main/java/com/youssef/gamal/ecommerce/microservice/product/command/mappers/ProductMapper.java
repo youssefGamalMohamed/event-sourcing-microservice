@@ -1,9 +1,6 @@
 package com.youssef.gamal.ecommerce.microservice.product.command.mappers;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-
+import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
 import com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent;
 import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.commands.ProductCommandDto;
 import org.mapstruct.Mapper;
@@ -11,7 +8,9 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
-import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 @Mapper(componentModel = "spring")
 public interface ProductMapper {
@@ -34,7 +33,7 @@ public interface ProductMapper {
     @Mapping(target = "id", ignore = true)
     void updateFrom(Product source, @MappingTarget Product target);
 
-    
+
     // ✅ Explicitly map LocalDateTime → Instant using conversion functions
     @Mapping(target = "creationDate", expression = "java(map(product.getCreationDate()))")
     @Mapping(target = "lastModifiedDate", expression = "java(map(product.getLastModifiedDate()))")

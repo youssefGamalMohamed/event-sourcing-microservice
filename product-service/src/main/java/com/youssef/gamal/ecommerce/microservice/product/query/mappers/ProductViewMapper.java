@@ -1,20 +1,19 @@
 package com.youssef.gamal.ecommerce.microservice.product.query.mappers;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-
 import com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent;
+import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
 import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.query.ProductViewDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 @Mapper(componentModel = "spring")
 public interface ProductViewMapper {
-    
+
     ProductViewMapper INSTANCE = Mappers.getMapper(ProductViewMapper.class);
 
     // ✅ ProductEvent → ProductView

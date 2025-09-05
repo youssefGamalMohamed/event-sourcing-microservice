@@ -4,7 +4,7 @@ import java.util.Optional;
 
 public enum ProductEventType {
 
-    CREATED , UPDATED, DELETED;
+    CREATED, UPDATED, DELETED;
 
 
     /**
