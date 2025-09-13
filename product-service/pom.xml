@@ -35,6 +35,13 @@
     </repositories>
 
     <dependencies>
+       
+       	<!-- Actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		
         <!-- JPA + Postgres -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
