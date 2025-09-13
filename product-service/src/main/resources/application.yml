@@ -115,3 +115,4 @@ logging:
       springframework:
         kafka: INFO
         cache: TRACE
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG

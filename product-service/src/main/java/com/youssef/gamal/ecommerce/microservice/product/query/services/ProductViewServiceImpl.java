@@ -1,6 +1,7 @@
 package com.youssef.gamal.ecommerce.microservice.product.query.services;
 
 import com.youssef.gamal.ecommerce.microservice.product.common.enums.ProductEventType;
+import com.youssef.gamal.ecommerce.microservice.product.query.configs.CachingConfigs;
 import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
 import com.youssef.gamal.ecommerce.microservice.product.query.integrations.category.rest.implementation.CategoryQueryIntegrationServiceIfc;
 import com.youssef.gamal.ecommerce.microservice.product.query.repos.ProductViewRepo;
@@ -17,7 +18,7 @@ import java.util.NoSuchElementException;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-@CacheConfig(cacheNames = "productViewCache") // ✅ single source of truth for cache name
+@CacheConfig(cacheNames = CachingConfigs.PRODUCT_VIEW_CACHE_NAME) // ✅ single source of truth for cache name
 public class ProductViewServiceImpl implements ProductViewService {
 
     private final ProductViewRepo productViewRepo;
@@ -25,17 +26,6 @@ public class ProductViewServiceImpl implements ProductViewService {
 
     @Override
     @Transactional
-    @Caching(
-            put = {
-                    @CachePut(
-                            key = "#result.originalId",
-                            condition = "#eventType.toString() == 'CREATED' || #eventType.toString() == 'UPDATED'"
-                    )
-            },
-            evict = {
-                    @CacheEvict(key = "#productView.originalId", condition = "#eventType.toString() == 'DELETED'")
-            }
-    )
     public ProductView savedProductView(ProductView productView, ProductEventType eventType) {
         log.info("savedProductView called with productView: {} , eventType: {}", productView, eventType);
 
