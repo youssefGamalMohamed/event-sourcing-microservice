@@ -24,6 +24,17 @@ public class CategoryViewServiceImpl implements CategoryViewServiceIfc {
 
     @Override
     @Transactional
+    @Caching(
+            put = {
+                    @CachePut(
+                            key = "#result.originalId",
+                            condition = "#eventType.toString() == 'CREATED' || #eventType.toString() == 'UPDATED'"
+                    )
+            },
+            evict = {
+                    @CacheEvict(key = "#categoryView.originalId", condition = "#eventType.toString() == 'DELETED'")
+            }
+    )
     public CategoryView saveCategoryView(CategoryView categoryView, CategoryEventType eventType) {
         log.info("saveCategoryView called with categoryView: {} , eventType: {}", categoryView, eventType);
 
