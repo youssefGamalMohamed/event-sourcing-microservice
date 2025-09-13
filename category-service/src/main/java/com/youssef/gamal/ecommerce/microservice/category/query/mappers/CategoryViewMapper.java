@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", imports = {CategoryViewDto.class})
 public interface CategoryViewMapper {
 
     CategoryViewMapper INSTANCE = Mappers.getMapper(CategoryViewMapper.class);

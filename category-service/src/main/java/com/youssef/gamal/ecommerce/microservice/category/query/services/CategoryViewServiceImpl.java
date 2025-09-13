@@ -1,6 +1,7 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.services;
 
 import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
+import com.youssef.gamal.ecommerce.microservice.category.query.configs.CachingConfigs;
 import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
 import com.youssef.gamal.ecommerce.microservice.category.query.repos.CategoryViewRepo;
 import jakarta.transaction.Transactional;
@@ -16,24 +17,13 @@ import java.util.NoSuchElementException;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-@CacheConfig(cacheNames = "categoryViewCache") // ✅ single source of truth for cache name
+@CacheConfig(cacheNames = CachingConfigs.CATEGORY_VIEW_CACHE_NAME) // ✅ single source of truth for cache name
 public class CategoryViewServiceImpl implements CategoryViewServiceIfc {
 
     private final CategoryViewRepo categoryRepo;
 
     @Override
     @Transactional
-    @Caching(
-            put = {
-                    @CachePut(
-                            key = "#result.originalId",
-                            condition = "#eventType.toString() == 'CREATED' || #eventType.toString() == 'UPDATED'"
-                    )
-            },
-            evict = {
-                    @CacheEvict(key = "#categoryView.originalId", condition = "#eventType.toString() == 'DELETED'")
-            }
-    )
     public CategoryView saveCategoryView(CategoryView categoryView, CategoryEventType eventType) {
         log.info("saveCategoryView called with categoryView: {} , eventType: {}", categoryView, eventType);
 

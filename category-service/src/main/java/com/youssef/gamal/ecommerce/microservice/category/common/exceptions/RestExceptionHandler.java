@@ -3,9 +3,9 @@ package com.youssef.gamal.ecommerce.microservice.category.common.exceptions;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.NoSuchElementException;
@@ -16,28 +16,31 @@ import java.util.stream.Collectors;
 public class RestExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public InternalServerErrorResponse handleException(Exception ex, HttpServletRequest request) {
+    public ResponseEntity<InternalServerErrorResponse> handleException(Exception ex, HttpServletRequest request) {
         log.error("Handling generic exception:", ex);
-        return InternalServerErrorResponse.builder()
+
+        InternalServerErrorResponse response = InternalServerErrorResponse.builder()
                 .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
                 .detailedMessage(ex.getMessage())
                 .build();
+
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
     }
 
     @ExceptionHandler(NoSuchElementException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public NotFoundResponse handleNoSuchElementException(NoSuchElementException ex, HttpServletRequest request) {
+    public ResponseEntity<NotFoundResponse> handleNoSuchElementException(NoSuchElementException ex, HttpServletRequest request) {
         log.error("Handling NoSuchElementException:", ex);
-        return NotFoundResponse.builder()
+
+        NotFoundResponse response = NotFoundResponse.builder()
                 .httpStatus(HttpStatus.NOT_FOUND)
                 .detailedMessage(ex.getMessage())
                 .build();
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ValidationErrorResponse handleValidationException(
+    public ResponseEntity<ValidationErrorResponse> handleValidationException(
             MethodArgumentNotValidException ex, HttpServletRequest request) {
         log.error("Handling validation exception:", ex);
 
@@ -45,24 +48,24 @@ public class RestExceptionHandler {
                 .map(error -> error.getField() + ": " + error.getDefaultMessage())
                 .collect(Collectors.joining(", "));
 
-
-        return ValidationErrorResponse.builder()
+        ValidationErrorResponse response = ValidationErrorResponse.builder()
                 .httpStatus(HttpStatus.BAD_REQUEST)
                 .detailedMessage(message)
                 .build();
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
-
     @ExceptionHandler(AlreadyExistException.class)
-    @ResponseStatus(HttpStatus.CONFLICT)
-    public ConflictErrorResponse handleCategoryAlreadyExistException(
+    public ResponseEntity<ConflictErrorResponse> handleCategoryAlreadyExistException(
             AlreadyExistException ex, HttpServletRequest request) {
         log.error("Handling CategoryAlreadyExistException:", ex);
 
-        return ConflictErrorResponse.builder()
+        ConflictErrorResponse response = ConflictErrorResponse.builder()
                 .httpStatus(HttpStatus.CONFLICT)
                 .detailedMessage(ex.getMessage())
                 .build();
-    }
 
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
+    }
 }
