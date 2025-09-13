@@ -66,10 +66,18 @@ spring:
           avro:
             reader: "true"
 
-# --- Broker Topics ---
-broker:
-  topics:
-    categories-topic: categories-topic
+# Messaging Queues ( Kafka , RabbitMQ , etc )
+messaging-queues:
+  kafka:
+    topics:
+      categories:
+        name: categories-topic
+        partitions: 1
+        replicas: 1
+      products:
+        name: products-topic
+        partitions: 1
+        replicas: 1
 
 
 # ----- Server Configs -----

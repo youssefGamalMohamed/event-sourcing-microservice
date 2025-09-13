@@ -1,6 +1,7 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.services;
 
 import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
+import com.youssef.gamal.ecommerce.microservice.category.commands.events.producers.CategoryEventProducerIfc;
 import com.youssef.gamal.ecommerce.microservice.category.commands.mappers.CategoryMapper;
 import com.youssef.gamal.ecommerce.microservice.category.commands.repos.CategoryRepo;
 import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
