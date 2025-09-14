@@ -32,7 +32,7 @@ public class CategoryViewServiceImpl implements CategoryViewServiceIfc {
                     )
             },
             evict = {
-                    @CacheEvict(key = "#categoryView.originalId", condition = "#eventType.toString() == 'DELETED'")
+                    @CacheEvict(key = "#result.originalId", condition = "#eventType.toString() == 'DELETED'")
             }
     )
     public CategoryView saveCategoryView(CategoryView categoryView, CategoryEventType eventType) {
