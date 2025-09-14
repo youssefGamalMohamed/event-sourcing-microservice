@@ -1,6 +1,7 @@
 package com.youssef.gamal.ecommerce.microservice.product.command.services;
 
 import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
+import com.youssef.gamal.ecommerce.microservice.product.command.events.producers.ProductEventProducerIfc;
 import com.youssef.gamal.ecommerce.microservice.product.command.mappers.ProductMapper;
 import com.youssef.gamal.ecommerce.microservice.product.command.repos.ProductRepo;
 import com.youssef.gamal.ecommerce.microservice.product.common.enums.ProductEventType;

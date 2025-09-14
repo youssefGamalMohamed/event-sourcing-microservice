@@ -74,10 +74,14 @@ server:
   servlet:
     context-path: /ecommerce/api/v1
 
-# --- Broker Topics ---
-broker:
-  topics:
-    products-topic: products-topic
+# --- Messaging Queues (Kafka, RabbitMQ, etc) ---
+messaging-queues:
+  kafka:
+    topics:
+      products:
+        name: products-topic
+        partitions: 1
+        replicas: 1
 
 # --- Zipkin and Tracing Configs ---
 management:
@@ -111,8 +115,10 @@ eureka:
 # --- Logging ---
 logging:
   level:
-    org:
-      springframework:
-        kafka: INFO
-        cache: TRACE
+    org.springframework.kafka: INFO
+    org.springframework.cache: TRACE
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    org.springframework.data.mongodb.repository.query: DEBUG
+    org.mongodb.driver.protocol.command: DEBUG
+    org.mongodb.driver.connection: DEBUG
     org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG

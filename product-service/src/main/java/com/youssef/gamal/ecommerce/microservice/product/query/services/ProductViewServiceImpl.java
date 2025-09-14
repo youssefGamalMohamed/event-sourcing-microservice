@@ -34,7 +34,7 @@ public class ProductViewServiceImpl implements ProductViewService {
                     )
             },
             evict = {
-                    @CacheEvict(key = "#categoryView.originalId", condition = "#eventType.toString() == 'DELETED'")
+                    @CacheEvict(key = "#result.originalId", condition = "#eventType.toString() == 'DELETED'")
             }
     )
     public ProductView savedProductView(ProductView productView, ProductEventType eventType) {
