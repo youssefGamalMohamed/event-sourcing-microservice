@@ -4,7 +4,11 @@
   "namespace": "com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events",
   "fields": [
     {
-      "name": "id",
+      "name": "originalId",
+      "type": "string"
+    },
+    {
+      "name": "snapshotId",
       "type": "string"
     },
     {
@@ -17,10 +21,7 @@
     },
     {
       "name": "description",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "default": null
     },
     {
@@ -35,43 +36,57 @@
       "name": "creationDate",
       "type": [
         "null",
-        {
-          "type": "long",
-          "logicalType": "timestamp-millis"
-        }
+        { "type": "long", "logicalType": "timestamp-millis" }
       ],
       "default": null
     },
     {
       "name": "createdBy",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "lastModifiedDate",
       "type": [
         "null",
-        {
-          "type": "long",
-          "logicalType": "timestamp-millis"
-        }
+        { "type": "long", "logicalType": "timestamp-millis" }
       ],
       "default": null
     },
     {
       "name": "lastModifiedBy",
-      "type": [
-        "null",
-        "string"
-      ],
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "timestamp",
       "type": "long"
+    },
+    {
+      "name": "categoryIds",
+      "type": [
+        "null",
+        { "type": "array", "items": "string" }
+      ],
+      "default": null
+    },
+    {
+      "name": "categories",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "name": "CategoryRef",
+            "type": "record",
+            "fields": [
+              { "name": "snapshotId", "type": "string" },
+              { "name": "originalId", "type": "string" }
+            ]
+          }
+        }
+      ],
+      "default": null
     }
   ]
 }

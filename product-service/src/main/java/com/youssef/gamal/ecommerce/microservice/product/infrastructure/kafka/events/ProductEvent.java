@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 5128298119935636816L;
+  private static final long serialVersionUID = 5079441052563027254L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ProductEvent\",\"namespace\":\"com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eventType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"description\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"price\",\"type\":\"double\"},{\"name\":\"quantity\",\"type\":\"int\"},{\"name\":\"creationDate\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"createdBy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"lastModifiedDate\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"lastModifiedBy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"timestamp\",\"type\":\"long\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ProductEvent\",\"namespace\":\"com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events\",\"fields\":[{\"name\":\"originalId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"snapshotId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eventType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"description\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"price\",\"type\":\"double\"},{\"name\":\"quantity\",\"type\":\"int\"},{\"name\":\"creationDate\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"createdBy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"lastModifiedDate\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"lastModifiedBy\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"timestamp\",\"type\":\"long\"},{\"name\":\"categoryIds\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}],\"default\":null},{\"name\":\"categories\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"CategoryRef\",\"fields\":[{\"name\":\"snapshotId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"originalId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -76,7 +76,8 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
     return DECODER.decode(b);
   }
 
-  private java.lang.String id;
+  private java.lang.String originalId;
+  private java.lang.String snapshotId;
   private java.lang.String eventType;
   private java.lang.String name;
   private java.lang.String description;
@@ -87,6 +88,8 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
   private java.time.Instant lastModifiedDate;
   private java.lang.String lastModifiedBy;
   private long timestamp;
+  private java.util.List<java.lang.String> categoryIds;
+  private java.util.List<com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.CategoryRef> categories;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -97,7 +100,8 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
 
   /**
    * All-args constructor.
-   * @param id The new value for id
+   * @param originalId The new value for originalId
+   * @param snapshotId The new value for snapshotId
    * @param eventType The new value for eventType
    * @param name The new value for name
    * @param description The new value for description
@@ -108,9 +112,12 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
    * @param lastModifiedDate The new value for lastModifiedDate
    * @param lastModifiedBy The new value for lastModifiedBy
    * @param timestamp The new value for timestamp
+   * @param categoryIds The new value for categoryIds
+   * @param categories The new value for categories
    */
-  public ProductEvent(java.lang.String id, java.lang.String eventType, java.lang.String name, java.lang.String description, java.lang.Double price, java.lang.Integer quantity, java.time.Instant creationDate, java.lang.String createdBy, java.time.Instant lastModifiedDate, java.lang.String lastModifiedBy, java.lang.Long timestamp) {
-    this.id = id;
+  public ProductEvent(java.lang.String originalId, java.lang.String snapshotId, java.lang.String eventType, java.lang.String name, java.lang.String description, java.lang.Double price, java.lang.Integer quantity, java.time.Instant creationDate, java.lang.String createdBy, java.time.Instant lastModifiedDate, java.lang.String lastModifiedBy, java.lang.Long timestamp, java.util.List<java.lang.String> categoryIds, java.util.List<com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.CategoryRef> categories) {
+    this.originalId = originalId;
+    this.snapshotId = snapshotId;
     this.eventType = eventType;
     this.name = name;
     this.description = description;
@@ -121,6 +128,8 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
     this.lastModifiedDate = lastModifiedDate;
     this.lastModifiedBy = lastModifiedBy;
     this.timestamp = timestamp;
+    this.categoryIds = categoryIds;
+    this.categories = categories;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -128,17 +137,20 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
   // Used by DatumWriter.  Applications should not call.
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return id;
-    case 1: return eventType;
-    case 2: return name;
-    case 3: return description;
-    case 4: return price;
-    case 5: return quantity;
-    case 6: return creationDate;
-    case 7: return createdBy;
-    case 8: return lastModifiedDate;
-    case 9: return lastModifiedBy;
-    case 10: return timestamp;
+    case 0: return originalId;
+    case 1: return snapshotId;
+    case 2: return eventType;
+    case 3: return name;
+    case 4: return description;
+    case 5: return price;
+    case 6: return quantity;
+    case 7: return creationDate;
+    case 8: return createdBy;
+    case 9: return lastModifiedDate;
+    case 10: return lastModifiedBy;
+    case 11: return timestamp;
+    case 12: return categoryIds;
+    case 13: return categories;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -147,36 +159,56 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = value$ != null ? value$.toString() : null; break;
-    case 1: eventType = value$ != null ? value$.toString() : null; break;
-    case 2: name = value$ != null ? value$.toString() : null; break;
-    case 3: description = value$ != null ? value$.toString() : null; break;
-    case 4: price = (java.lang.Double)value$; break;
-    case 5: quantity = (java.lang.Integer)value$; break;
-    case 6: creationDate = (java.time.Instant)value$; break;
-    case 7: createdBy = value$ != null ? value$.toString() : null; break;
-    case 8: lastModifiedDate = (java.time.Instant)value$; break;
-    case 9: lastModifiedBy = value$ != null ? value$.toString() : null; break;
-    case 10: timestamp = (java.lang.Long)value$; break;
+    case 0: originalId = value$ != null ? value$.toString() : null; break;
+    case 1: snapshotId = value$ != null ? value$.toString() : null; break;
+    case 2: eventType = value$ != null ? value$.toString() : null; break;
+    case 3: name = value$ != null ? value$.toString() : null; break;
+    case 4: description = value$ != null ? value$.toString() : null; break;
+    case 5: price = (java.lang.Double)value$; break;
+    case 6: quantity = (java.lang.Integer)value$; break;
+    case 7: creationDate = (java.time.Instant)value$; break;
+    case 8: createdBy = value$ != null ? value$.toString() : null; break;
+    case 9: lastModifiedDate = (java.time.Instant)value$; break;
+    case 10: lastModifiedBy = value$ != null ? value$.toString() : null; break;
+    case 11: timestamp = (java.lang.Long)value$; break;
+    case 12: categoryIds = (java.util.List<java.lang.String>)value$; break;
+    case 13: categories = (java.util.List<com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.CategoryRef>)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
   /**
-   * Gets the value of the 'id' field.
-   * @return The value of the 'id' field.
+   * Gets the value of the 'originalId' field.
+   * @return The value of the 'originalId' field.
    */
-  public java.lang.String getId() {
-    return id;
+  public java.lang.String getOriginalId() {
+    return originalId;
   }
 
 
   /**
-   * Sets the value of the 'id' field.
+   * Sets the value of the 'originalId' field.
    * @param value the value to set.
    */
-  public void setId(java.lang.String value) {
-    this.id = value;
+  public void setOriginalId(java.lang.String value) {
+    this.originalId = value;
+  }
+
+  /**
+   * Gets the value of the 'snapshotId' field.
+   * @return The value of the 'snapshotId' field.
+   */
+  public java.lang.String getSnapshotId() {
+    return snapshotId;
+  }
+
+
+  /**
+   * Sets the value of the 'snapshotId' field.
+   * @param value the value to set.
+   */
+  public void setSnapshotId(java.lang.String value) {
+    this.snapshotId = value;
   }
 
   /**
@@ -350,6 +382,40 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
   }
 
   /**
+   * Gets the value of the 'categoryIds' field.
+   * @return The value of the 'categoryIds' field.
+   */
+  public java.util.List<java.lang.String> getCategoryIds() {
+    return categoryIds;
+  }
+
+
+  /**
+   * Sets the value of the 'categoryIds' field.
+   * @param value the value to set.
+   */
+  public void setCategoryIds(java.util.List<java.lang.String> value) {
+    this.categoryIds = value;
+  }
+
+  /**
+   * Gets the value of the 'categories' field.
+   * @return The value of the 'categories' field.
+   */
+  public java.util.List<com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.CategoryRef> getCategories() {
+    return categories;
+  }
+
+
+  /**
+   * Sets the value of the 'categories' field.
+   * @param value the value to set.
+   */
+  public void setCategories(java.util.List<com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.CategoryRef> value) {
+    this.categories = value;
+  }
+
+  /**
    * Creates a new ProductEvent RecordBuilder.
    * @return A new ProductEvent RecordBuilder
    */
@@ -390,7 +456,8 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<ProductEvent>
     implements org.apache.avro.data.RecordBuilder<ProductEvent> {
 
-    private java.lang.String id;
+    private java.lang.String originalId;
+    private java.lang.String snapshotId;
     private java.lang.String eventType;
     private java.lang.String name;
     private java.lang.String description;
@@ -401,6 +468,8 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
     private java.time.Instant lastModifiedDate;
     private java.lang.String lastModifiedBy;
     private long timestamp;
+    private java.util.List<java.lang.String> categoryIds;
+    private java.util.List<com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.CategoryRef> categories;
 
     /** Creates a new Builder */
     private Builder() {
@@ -413,49 +482,61 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
      */
     private Builder(com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder other) {
       super(other);
-      if (isValidValue(fields()[0], other.id)) {
-        this.id = data().deepCopy(fields()[0].schema(), other.id);
+      if (isValidValue(fields()[0], other.originalId)) {
+        this.originalId = data().deepCopy(fields()[0].schema(), other.originalId);
         fieldSetFlags()[0] = other.fieldSetFlags()[0];
       }
-      if (isValidValue(fields()[1], other.eventType)) {
-        this.eventType = data().deepCopy(fields()[1].schema(), other.eventType);
+      if (isValidValue(fields()[1], other.snapshotId)) {
+        this.snapshotId = data().deepCopy(fields()[1].schema(), other.snapshotId);
         fieldSetFlags()[1] = other.fieldSetFlags()[1];
       }
-      if (isValidValue(fields()[2], other.name)) {
-        this.name = data().deepCopy(fields()[2].schema(), other.name);
+      if (isValidValue(fields()[2], other.eventType)) {
+        this.eventType = data().deepCopy(fields()[2].schema(), other.eventType);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
-      if (isValidValue(fields()[3], other.description)) {
-        this.description = data().deepCopy(fields()[3].schema(), other.description);
+      if (isValidValue(fields()[3], other.name)) {
+        this.name = data().deepCopy(fields()[3].schema(), other.name);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
       }
-      if (isValidValue(fields()[4], other.price)) {
-        this.price = data().deepCopy(fields()[4].schema(), other.price);
+      if (isValidValue(fields()[4], other.description)) {
+        this.description = data().deepCopy(fields()[4].schema(), other.description);
         fieldSetFlags()[4] = other.fieldSetFlags()[4];
       }
-      if (isValidValue(fields()[5], other.quantity)) {
-        this.quantity = data().deepCopy(fields()[5].schema(), other.quantity);
+      if (isValidValue(fields()[5], other.price)) {
+        this.price = data().deepCopy(fields()[5].schema(), other.price);
         fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
-      if (isValidValue(fields()[6], other.creationDate)) {
-        this.creationDate = data().deepCopy(fields()[6].schema(), other.creationDate);
+      if (isValidValue(fields()[6], other.quantity)) {
+        this.quantity = data().deepCopy(fields()[6].schema(), other.quantity);
         fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
-      if (isValidValue(fields()[7], other.createdBy)) {
-        this.createdBy = data().deepCopy(fields()[7].schema(), other.createdBy);
+      if (isValidValue(fields()[7], other.creationDate)) {
+        this.creationDate = data().deepCopy(fields()[7].schema(), other.creationDate);
         fieldSetFlags()[7] = other.fieldSetFlags()[7];
       }
-      if (isValidValue(fields()[8], other.lastModifiedDate)) {
-        this.lastModifiedDate = data().deepCopy(fields()[8].schema(), other.lastModifiedDate);
+      if (isValidValue(fields()[8], other.createdBy)) {
+        this.createdBy = data().deepCopy(fields()[8].schema(), other.createdBy);
         fieldSetFlags()[8] = other.fieldSetFlags()[8];
       }
-      if (isValidValue(fields()[9], other.lastModifiedBy)) {
-        this.lastModifiedBy = data().deepCopy(fields()[9].schema(), other.lastModifiedBy);
+      if (isValidValue(fields()[9], other.lastModifiedDate)) {
+        this.lastModifiedDate = data().deepCopy(fields()[9].schema(), other.lastModifiedDate);
         fieldSetFlags()[9] = other.fieldSetFlags()[9];
       }
-      if (isValidValue(fields()[10], other.timestamp)) {
-        this.timestamp = data().deepCopy(fields()[10].schema(), other.timestamp);
+      if (isValidValue(fields()[10], other.lastModifiedBy)) {
+        this.lastModifiedBy = data().deepCopy(fields()[10].schema(), other.lastModifiedBy);
         fieldSetFlags()[10] = other.fieldSetFlags()[10];
+      }
+      if (isValidValue(fields()[11], other.timestamp)) {
+        this.timestamp = data().deepCopy(fields()[11].schema(), other.timestamp);
+        fieldSetFlags()[11] = other.fieldSetFlags()[11];
+      }
+      if (isValidValue(fields()[12], other.categoryIds)) {
+        this.categoryIds = data().deepCopy(fields()[12].schema(), other.categoryIds);
+        fieldSetFlags()[12] = other.fieldSetFlags()[12];
+      }
+      if (isValidValue(fields()[13], other.categories)) {
+        this.categories = data().deepCopy(fields()[13].schema(), other.categories);
+        fieldSetFlags()[13] = other.fieldSetFlags()[13];
       }
     }
 
@@ -465,89 +546,141 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
      */
     private Builder(com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent other) {
       super(SCHEMA$, MODEL$);
-      if (isValidValue(fields()[0], other.id)) {
-        this.id = data().deepCopy(fields()[0].schema(), other.id);
+      if (isValidValue(fields()[0], other.originalId)) {
+        this.originalId = data().deepCopy(fields()[0].schema(), other.originalId);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.eventType)) {
-        this.eventType = data().deepCopy(fields()[1].schema(), other.eventType);
+      if (isValidValue(fields()[1], other.snapshotId)) {
+        this.snapshotId = data().deepCopy(fields()[1].schema(), other.snapshotId);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.name)) {
-        this.name = data().deepCopy(fields()[2].schema(), other.name);
+      if (isValidValue(fields()[2], other.eventType)) {
+        this.eventType = data().deepCopy(fields()[2].schema(), other.eventType);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.description)) {
-        this.description = data().deepCopy(fields()[3].schema(), other.description);
+      if (isValidValue(fields()[3], other.name)) {
+        this.name = data().deepCopy(fields()[3].schema(), other.name);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.price)) {
-        this.price = data().deepCopy(fields()[4].schema(), other.price);
+      if (isValidValue(fields()[4], other.description)) {
+        this.description = data().deepCopy(fields()[4].schema(), other.description);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.quantity)) {
-        this.quantity = data().deepCopy(fields()[5].schema(), other.quantity);
+      if (isValidValue(fields()[5], other.price)) {
+        this.price = data().deepCopy(fields()[5].schema(), other.price);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.creationDate)) {
-        this.creationDate = data().deepCopy(fields()[6].schema(), other.creationDate);
+      if (isValidValue(fields()[6], other.quantity)) {
+        this.quantity = data().deepCopy(fields()[6].schema(), other.quantity);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.createdBy)) {
-        this.createdBy = data().deepCopy(fields()[7].schema(), other.createdBy);
+      if (isValidValue(fields()[7], other.creationDate)) {
+        this.creationDate = data().deepCopy(fields()[7].schema(), other.creationDate);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.lastModifiedDate)) {
-        this.lastModifiedDate = data().deepCopy(fields()[8].schema(), other.lastModifiedDate);
+      if (isValidValue(fields()[8], other.createdBy)) {
+        this.createdBy = data().deepCopy(fields()[8].schema(), other.createdBy);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.lastModifiedBy)) {
-        this.lastModifiedBy = data().deepCopy(fields()[9].schema(), other.lastModifiedBy);
+      if (isValidValue(fields()[9], other.lastModifiedDate)) {
+        this.lastModifiedDate = data().deepCopy(fields()[9].schema(), other.lastModifiedDate);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.timestamp)) {
-        this.timestamp = data().deepCopy(fields()[10].schema(), other.timestamp);
+      if (isValidValue(fields()[10], other.lastModifiedBy)) {
+        this.lastModifiedBy = data().deepCopy(fields()[10].schema(), other.lastModifiedBy);
         fieldSetFlags()[10] = true;
+      }
+      if (isValidValue(fields()[11], other.timestamp)) {
+        this.timestamp = data().deepCopy(fields()[11].schema(), other.timestamp);
+        fieldSetFlags()[11] = true;
+      }
+      if (isValidValue(fields()[12], other.categoryIds)) {
+        this.categoryIds = data().deepCopy(fields()[12].schema(), other.categoryIds);
+        fieldSetFlags()[12] = true;
+      }
+      if (isValidValue(fields()[13], other.categories)) {
+        this.categories = data().deepCopy(fields()[13].schema(), other.categories);
+        fieldSetFlags()[13] = true;
       }
     }
 
     /**
-      * Gets the value of the 'id' field.
+      * Gets the value of the 'originalId' field.
       * @return The value.
       */
-    public java.lang.String getId() {
-      return id;
+    public java.lang.String getOriginalId() {
+      return originalId;
     }
 
 
     /**
-      * Sets the value of the 'id' field.
-      * @param value The value of 'id'.
+      * Sets the value of the 'originalId' field.
+      * @param value The value of 'originalId'.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setId(java.lang.String value) {
+    public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setOriginalId(java.lang.String value) {
       validate(fields()[0], value);
-      this.id = value;
+      this.originalId = value;
       fieldSetFlags()[0] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'id' field has been set.
-      * @return True if the 'id' field has been set, false otherwise.
+      * Checks whether the 'originalId' field has been set.
+      * @return True if the 'originalId' field has been set, false otherwise.
       */
-    public boolean hasId() {
+    public boolean hasOriginalId() {
       return fieldSetFlags()[0];
     }
 
 
     /**
-      * Clears the value of the 'id' field.
+      * Clears the value of the 'originalId' field.
       * @return This builder.
       */
-    public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearId() {
-      id = null;
+    public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearOriginalId() {
+      originalId = null;
       fieldSetFlags()[0] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'snapshotId' field.
+      * @return The value.
+      */
+    public java.lang.String getSnapshotId() {
+      return snapshotId;
+    }
+
+
+    /**
+      * Sets the value of the 'snapshotId' field.
+      * @param value The value of 'snapshotId'.
+      * @return This builder.
+      */
+    public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setSnapshotId(java.lang.String value) {
+      validate(fields()[1], value);
+      this.snapshotId = value;
+      fieldSetFlags()[1] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'snapshotId' field has been set.
+      * @return True if the 'snapshotId' field has been set, false otherwise.
+      */
+    public boolean hasSnapshotId() {
+      return fieldSetFlags()[1];
+    }
+
+
+    /**
+      * Clears the value of the 'snapshotId' field.
+      * @return This builder.
+      */
+    public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearSnapshotId() {
+      snapshotId = null;
+      fieldSetFlags()[1] = false;
       return this;
     }
 
@@ -566,9 +699,9 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setEventType(java.lang.String value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.eventType = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this;
     }
 
@@ -577,7 +710,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'eventType' field has been set, false otherwise.
       */
     public boolean hasEventType() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
 
 
@@ -587,7 +720,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearEventType() {
       eventType = null;
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -606,9 +739,9 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setName(java.lang.String value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.name = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this;
     }
 
@@ -617,7 +750,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'name' field has been set, false otherwise.
       */
     public boolean hasName() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
 
 
@@ -627,7 +760,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearName() {
       name = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -646,9 +779,9 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setDescription(java.lang.String value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.description = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -657,7 +790,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'description' field has been set, false otherwise.
       */
     public boolean hasDescription() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
 
 
@@ -667,7 +800,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearDescription() {
       description = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -686,9 +819,9 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setPrice(double value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.price = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this;
     }
 
@@ -697,7 +830,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'price' field has been set, false otherwise.
       */
     public boolean hasPrice() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
 
 
@@ -706,7 +839,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearPrice() {
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
 
@@ -725,9 +858,9 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setQuantity(int value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.quantity = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this;
     }
 
@@ -736,7 +869,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'quantity' field has been set, false otherwise.
       */
     public boolean hasQuantity() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
 
 
@@ -745,7 +878,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearQuantity() {
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -764,9 +897,9 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setCreationDate(java.time.Instant value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.creationDate = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this;
     }
 
@@ -775,7 +908,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'creationDate' field has been set, false otherwise.
       */
     public boolean hasCreationDate() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
 
 
@@ -785,7 +918,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearCreationDate() {
       creationDate = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
 
@@ -804,9 +937,9 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setCreatedBy(java.lang.String value) {
-      validate(fields()[7], value);
+      validate(fields()[8], value);
       this.createdBy = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this;
     }
 
@@ -815,7 +948,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'createdBy' field has been set, false otherwise.
       */
     public boolean hasCreatedBy() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
 
 
@@ -825,7 +958,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearCreatedBy() {
       createdBy = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -844,9 +977,9 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setLastModifiedDate(java.time.Instant value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.lastModifiedDate = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -855,7 +988,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'lastModifiedDate' field has been set, false otherwise.
       */
     public boolean hasLastModifiedDate() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
 
 
@@ -865,7 +998,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearLastModifiedDate() {
       lastModifiedDate = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -884,9 +1017,9 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setLastModifiedBy(java.lang.String value) {
-      validate(fields()[9], value);
+      validate(fields()[10], value);
       this.lastModifiedBy = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this;
     }
 
@@ -895,7 +1028,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'lastModifiedBy' field has been set, false otherwise.
       */
     public boolean hasLastModifiedBy() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
 
 
@@ -905,7 +1038,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearLastModifiedBy() {
       lastModifiedBy = null;
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -924,9 +1057,9 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setTimestamp(long value) {
-      validate(fields()[10], value);
+      validate(fields()[11], value);
       this.timestamp = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this;
     }
 
@@ -935,7 +1068,7 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'timestamp' field has been set, false otherwise.
       */
     public boolean hasTimestamp() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
 
 
@@ -944,7 +1077,87 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearTimestamp() {
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'categoryIds' field.
+      * @return The value.
+      */
+    public java.util.List<java.lang.String> getCategoryIds() {
+      return categoryIds;
+    }
+
+
+    /**
+      * Sets the value of the 'categoryIds' field.
+      * @param value The value of 'categoryIds'.
+      * @return This builder.
+      */
+    public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setCategoryIds(java.util.List<java.lang.String> value) {
+      validate(fields()[12], value);
+      this.categoryIds = value;
+      fieldSetFlags()[12] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'categoryIds' field has been set.
+      * @return True if the 'categoryIds' field has been set, false otherwise.
+      */
+    public boolean hasCategoryIds() {
+      return fieldSetFlags()[12];
+    }
+
+
+    /**
+      * Clears the value of the 'categoryIds' field.
+      * @return This builder.
+      */
+    public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearCategoryIds() {
+      categoryIds = null;
+      fieldSetFlags()[12] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'categories' field.
+      * @return The value.
+      */
+    public java.util.List<com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.CategoryRef> getCategories() {
+      return categories;
+    }
+
+
+    /**
+      * Sets the value of the 'categories' field.
+      * @param value The value of 'categories'.
+      * @return This builder.
+      */
+    public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder setCategories(java.util.List<com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.CategoryRef> value) {
+      validate(fields()[13], value);
+      this.categories = value;
+      fieldSetFlags()[13] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'categories' field has been set.
+      * @return True if the 'categories' field has been set, false otherwise.
+      */
+    public boolean hasCategories() {
+      return fieldSetFlags()[13];
+    }
+
+
+    /**
+      * Clears the value of the 'categories' field.
+      * @return This builder.
+      */
+    public com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent.Builder clearCategories() {
+      categories = null;
+      fieldSetFlags()[13] = false;
       return this;
     }
 
@@ -953,17 +1166,20 @@ public class ProductEvent extends org.apache.avro.specific.SpecificRecordBase im
     public ProductEvent build() {
       try {
         ProductEvent record = new ProductEvent();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.String) defaultValue(fields()[0]);
-        record.eventType = fieldSetFlags()[1] ? this.eventType : (java.lang.String) defaultValue(fields()[1]);
-        record.name = fieldSetFlags()[2] ? this.name : (java.lang.String) defaultValue(fields()[2]);
-        record.description = fieldSetFlags()[3] ? this.description : (java.lang.String) defaultValue(fields()[3]);
-        record.price = fieldSetFlags()[4] ? this.price : (java.lang.Double) defaultValue(fields()[4]);
-        record.quantity = fieldSetFlags()[5] ? this.quantity : (java.lang.Integer) defaultValue(fields()[5]);
-        record.creationDate = fieldSetFlags()[6] ? this.creationDate : (java.time.Instant) defaultValue(fields()[6]);
-        record.createdBy = fieldSetFlags()[7] ? this.createdBy : (java.lang.String) defaultValue(fields()[7]);
-        record.lastModifiedDate = fieldSetFlags()[8] ? this.lastModifiedDate : (java.time.Instant) defaultValue(fields()[8]);
-        record.lastModifiedBy = fieldSetFlags()[9] ? this.lastModifiedBy : (java.lang.String) defaultValue(fields()[9]);
-        record.timestamp = fieldSetFlags()[10] ? this.timestamp : (java.lang.Long) defaultValue(fields()[10]);
+        record.originalId = fieldSetFlags()[0] ? this.originalId : (java.lang.String) defaultValue(fields()[0]);
+        record.snapshotId = fieldSetFlags()[1] ? this.snapshotId : (java.lang.String) defaultValue(fields()[1]);
+        record.eventType = fieldSetFlags()[2] ? this.eventType : (java.lang.String) defaultValue(fields()[2]);
+        record.name = fieldSetFlags()[3] ? this.name : (java.lang.String) defaultValue(fields()[3]);
+        record.description = fieldSetFlags()[4] ? this.description : (java.lang.String) defaultValue(fields()[4]);
+        record.price = fieldSetFlags()[5] ? this.price : (java.lang.Double) defaultValue(fields()[5]);
+        record.quantity = fieldSetFlags()[6] ? this.quantity : (java.lang.Integer) defaultValue(fields()[6]);
+        record.creationDate = fieldSetFlags()[7] ? this.creationDate : (java.time.Instant) defaultValue(fields()[7]);
+        record.createdBy = fieldSetFlags()[8] ? this.createdBy : (java.lang.String) defaultValue(fields()[8]);
+        record.lastModifiedDate = fieldSetFlags()[9] ? this.lastModifiedDate : (java.time.Instant) defaultValue(fields()[9]);
+        record.lastModifiedBy = fieldSetFlags()[10] ? this.lastModifiedBy : (java.lang.String) defaultValue(fields()[10]);
+        record.timestamp = fieldSetFlags()[11] ? this.timestamp : (java.lang.Long) defaultValue(fields()[11]);
+        record.categoryIds = fieldSetFlags()[12] ? this.categoryIds : (java.util.List<java.lang.String>) defaultValue(fields()[12]);
+        record.categories = fieldSetFlags()[13] ? this.categories : (java.util.List<com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.CategoryRef>) defaultValue(fields()[13]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;

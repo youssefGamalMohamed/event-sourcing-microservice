@@ -12,6 +12,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -21,7 +23,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 public class Product {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -36,6 +37,15 @@ public class Product {
 
     private int quantity;
 
+    // ✅ Store categoriesQueriesResponse as embeddable objects
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(
+            name = "product_categories", // join table
+            joinColumns = @JoinColumn(name = "product_id")
+    )
+    @Builder.Default
+    private Set<Category> categories = new HashSet<>();
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime creationDate;
@@ -46,7 +56,6 @@ public class Product {
 
     @LastModifiedDate
     private LocalDateTime lastModifiedDate;
-
 
     @LastModifiedBy
     private String lastModifiedBy;

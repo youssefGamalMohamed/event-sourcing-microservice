@@ -54,8 +54,8 @@ public class ProductEventConsumerServiceImpl {
                             productViewService.savedProductView(view, eventType);
                         },
                         () -> {
-                            log.error("❌ Invalid event type: {} , id: {}",
-                                    productEvent.getEventType(), productEvent.getId());
+                            log.error("❌ Invalid event type: {} , originalId: {}, snapshotId: {}",
+                                    productEvent.getEventType(), productEvent.getOriginalId(), productEvent.getSnapshotId());
                             // TODO: forward invalid event to dead-letter topic or monitoring system
                         }
                 );

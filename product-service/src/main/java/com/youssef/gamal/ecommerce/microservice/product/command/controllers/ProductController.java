@@ -7,7 +7,7 @@ import com.youssef.gamal.ecommerce.microservice.product.common.exceptions.Confli
 import com.youssef.gamal.ecommerce.microservice.product.common.exceptions.InternalServerErrorResponse;
 import com.youssef.gamal.ecommerce.microservice.product.common.exceptions.NotFoundResponse;
 import com.youssef.gamal.ecommerce.microservice.product.common.exceptions.ValidationErrorResponse;
-import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.commands.ProductCommandDto;
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.commands.ProductCommand;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -33,20 +33,20 @@ public class ProductController {
     @Operation(summary = "Create a new product",
             description = "Creates a new product with the provided details and saves it to the database.")
     @ApiResponse(responseCode = "201", description = "Product created successfully",
-            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ProductCommandDto.class)))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ProductCommand.class)))
     @ApiResponse(responseCode = "400", description = "Bad Request - The request body failed validation",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ValidationErrorResponse.class)))
     @ApiResponse(responseCode = "409", description = "Conflict - A product with the same name already exists",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ConflictErrorResponse.class)))
     @ApiResponse(responseCode = "500", description = "Internal Server Error",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = InternalServerErrorResponse.class)))
-    public ProductCommandDto createProduct(@RequestBody ProductCommandDto product) {
+    public ProductCommand createProduct(@RequestBody ProductCommand product) {
         log.info("Creating product: {}", product);
         Product productEntity = productMapper.toEntity(product);
         log.info("Mapped product Request DTO to entity: {}", productEntity);
         Product createdProduct = productService.createProduct(productEntity);
         log.info("Created product: {}", createdProduct);
-        ProductCommandDto responseDto = productMapper.toDto(createdProduct);
+        ProductCommand responseDto = productMapper.toDto(createdProduct, product.categoriesQueriesResponse());
         log.info("Mapped created product to Response DTO: {}", responseDto);
         return responseDto;
     }
@@ -56,7 +56,7 @@ public class ProductController {
     @Operation(summary = "Update an existing product",
             description = "Updates an existing product with the specified ID and new details.")
     @ApiResponse(responseCode = "200", description = "Product updated successfully",
-            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ProductCommandDto.class)))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ProductCommand.class)))
     @ApiResponse(responseCode = "400", description = "Bad Request - The request body failed validation",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ValidationErrorResponse.class)))
     @ApiResponse(responseCode = "404", description = "Not Found - The product with the specified ID was not found",
@@ -65,13 +65,13 @@ public class ProductController {
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ConflictErrorResponse.class)))
     @ApiResponse(responseCode = "500", description = "Internal Server Error",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = InternalServerErrorResponse.class)))
-    public ProductCommandDto updateProduct(@PathVariable String id, @RequestBody ProductCommandDto product) {
-        log.info("Updating product with id: {} with new data: {}", id, product);
+    public ProductCommand updateProduct(@PathVariable String id, @RequestBody ProductCommand product) {
+        log.info("Updating product with snapshotId: {} with new data: {}", id, product);
         Product productEntity = productMapper.toEntity(product);
         log.info("Mapped updated product Request DTO to entity: {}", productEntity);
         Product updatedProduct = productService.updateProduct(id, productEntity);
-        log.info("Updated product with id: {}", id);
-        ProductCommandDto responseDto = productMapper.toDto(updatedProduct);
+        log.info("Updated product with snapshotId: {}", id);
+        ProductCommand responseDto = productMapper.toDto(updatedProduct, product.categoriesQueriesResponse());
         log.info("Mapped product entity to DTO response : {}", responseDto);
         return responseDto;
     }
@@ -85,9 +85,9 @@ public class ProductController {
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = NotFoundResponse.class)))
     @ApiResponse(responseCode = "500", description = "Internal Server Error",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = InternalServerErrorResponse.class)))
-    public void deleteProduct(@PathVariable(name = "id") String id) {
-        log.info("Deleting product with id: {}", id);
+    public void deleteProduct(@PathVariable(name = "snapshotId") String id) {
+        log.info("Deleting product with snapshotId: {}", id);
         productService.deleteProduct(id);
-        log.info("Deleted product with id: {}", id);
+        log.info("Deleted product with snapshotId: {}", id);
     }
 }

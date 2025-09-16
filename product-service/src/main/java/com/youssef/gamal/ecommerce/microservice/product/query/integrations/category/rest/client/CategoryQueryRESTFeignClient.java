@@ -1,6 +1,6 @@
 package com.youssef.gamal.ecommerce.microservice.product.query.integrations.category.rest.client;
 
-import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryViewDto;
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryQueryResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface CategoryQueryRESTFeignClient {
 
     // ---------- QUERY SIDE ----------
-    @GetMapping("/categories/{id}")
-    ResponseEntity<CategoryViewDto> findByOriginalIdAndWithLastHistory(@PathVariable(name = "id") String id);
+    @GetMapping("/categories/{snapshotId}")
+    ResponseEntity<CategoryQueryResponse> findByOriginalIdAndWithLastHistory(@PathVariable(name = "snapshotId") String id);
 
-    @GetMapping("/categories/{id}/history")
-    ResponseEntity<Page<CategoryViewDto>> findAllHistoryByOriginalId(@PathVariable(name = "id") String id, Pageable pageable);
+    @GetMapping("/categories/{snapshotId}/history")
+    ResponseEntity<Page<CategoryQueryResponse>> findAllHistoryByOriginalId(@PathVariable(name = "snapshotId") String id, Pageable pageable);
 }

@@ -82,6 +82,10 @@ messaging-queues:
         name: products-topic
         partitions: 1
         replicas: 1
+      categories:
+        name: categories-topic
+        partitions: 1
+        replicas: 1
 
 # --- Zipkin and Tracing Configs ---
 management:
@@ -122,3 +126,8 @@ logging:
     org.mongodb.driver.protocol.command: DEBUG
     org.mongodb.driver.connection: DEBUG
     org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+    org.hibernate.SQL: DEBUG                # Logs the generated SQL statements
+    org.hibernate.orm.jdbc.bind: TRACE      # Hibernate 6 (Spring Boot 3.x) → logs parameters
+    org.hibernate.type.descriptor.sql: TRACE # Hibernate 5.x → logs parameters (fallback)
+    org.springframework.orm.jpa: DEBUG
+    org.springframework.transaction: DEBUG

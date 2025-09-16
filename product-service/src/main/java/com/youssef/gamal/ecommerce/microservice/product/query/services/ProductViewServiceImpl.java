@@ -1,19 +1,29 @@
 package com.youssef.gamal.ecommerce.microservice.product.query.services;
 
-import com.youssef.gamal.ecommerce.microservice.product.common.enums.ProductEventType;
-import com.youssef.gamal.ecommerce.microservice.product.query.configs.CachingConfigs;
-import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
-import com.youssef.gamal.ecommerce.microservice.product.query.integrations.category.rest.implementation.CategoryQueryIntegrationServiceIfc;
-import com.youssef.gamal.ecommerce.microservice.product.query.repos.ProductViewRepo;
-import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.cache.annotation.*;
+import java.util.NoSuchElementException;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.NoSuchElementException;
+import com.youssef.gamal.ecommerce.microservice.product.common.enums.ProductEventType;
+import com.youssef.gamal.ecommerce.microservice.product.query.configs.CachingConfigs;
+import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
+import com.youssef.gamal.ecommerce.microservice.product.query.integrations.category.rest.implementation.CategoryQueryIntegrationServiceIfc;
+import com.youssef.gamal.ecommerce.microservice.product.query.mappers.CategoryViewMapper;
+import com.youssef.gamal.ecommerce.microservice.product.query.repos.ProductViewRepo;
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryQueryResponse;
+
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
@@ -23,7 +33,8 @@ public class ProductViewServiceImpl implements ProductViewService {
 
     private final ProductViewRepo productViewRepo;
     private final CategoryQueryIntegrationServiceIfc categoryIntegrationService;
-
+    private final CategoryViewMapper categoryViewMapper;
+    
     @Override
     @Transactional
     @Caching(
@@ -41,10 +52,17 @@ public class ProductViewServiceImpl implements ProductViewService {
         log.info("savedProductView called with productView: {} , eventType: {}", productView, eventType);
 
         productView.setEventType(eventType.toString()); // ✅ ensure DB consistency
+                
+        
+        Set<String> categories_ids = productView.getCategories().stream().map(c -> c.getOriginalId()).collect(Collectors.toSet());
+        
+        Set<CategoryQueryResponse> categoryQueryResponses = categoryIntegrationService.findAllByIds(categories_ids);
+        productView.setCategories(categoryViewMapper.toEntities(categoryQueryResponses));
+        
         ProductView savedProductView = productViewRepo.save(productView);
 
-        log.info("[PRODUCT_VIEW:SAVE] id={}, originalId={}, eventType={}",
-                savedProductView.getId(), savedProductView.getOriginalId(), eventType);
+        log.info("[PRODUCT_VIEW:SAVE] snapshotId={}, originalId={}, eventType={}",
+                savedProductView.getSnapshotId(), savedProductView.getOriginalId(), eventType);
 
         return savedProductView;
     }
@@ -73,7 +91,7 @@ public class ProductViewServiceImpl implements ProductViewService {
             throw new NoSuchElementException("Product view not found with originalId: " + originalId);
         }
 
-        log.info("ProductView found with originalId: {}, id: {}", originalId, productView.getId());
+        log.info("ProductView found with originalId: {}, snapshotId: {}", originalId, productView.getSnapshotId());
         return productView;
     }
 }

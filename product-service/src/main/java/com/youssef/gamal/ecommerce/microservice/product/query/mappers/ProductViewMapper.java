@@ -1,38 +1,36 @@
 package com.youssef.gamal.ecommerce.microservice.product.query.mappers;
 
-import com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent;
-import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
-import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.query.ProductViewDto;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
-
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
-@Mapper(componentModel = "spring")
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
+
+import com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent;
+import com.youssef.gamal.ecommerce.microservice.product.query.entities.ProductView;
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.query.ProducQueryResponse;
+
+@Mapper(
+		componentModel = "spring" ,
+		uses = { CategoryViewMapper.class }
+)
 public interface ProductViewMapper {
 
     ProductViewMapper INSTANCE = Mappers.getMapper(ProductViewMapper.class);
-
+    
     // ✅ ProductEvent → ProductView
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "eventType", source = "eventType")
-    @Mapping(target = "originalId", source = "id")
-    @Mapping(target = "name", source = "name")
-    @Mapping(target = "description", source = "description")
-    @Mapping(target = "price", source = "price")
-    @Mapping(target = "quantity", source = "quantity")
+    @Mapping(target = "snapshotId", ignore = true)
+    @Mapping(target = "originalId", source = "originalId")
+    @Mapping(target = "categories", source = "categories")
     @Mapping(target = "creationDate", expression = "java(map(productEvent.getCreationDate()))")
-    @Mapping(target = "createdBy", source = "createdBy")
     @Mapping(target = "lastModifiedDate", expression = "java(map(productEvent.getLastModifiedDate()))")
-    @Mapping(target = "lastModifiedBy", source = "lastModifiedBy")
     ProductView toProductView(ProductEvent productEvent);
 
-    // ✅ ProductView → ProductViewDto
-    @Mapping(target = "id", source = "productView.originalId")
-    ProductViewDto toDto(ProductView productView);
+    // ✅ ProductView → ProducQueryResponse
+    @Mapping(target = "catoegoriesViews", source = "categories")
+    ProducQueryResponse toDto(ProductView productView);
 
     // === Conversion methods ===
     default LocalDateTime map(Instant instant) {
@@ -42,4 +40,5 @@ public interface ProductViewMapper {
     default Instant map(LocalDateTime localDateTime) {
         return localDateTime != null ? localDateTime.toInstant(ZoneOffset.UTC) : null;
     }
+    
 }
