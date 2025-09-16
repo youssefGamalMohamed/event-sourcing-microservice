@@ -72,7 +72,7 @@ public class CategoryViewServiceImpl implements CategoryViewServiceIfc {
         key = "'originalId=' + #originalId",   // ✅ only dynamic key
         unless = "#result == null"
     )
-    public CategoryView findByOriginalIdAndWithLastHistory(String originalId) {
+    public CategoryView findByOriginalIdAndWithLastSnapshot(String originalId) {
         log.info("findByOriginalIdAndWithLastHistory called with originalId: {}", originalId);
 
         CategoryView categoryView = categoryRepo.findFirstByOriginalIdOrderByLastModifiedDateDesc(originalId)

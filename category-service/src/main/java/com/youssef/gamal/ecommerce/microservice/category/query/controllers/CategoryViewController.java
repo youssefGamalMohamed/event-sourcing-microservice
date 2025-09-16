@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,22 +33,22 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
-@Tag(name = "Category Query", description = "Operations related to querying categories and their history")
+@Tag(name = "Category Query", description = "Operations related to querying categories and their snapshots")
 public class CategoryViewController {
 
     private final CategoryViewServiceIfc categoryViewService;
     private final CategoryViewMapper categoryViewMapper;
 
-    @GetMapping("/categories/{originalId}/history")
+    @GetMapping("/categories/{originalId}/snapshots")
     @ResponseStatus(HttpStatus.OK)
     @Operation(
-            summary = "Get all historical versions of a category",
-            description = "Returns a paginated list of all historical versions of a category by its original UUID."
+            summary = "Get all snapshots of a category",
+            description = "Returns a paginated list of all snapshots of a category by its original UUID."
     )
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
-                    description = "Category history retrieved successfully",
+                    description = "Category snapshots retrieved successfully",
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = Page.class)
@@ -62,7 +63,7 @@ public class CategoryViewController {
                     )
             )
     })
-    public Page<CategoryQueryResponse> findAllHistoryByOriginalId(
+    public Page<CategoryQueryResponse> findAllSnapshotsByOriginalId(
             @Parameter(
                     description = "Original UUID of the category",
                     required = true,
@@ -72,7 +73,7 @@ public class CategoryViewController {
             @PathVariable UUID originalId,
             @ParameterObject Pageable pageable) {
 
-        log.info("findAllHistoryByOriginalId called with originalId: {}, pageable: {}", originalId, pageable);
+        log.info("findAllSnapshotsByOriginalId called with originalId: {}, pageable: {}", originalId, pageable);
         Page<CategoryView> categoryViewPage = categoryViewService.findAllByOriginalId(originalId.toString(), pageable);
         return categoryViewPage.map(categoryViewMapper::toDto);
     }
@@ -80,13 +81,13 @@ public class CategoryViewController {
     @GetMapping("/categories/{originalId}")
     @ResponseStatus(HttpStatus.OK)
     @Operation(
-            summary = "Get the latest version of a category",
-            description = "Returns the current/latest version of a category including last modification history."
+            summary = "Get the latest snapshot of a category",
+            description = "Returns the current/latest snapshot of a category including last modification history."
     )
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
-                    description = "Category retrieved successfully",
+                    description = "Category snapshot retrieved successfully",
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = CategoryQueryResponse.class)
@@ -109,7 +110,7 @@ public class CategoryViewController {
                     )
             )
     })
-    public CategoryQueryResponse findByOriginalIdAndWithLastHistory(
+    public CategoryQueryResponse findLatestSnapshotByOriginalId(
             @Parameter(
                     description = "Original UUID of the category",
                     required = true,
@@ -118,8 +119,107 @@ public class CategoryViewController {
             )
             @PathVariable UUID originalId) {
 
-        log.info("findByOriginalIdAndWithLastHistory called with originalId: {}", originalId);
-        CategoryView categoryView = categoryViewService.findByOriginalIdAndWithLastHistory(originalId.toString());
+        log.info("findLatestSnapshotByOriginalId called with originalId: {}", originalId);
+        CategoryView categoryView = categoryViewService.findByOriginalIdAndWithLastSnapshot(originalId.toString());
+        return categoryViewMapper.toDto(categoryView);
+    }
+
+    @GetMapping(value = "/categories", params = "snapshotId")
+    @ResponseStatus(HttpStatus.OK)
+    @Operation(
+            summary = "Get snapshot by snapshotId",
+            description = "Returns a specific snapshot of a category by its snapshot UUID."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Category snapshot retrieved successfully",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = CategoryQueryResponse.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Snapshot not found",
+                    content = @Content(
+                            schema = @Schema(implementation = NotFoundResponse.class),
+                            mediaType = MediaType.APPLICATION_JSON_VALUE
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Internal server error",
+                    content = @Content(
+                            schema = @Schema(implementation = InternalServerErrorResponse.class),
+                            mediaType = MediaType.APPLICATION_JSON_VALUE
+                    )
+            )
+    })
+    public CategoryQueryResponse findBySnapshotId(
+            @Parameter(
+                    description = "Snapshot UUID of the category",
+                    required = true,
+                    example = "123e4567-e89b-12d3-a456-426614174000",
+                    schema = @Schema(type = "string", format = "uuid")
+            )
+            @RequestParam UUID snapshotId) {
+
+        log.info("findBySnapshotId called with snapshotId: {}", snapshotId);
+        CategoryView categoryView = categoryViewService.findBySnapshotId(snapshotId.toString());
+        return categoryViewMapper.toDto(categoryView);
+    }
+
+    @GetMapping("/categories/{originalId}/snapshots/{snapshotId}")
+    @ResponseStatus(HttpStatus.OK)
+    @Operation(
+            summary = "Get snapshot by originalId and snapshotId",
+            description = "Returns a specific snapshot of a category for a given originalId and snapshotId."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Category snapshot retrieved successfully",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = CategoryQueryResponse.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Snapshot not found",
+                    content = @Content(
+                            schema = @Schema(implementation = NotFoundResponse.class),
+                            mediaType = MediaType.APPLICATION_JSON_VALUE
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Internal server error",
+                    content = @Content(
+                            schema = @Schema(implementation = InternalServerErrorResponse.class),
+                            mediaType = MediaType.APPLICATION_JSON_VALUE
+                    )
+            )
+    })
+    public CategoryQueryResponse findByOriginalIdAndSnapshotId(
+            @Parameter(
+                    description = "Original UUID of the category",
+                    required = true,
+                    example = "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+                    schema = @Schema(type = "string", format = "uuid")
+            )
+            @PathVariable UUID originalId,
+            @Parameter(
+                    description = "Snapshot UUID of the category",
+                    required = true,
+                    example = "123e4567-e89b-12d3-a456-426614174000",
+                    schema = @Schema(type = "string", format = "uuid")
+            )
+            @PathVariable UUID snapshotId) {
+
+        log.info("findByOriginalIdAndSnapshotId called with originalId: {}, snapshotId: {}", originalId, snapshotId);
+        CategoryView categoryView = categoryViewService.findByOriginalIdAndSnapShotId(originalId.toString(), snapshotId.toString());
         return categoryViewMapper.toDto(categoryView);
     }
 }

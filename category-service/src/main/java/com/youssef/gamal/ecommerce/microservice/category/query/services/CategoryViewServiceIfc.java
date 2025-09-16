@@ -13,7 +13,7 @@ public interface CategoryViewServiceIfc {
 
     Page<CategoryView> findAllByOriginalId(String id, Pageable pageable);
 
-    CategoryView findByOriginalIdAndWithLastHistory(String originalId);
+    CategoryView findByOriginalIdAndWithLastSnapshot(String originalId);
     
     CategoryView findBySnapshotId(String snapshotId);
     
