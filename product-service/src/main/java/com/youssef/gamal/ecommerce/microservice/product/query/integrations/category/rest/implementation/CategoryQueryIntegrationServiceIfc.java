@@ -4,14 +4,16 @@ import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category
 
 import java.util.Set;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
 public interface CategoryQueryIntegrationServiceIfc {
+
     // ---------- QUERY ----------
-    CategoryQueryResponse findCategoryById(String id);
 
-    Page<CategoryQueryResponse> findCategoryHistoryById(String id, Pageable pageable);
+    // 1. Get snapshot by snapshotId
+    CategoryQueryResponse findBySnapshotId(String snapshotId);
 
-    Set<CategoryQueryResponse> findAllByIds(Set<String> categoryIds);
+    // 2. Get snapshot by originalId + snapshotId
+    CategoryQueryResponse findByOriginalIdAndSnapshotId(String originalId, String snapshotId);
+
+    // 3. Batch fetch by snapshot IDs
+    Set<CategoryQueryResponse> findAllBySnapshotIds(Set<String> snapshotIds);
 }

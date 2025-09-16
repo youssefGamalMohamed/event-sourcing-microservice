@@ -51,6 +51,7 @@ public class ProductEventConsumerServiceImpl {
         ProductEventType.fromValue(productEvent.getEventType())
                 .ifPresentOrElse(eventType -> {
                             ProductView view = productViewMapper.toProductView(productEvent);
+                            log.info("After convert to ProductView , product-view = {}", view);
                             productViewService.savedProductView(view, eventType);
                         },
                         () -> {

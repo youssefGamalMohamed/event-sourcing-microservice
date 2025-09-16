@@ -29,7 +29,7 @@ public interface ProductViewMapper {
     ProductView toProductView(ProductEvent productEvent);
 
     // ✅ ProductView → ProducQueryResponse
-    @Mapping(target = "catoegoriesViews", source = "categories")
+    @Mapping(target = "categoriesViews", source = "categories")
     ProducQueryResponse toDto(ProductView productView);
 
     // === Conversion methods ===

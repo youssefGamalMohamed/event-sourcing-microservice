@@ -42,8 +42,8 @@ public record ProductCommand(
         int quantity,
 
         @ArraySchema(
-                schema = @Schema(implementation = CategoryCommand.class),
-                arraySchema = @Schema(description = "The set of categoriesQueriesResponse this product belongs to.")
+                schema = @Schema(implementation = CategoryQueryResponse.class),
+                arraySchema = @Schema(description = "The set of Categories that this product belongs to.")
         )
         Set<CategoryQueryResponse> categoriesQueriesResponse,
         

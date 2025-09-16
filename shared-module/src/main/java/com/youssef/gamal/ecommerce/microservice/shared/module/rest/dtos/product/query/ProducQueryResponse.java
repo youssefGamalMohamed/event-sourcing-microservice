@@ -1,5 +1,6 @@
 package com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.query;
 
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -15,13 +16,14 @@ import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category
 @Schema(description = "Represents a product's view model.")
 public record ProducQueryResponse(
 
-        @Schema(description = "The unique identifier of the product.", example = "123e4567-e89b-12d3-a456-426614174000")
+        @Schema(description = "The unique identifier of the product.", 
+                example = "123e4567-e89b-12d3-a456-426614174000")
         @NotBlank(message = "Product ID cannot be blank.")
         String originalId,
 
-
-        @Schema(description = "The unique identifier of snapshot of the product.", example = "123e4567-e89b-12d3-a456-426614174000")
-        @NotBlank(message = "Product ID cannot be blank.")
+        @Schema(description = "The unique identifier of the snapshot of the product.", 
+                example = "123e4567-e89b-12d3-a456-426614174000")
+        @NotBlank(message = "Snapshot ID cannot be blank.")
         String snapshotId,
         
         @Schema(description = "The name of the product.", example = "Laptop")
@@ -29,7 +31,8 @@ public record ProducQueryResponse(
         @Size(min = 2, max = 100, message = "Product name must be between 2 and 100 characters.")
         String name,
 
-        @Schema(description = "A brief description of the product.", example = "A powerful and lightweight laptop for professional use.")
+        @Schema(description = "A brief description of the product.", 
+                example = "A powerful and lightweight laptop for professional use.")
         @Size(max = 500, message = "Product description cannot exceed 500 characters.")
         String description,
 
@@ -43,21 +46,27 @@ public record ProducQueryResponse(
         @Min(value = 0, message = "Product quantity cannot be negative.")
         int quantity,
 
-        Set<CategoryQueryResponse> catoegoriesViews,
+        @ArraySchema(arraySchema = @Schema(description = "The categories associated with the product."),
+                     schema = @Schema(implementation = CategoryQueryResponse.class))
+        Set<CategoryQueryResponse> categoriesViews,
         
-        @Schema(description = "The date and time the product was created.", example = "2025-09-06T10:00:00Z")
+        @Schema(description = "The date and time the product was created.", 
+                example = "2025-09-06T10:00:00Z")
         LocalDateTime creationDate,
 
         @Schema(description = "The user who created the product.", example = "JohnDoe")
         String createdBy,
 
-        @Schema(description = "The date and time the product was last modified.", example = "2025-09-06T11:30:00Z")
+        @Schema(description = "The date and time the product was last modified.", 
+                example = "2025-09-06T11:30:00Z")
         LocalDateTime lastModifiedDate,
 
         @Schema(description = "The user who last modified the product.", example = "JaneSmith")
         String lastModifiedBy,
 
-        @Schema(description = "The type of event associated with the product.", example = "CREATED")
+        @Schema(description = "The type of event associated with the product.", 
+                example = "CREATED")
         String eventType
+
 ) implements Serializable {
 }

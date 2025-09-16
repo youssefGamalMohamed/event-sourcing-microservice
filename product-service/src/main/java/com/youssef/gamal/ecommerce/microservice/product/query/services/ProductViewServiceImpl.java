@@ -53,10 +53,11 @@ public class ProductViewServiceImpl implements ProductViewService {
 
         productView.setEventType(eventType.toString()); // ✅ ensure DB consistency
                 
+       
+        Set<CategoryQueryResponse> categoryQueryResponses = productView.getCategories().stream()
+        		.map(categoryRef -> categoryIntegrationService.findByOriginalIdAndSnapshotId(categoryRef.getOriginalId(), categoryRef.getSnapshotId()))
+        		.collect(Collectors.toSet());
         
-        Set<String> categories_ids = productView.getCategories().stream().map(c -> c.getOriginalId()).collect(Collectors.toSet());
-        
-        Set<CategoryQueryResponse> categoryQueryResponses = categoryIntegrationService.findAllByIds(categories_ids);
         productView.setCategories(categoryViewMapper.toEntities(categoryQueryResponses));
         
         ProductView savedProductView = productViewRepo.save(productView);

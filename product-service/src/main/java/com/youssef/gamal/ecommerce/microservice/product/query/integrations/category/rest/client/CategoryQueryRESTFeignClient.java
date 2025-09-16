@@ -1,20 +1,26 @@
 package com.youssef.gamal.ecommerce.microservice.product.query.integrations.category.rest.client;
 
-import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryQueryResponse;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryQueryResponse;
 
 @FeignClient(value = "category-service", path = "/ecommerce/api/v1")
 public interface CategoryQueryRESTFeignClient {
 
     // ---------- QUERY SIDE ----------
-    @GetMapping("/categories/{snapshotId}")
-    ResponseEntity<CategoryQueryResponse> findByOriginalIdAndWithLastHistory(@PathVariable(name = "snapshotId") String id);
 
-    @GetMapping("/categories/{snapshotId}/history")
-    ResponseEntity<Page<CategoryQueryResponse>> findAllHistoryByOriginalId(@PathVariable(name = "snapshotId") String id, Pageable pageable);
+    // 1. Get snapshot by snapshotId (query param)
+    @GetMapping(value = "/categories", params = "snapshotId")
+    ResponseEntity<CategoryQueryResponse> findBySnapshotId(
+            @RequestParam("snapshotId") String snapshotId);
+
+    // 2. Get snapshot by originalId + snapshotId
+    @GetMapping("/categories/{originalId}/snapshots/{snapshotId}")
+    ResponseEntity<CategoryQueryResponse> findByOriginalIdAndSnapshotId(
+            @PathVariable("originalId") String originalId,
+            @PathVariable("snapshotId") String snapshotId);
 }
