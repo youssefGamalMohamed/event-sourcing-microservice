@@ -1,9 +1,10 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.auditing;
 
-import lombok.AllArgsConstructor;
+import java.util.Optional;
+
 import org.springframework.data.domain.AuditorAware;
 
-import java.util.Optional;
+import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class SecurityAuditorAware implements AuditorAware<String> {

@@ -1,17 +1,19 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.services;
 
+import java.util.NoSuchElementException;
+
+import org.springframework.stereotype.Service;
+
 import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
-import com.youssef.gamal.ecommerce.microservice.category.commands.events.producers.CategoryEventProducerIfc;
+import com.youssef.gamal.ecommerce.microservice.category.commands.events.producers.CategoryCommandEventProducerIfc;
 import com.youssef.gamal.ecommerce.microservice.category.commands.mappers.CategoryMapper;
 import com.youssef.gamal.ecommerce.microservice.category.commands.repos.CategoryRepo;
 import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
 import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.AlreadyExistException;
+
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
-import java.util.NoSuchElementException;
 
 @Service
 @AllArgsConstructor
@@ -20,7 +22,7 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
 
     private final CategoryRepo categoryRepo;
     private final CategoryMapper categoryMapper;
-    private final CategoryEventProducerIfc categoryEventProducerIfc;
+    private final CategoryCommandEventProducerIfc categoryCommandEventProducerIfc;
 
     @Override
     @Transactional(Transactional.TxType.REQUIRED) // default
@@ -38,23 +40,23 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
         log.info("Category Saved Successfully: newCategory={}", savedCategory);
 
         // publish event to kafka
-        categoryEventProducerIfc.publish(categoryMapper.toEvent(savedCategory, CategoryEventType.CREATED.toString()));
+        categoryCommandEventProducerIfc.publish(categoryMapper.toEvent(savedCategory, CategoryEventType.CREATED.toString()));
         return savedCategory;
     }
 
     @Override
     @Transactional(Transactional.TxType.REQUIRED) // default
     public Category update(String id, Category updatedCategory) {
-        log.info("CategoryServiceImpl -> update(id={}, updatedCategory={})", id, updatedCategory);
+        log.info("CategoryServiceImpl -> update(snapshotId={}, updatedCategory={})", id, updatedCategory);
 
         Category existingCategory = categoryRepo.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("Category not found with id: " + id));
+                .orElseThrow(() -> new NoSuchElementException("Category not found with snapshotId: " + id));
 
         // ensure new name is unique
         categoryRepo.findByName(updatedCategory.getName())
                 .filter(found -> !found.getId().equals(id))
                 .ifPresent(found -> {
-                    log.warn("CategoryServiceImpl -> update(name: {}, id: {}) already exists in another category",
+                    log.warn("CategoryServiceImpl -> update(name: {}, snapshotId: {}) already exists in another category",
                             found.getName(), found.getId());
                     throw new AlreadyExistException(updatedCategory.getName());
                 });
@@ -66,7 +68,7 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
         log.info("Category Updated Successfully: {}", savedCategory);
 
         // publish event to kafka
-        categoryEventProducerIfc.publish(categoryMapper.toEvent(savedCategory, CategoryEventType.UPDATED.toString()));
+        categoryCommandEventProducerIfc.publish(categoryMapper.toEvent(savedCategory, CategoryEventType.UPDATED.toString()));
         return savedCategory;
     }
 
@@ -77,12 +79,12 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
         log.info("CategoryServiceImpl -> delete({})", id);
 
         Category category = categoryRepo.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("Category not found with id: " + id));
+                .orElseThrow(() -> new NoSuchElementException("Category not found with snapshotId: " + id));
 
         // delete by reference
         categoryRepo.delete(category);
 
         // publish event to kafka
-        categoryEventProducerIfc.publish(categoryMapper.toEvent(category, CategoryEventType.DELETED.toString()));
+        categoryCommandEventProducerIfc.publish(categoryMapper.toEvent(category, CategoryEventType.DELETED.toString()));
     }
 }

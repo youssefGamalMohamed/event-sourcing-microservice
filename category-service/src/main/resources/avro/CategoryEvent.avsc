@@ -4,7 +4,11 @@
   "namespace": "com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events",
   "fields": [
     {
-      "name": "id",
+      "name": "original_id",
+      "type": "string"
+    },
+    {
+      "name": "snapshot_id",
       "type": "string"
     },
     {

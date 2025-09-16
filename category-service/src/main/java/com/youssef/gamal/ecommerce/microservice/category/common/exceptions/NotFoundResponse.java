@@ -1,12 +1,14 @@
 package com.youssef.gamal.ecommerce.microservice.category.common.exceptions;
 
+import org.springframework.http.HttpStatus;
+
 import com.youssef.gamal.ecommerce.microservice.category.common.constants.ServiceErrorCodesConstants;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
-import org.springframework.http.HttpStatus;
 
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder

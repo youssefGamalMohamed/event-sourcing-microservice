@@ -1,20 +1,7 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.controllers;
 
-import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.InternalServerErrorResponse;
-import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.NotFoundResponse;
-import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
-import com.youssef.gamal.ecommerce.microservice.category.query.mappers.CategoryViewMapper;
-import com.youssef.gamal.ecommerce.microservice.category.query.services.CategoryViewServiceIfc;
-import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryViewDto;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import java.util.UUID;
+
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,7 +12,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
+import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.InternalServerErrorResponse;
+import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.NotFoundResponse;
+import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
+import com.youssef.gamal.ecommerce.microservice.category.query.mappers.CategoryViewMapper;
+import com.youssef.gamal.ecommerce.microservice.category.query.services.CategoryViewServiceIfc;
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryQueryResponse;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Slf4j
@@ -36,7 +38,7 @@ public class CategoryViewController {
     private final CategoryViewServiceIfc categoryViewService;
     private final CategoryViewMapper categoryViewMapper;
 
-    @GetMapping("/categories/{id}/history")
+    @GetMapping("/categories/{originalId}/history")
     @ResponseStatus(HttpStatus.OK)
     @Operation(
             summary = "Get all historical versions of a category",
@@ -60,22 +62,22 @@ public class CategoryViewController {
                     )
             )
     })
-    public Page<CategoryViewDto> findAllHistoryByOriginalId(
+    public Page<CategoryQueryResponse> findAllHistoryByOriginalId(
             @Parameter(
                     description = "Original UUID of the category",
                     required = true,
                     example = "a1b2c3d4-e5f6-7890-1234-567890abcdef",
                     schema = @Schema(type = "string", format = "uuid")
             )
-            @PathVariable("id") UUID id,
+            @PathVariable UUID originalId,
             @ParameterObject Pageable pageable) {
 
-        log.info("findAllHistoryByOriginalId called with id: {}, pageable: {}", id, pageable);
-        Page<CategoryView> categoryViewPage = categoryViewService.findAllByOriginalId(id.toString(), pageable);
+        log.info("findAllHistoryByOriginalId called with originalId: {}, pageable: {}", originalId, pageable);
+        Page<CategoryView> categoryViewPage = categoryViewService.findAllByOriginalId(originalId.toString(), pageable);
         return categoryViewPage.map(categoryViewMapper::toDto);
     }
 
-    @GetMapping("/categories/{id}")
+    @GetMapping("/categories/{originalId}")
     @ResponseStatus(HttpStatus.OK)
     @Operation(
             summary = "Get the latest version of a category",
@@ -87,7 +89,7 @@ public class CategoryViewController {
                     description = "Category retrieved successfully",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = CategoryViewDto.class)
+                            schema = @Schema(implementation = CategoryQueryResponse.class)
                     )
             ),
             @ApiResponse(
@@ -107,17 +109,17 @@ public class CategoryViewController {
                     )
             )
     })
-    public CategoryViewDto findByOriginalIdAndWithLastHistory(
+    public CategoryQueryResponse findByOriginalIdAndWithLastHistory(
             @Parameter(
                     description = "Original UUID of the category",
                     required = true,
                     example = "a1b2c3d4-e5f6-7890-1234-567890abcdef",
                     schema = @Schema(type = "string", format = "uuid")
             )
-            @PathVariable("id") UUID id) {
+            @PathVariable UUID originalId) {
 
-        log.info("findByOriginalIdAndWithLastHistory called with id: {}", id);
-        CategoryView categoryView = categoryViewService.findByOriginalIdAndWithLastHistory(id.toString());
+        log.info("findByOriginalIdAndWithLastHistory called with originalId: {}", originalId);
+        CategoryView categoryView = categoryViewService.findByOriginalIdAndWithLastHistory(originalId.toString());
         return categoryViewMapper.toDto(categoryView);
     }
 }

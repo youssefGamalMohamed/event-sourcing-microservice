@@ -9,14 +9,14 @@ import java.time.LocalDateTime;
  * DTO for transferring category view data.
  */
 @Schema(
-        name = "CategoryViewDto",
+        name = "CategoryQueryResponse",
         description = "Represents the category view data returned by query endpoints."
 )
-public record CategoryViewDto(
+public record CategoryQueryResponse(
 
         @Schema(description = "Unique identifier of the category (UUID or database ID)",
-                example = "68bb0f685176c61054f6e497")
-        String id,
+                example = "e96ec223-6318-43de-bfb6-7db7986f1216")
+        String snapshotId,
 
         @Schema(description = "Original ID used for correlation with other services or systems",
                 example = "e96ec223-6318-43de-bfb6-7db7986f1216")

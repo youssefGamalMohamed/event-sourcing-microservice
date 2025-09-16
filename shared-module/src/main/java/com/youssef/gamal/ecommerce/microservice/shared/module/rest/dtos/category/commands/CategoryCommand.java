@@ -8,10 +8,10 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Schema(
-        name = "CategoryCommandDto",
+        name = "CategoryCommand",
         description = "DTO representing a category for create/update operations"
 )
-public record CategoryCommandDto(
+public record CategoryCommand(
 
         @Schema(
                 description = "Unique identifier of the category",

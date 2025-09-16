@@ -43,9 +43,10 @@ public class CategoryEventConsumerServiceImpl {
                             categoryViewServiceIfc.saveCategoryView(view, eventType);
                         },
                         () -> {
-                            log.error("❌ Invalid event type received: {} , id: {} | key={} | partition={} | offset={}",
+                            log.error("❌ Invalid event type received: {} , original_id: {} | snapshot_id = {} | key={} | partition={} | offset={}",
                                     categoryEvent.getEventType(),
-                                    categoryEvent.getId(),
+                                    categoryEvent.getOriginalId(),
+                                    categoryEvent.getSnapshotId(),
                                     record.key(),
                                     record.partition(),
                                     record.offset()

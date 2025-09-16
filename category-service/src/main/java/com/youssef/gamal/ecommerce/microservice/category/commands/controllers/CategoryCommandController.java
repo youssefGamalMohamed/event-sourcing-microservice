@@ -1,5 +1,17 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.controllers;
 
+import java.net.URI;
+
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
 import com.youssef.gamal.ecommerce.microservice.category.commands.mappers.CategoryMapper;
 import com.youssef.gamal.ecommerce.microservice.category.commands.services.CategoryServiceIfc;
@@ -7,7 +19,8 @@ import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.Confl
 import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.InternalServerErrorResponse;
 import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.NotFoundResponse;
 import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.ValidationErrorResponse;
-import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.commands.CategoryCommandDto;
+import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.commands.CategoryCommand;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.headers.Header;
@@ -19,19 +32,13 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
-
-import java.net.URI;
 
 @RestController
 @RequiredArgsConstructor
 @Slf4j
 @Validated
 @Tag(name = "Category Management", description = "Operations related to managing categories")
-public class CategoryController {
+public class CategoryCommandController {
 
     private final CategoryServiceIfc categoryService;
     private final CategoryMapper categoryMapper;
@@ -58,7 +65,7 @@ public class CategoryController {
                             )
                     },
                     content = @Content(
-                            schema = @Schema(implementation = CategoryCommandDto.class),
+                            schema = @Schema(implementation = CategoryCommand.class),
                             mediaType = MediaType.APPLICATION_JSON_VALUE
                     )
             ),
@@ -87,26 +94,26 @@ public class CategoryController {
                     )
             )
     })
-    public ResponseEntity<CategoryCommandDto> save(
+    public ResponseEntity<CategoryCommand> save(
             @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "Category data to create. Only 'name' field is required.",
                     required = true,
                     content = @Content(
-                            schema = @Schema(implementation = CategoryCommandDto.class)
+                            schema = @Schema(implementation = CategoryCommand.class)
                     )
             )
-            @Valid @RequestBody CategoryCommandDto categoryCommandDto) {
+            @Valid @RequestBody CategoryCommand categoryCommand) {
 
-        log.info("CategoryController -> save() called with categoryDto={}", categoryCommandDto);
+        log.info("CategoryCommandController -> save() called with categoryDto={}", categoryCommand);
 
-        Category category = categoryMapper.toEntity(categoryCommandDto);
+        Category category = categoryMapper.toEntity(categoryCommand);
         Category savedCategory = categoryService.save(category);
-        CategoryCommandDto savedDto = categoryMapper.toDto(savedCategory);
+        CategoryCommand savedDto = categoryMapper.toDto(savedCategory);
 
         // Build URI for Location header
         URI location = URI.create("/categories/" + savedCategory.getId());
 
-        log.info("CategoryController -> save() completed successfully with result={}, location={}",
+        log.info("CategoryCommandController -> save() completed successfully with result={}, location={}",
                 savedDto, location);
 
         return ResponseEntity
@@ -124,7 +131,7 @@ public class CategoryController {
                     responseCode = "200",
                     description = "Category updated successfully",
                     content = @Content(
-                            schema = @Schema(implementation = CategoryCommandDto.class),
+                            schema = @Schema(implementation = CategoryCommand.class),
                             mediaType = MediaType.APPLICATION_JSON_VALUE
                     )
             ),
@@ -163,7 +170,7 @@ public class CategoryController {
     })
 
 
-    public ResponseEntity<CategoryCommandDto> update(
+    public ResponseEntity<CategoryCommand> update(
             @Parameter(
                     description = "Unique identifier of the category to update",
                     required = true,
@@ -175,17 +182,17 @@ public class CategoryController {
                     description = "Updated category data. Only 'name' field should be provided for update.",
                     required = true,
                     content = @Content(
-                            schema = @Schema(implementation = CategoryCommandDto.class)
+                            schema = @Schema(implementation = CategoryCommand.class)
                     )
             )
-            @Valid @RequestBody CategoryCommandDto categoryDto) {
-        log.info("CategoryController -> update() called with id={}, categoryDto={}", id, categoryDto);
+            @Valid @RequestBody CategoryCommand categoryDto) {
+        log.info("CategoryCommandController -> update() called with snapshotId={}, categoryDto={}", id, categoryDto);
 
         Category updatedCategory = categoryMapper.toEntity(categoryDto);
         Category savedCategory = categoryService.update(id, updatedCategory);
-        CategoryCommandDto savedDto = categoryMapper.toDto(savedCategory);
+        CategoryCommand savedDto = categoryMapper.toDto(savedCategory);
 
-        log.info("CategoryController -> update() completed successfully with result={}", savedDto);
+        log.info("CategoryCommandController -> update() completed successfully with result={}", savedDto);
         return ResponseEntity.ok(savedDto);
     }
 
@@ -226,11 +233,11 @@ public class CategoryController {
                     schema = @Schema(type = "string", format = "uuid")
             )
             @PathVariable(name = "id") String id) {
-        log.info("CategoryController -> delete() called with id={}", id);
+        log.info("CategoryCommandController -> delete() called with snapshotId={}", id);
 
         categoryService.delete(id);
 
-        log.info("CategoryController -> delete() completed successfully for id={}", id);
+        log.info("CategoryCommandController -> delete() completed successfully for snapshotId={}", id);
         return ResponseEntity.noContent().build();
     }
 

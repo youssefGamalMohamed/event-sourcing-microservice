@@ -1,18 +1,24 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.services;
 
-import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
-import com.youssef.gamal.ecommerce.microservice.category.query.configs.CachingConfigs;
-import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
-import com.youssef.gamal.ecommerce.microservice.category.query.repos.CategoryViewRepo;
-import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.cache.annotation.*;
+import java.util.NoSuchElementException;
+
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.NoSuchElementException;
+import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
+import com.youssef.gamal.ecommerce.microservice.category.query.configs.CachingConfigs;
+import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
+import com.youssef.gamal.ecommerce.microservice.category.query.repos.CategoryViewRepo;
+
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
@@ -25,15 +31,20 @@ public class CategoryViewServiceImpl implements CategoryViewServiceIfc {
     @Override
     @Transactional
     @Caching(
-            put = {
-                    @CachePut(
-                            key = "#result.originalId",
-                            condition = "#eventType.toString() == 'CREATED' || #eventType.toString() == 'UPDATED'"
-                    )
-            },
-            evict = {
-                    @CacheEvict(key = "#result.originalId", condition = "#eventType.toString() == 'DELETED'")
-            }
+        put = {
+            // Cache by originalId (readable key, no static prefix)
+            @CachePut(
+                key = "'originalId=' + #result.originalId",
+                condition = "#eventType.toString() == 'CREATED' || #eventType.toString() == 'UPDATED'"
+            )
+        },
+        evict = {
+            // Evict by originalId if deleted (readable key, no static prefix)
+            @CacheEvict(
+                key = "'originalId=' + #result.originalId",
+                condition = "#eventType.toString() == 'DELETED'"
+            )
+        }
     )
     public CategoryView saveCategoryView(CategoryView categoryView, CategoryEventType eventType) {
         log.info("saveCategoryView called with categoryView: {} , eventType: {}", categoryView, eventType);
@@ -41,8 +52,10 @@ public class CategoryViewServiceImpl implements CategoryViewServiceIfc {
         categoryView.setEventType(eventType.toString()); // ✅ ensure DB consistency
         CategoryView savedCategoryView = categoryRepo.save(categoryView);
 
-        log.info("[CATEGORY_VIEW:SAVE] id={}, originalId={}, eventType={}", savedCategoryView.getId(), savedCategoryView.getOriginalId(), eventType);
-
+        log.info("[CATEGORY_VIEW:SAVE] snapshotId={}, originalId={}, eventType={}", 
+                 savedCategoryView.getSnapshotId(), 
+                 savedCategoryView.getOriginalId(), 
+                 eventType);
         return savedCategoryView;
     }
 
@@ -55,7 +68,10 @@ public class CategoryViewServiceImpl implements CategoryViewServiceIfc {
     }
 
     @Override
-    @Cacheable(key = "#originalId", unless = "#result == null") // cache element when element != null
+    @Cacheable(
+        key = "'originalId=' + #originalId",   // ✅ only dynamic key
+        unless = "#result == null"
+    )
     public CategoryView findByOriginalIdAndWithLastHistory(String originalId) {
         log.info("findByOriginalIdAndWithLastHistory called with originalId: {}", originalId);
 
@@ -68,7 +84,33 @@ public class CategoryViewServiceImpl implements CategoryViewServiceIfc {
             throw new NoSuchElementException("Category view not found with originalId: " + originalId);
         }
 
-        log.info("CategoryView found with originalId: {}, id: {}", originalId, categoryView.getId());
+        log.info("CategoryView found with originalId: {}, snapshotId: {}", originalId, categoryView.getSnapshotId());
         return categoryView;
+    }
+
+    @Override
+    @Cacheable(
+        key = "'snapshotId=' + #snapshotId",
+        unless = "#result == null"
+    )
+    public CategoryView findBySnapshotId(String snapshotId) {
+        log.info("findBySnapshotId called with snapshotId: {}", snapshotId);
+
+        return categoryRepo.findBySnapshotId(snapshotId)
+                .orElseThrow(() -> new NoSuchElementException("Category view not found with snapshotId: " + snapshotId));
+    }
+
+    @Override
+    @Cacheable(
+        key = "'originalId=' + #originalId + ':snapshotId=' + #snapshotId",
+        unless = "#result == null"
+    )
+    public CategoryView findByOriginalIdAndSnapShotId(String originalId, String snapshotId) {
+        log.info("findByOriginalIdAndSnapShotId called with originalId: {}, snapshotId: {}", originalId, snapshotId);
+
+        return categoryRepo.findByOriginalIdAndSnapshotId(originalId, snapshotId)
+                .orElseThrow(() -> new NoSuchElementException(
+                    "Category view not found with originalId: " + originalId + " and snapshotId: " + snapshotId
+                ));
     }
 }

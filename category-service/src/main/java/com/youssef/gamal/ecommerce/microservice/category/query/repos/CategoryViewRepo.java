@@ -1,12 +1,14 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.repos;
 
-import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
+import java.util.Optional;
+import java.util.UUID;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
 
 @Repository
 public interface CategoryViewRepo extends MongoRepository<CategoryView, String> {
@@ -14,4 +16,8 @@ public interface CategoryViewRepo extends MongoRepository<CategoryView, String> 
     Page<CategoryView> findAllByOriginalId(String originalId, Pageable pageable);
 
     Optional<CategoryView> findFirstByOriginalIdOrderByLastModifiedDateDesc(String originalId);
+
+    Optional<CategoryView> findBySnapshotId(String snapshotId);
+
+    Optional<CategoryView> findByOriginalIdAndSnapshotId(String originalId, String snapshotId);
 }

@@ -2,7 +2,7 @@ package com.youssef.gamal.ecommerce.microservice.category.commands.events.produc
 
 import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
 
-public interface CategoryEventProducerIfc {
+public interface CategoryCommandEventProducerIfc {
 
     void publish(CategoryEvent productEvent);
 }

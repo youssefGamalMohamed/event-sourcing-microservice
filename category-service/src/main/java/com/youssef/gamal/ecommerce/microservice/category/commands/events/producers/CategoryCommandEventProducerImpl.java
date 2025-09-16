@@ -1,21 +1,22 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.events.producers;
 
-import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
+import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
-import brave.Tracer;
-import io.micrometer.observation.annotation.Observed;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
+import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
+
+import brave.Tracer;
+import io.micrometer.observation.annotation.Observed;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class KafkaCategoryEventProducerImpl implements CategoryEventProducerIfc {
+public class CategoryCommandEventProducerImpl implements CategoryCommandEventProducerIfc {
 
     @Value("${messaging-queues.kafka.topics.categories.name}")
     private String categoriesTopic;
@@ -24,7 +25,7 @@ public class KafkaCategoryEventProducerImpl implements CategoryEventProducerIfc 
     
     private final KafkaTemplate<String, CategoryEvent> kafkaTemplate;
 
-    public KafkaCategoryEventProducerImpl(KafkaTemplate<String, CategoryEvent> kafkaTemplate, Tracer tracer) {
+    public CategoryCommandEventProducerImpl(KafkaTemplate<String, CategoryEvent> kafkaTemplate, Tracer tracer) {
         this.tracer = tracer;
 		this.kafkaTemplate = kafkaTemplate;
     }
