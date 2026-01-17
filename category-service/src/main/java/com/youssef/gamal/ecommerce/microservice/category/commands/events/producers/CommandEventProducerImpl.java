@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -28,6 +29,7 @@ public class CommandEventProducerImpl implements CommandEventProducerIfc {
 
     @Override
     @Observed(name = "kafka.produce.category", contextualName = "publish-category-event")
+    @Retryable()
     public void publish(CategoryEvent categoryEvent) {
         log.info("📤 Publishing category event: {}", categoryEvent);
 
