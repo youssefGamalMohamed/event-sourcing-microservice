@@ -7,6 +7,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.youssef.gamal.ecommerce.microservice.product.command.entities.Category;
 import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
 import com.youssef.gamal.ecommerce.microservice.product.command.events.producers.ProductEventProducerIfc;
 import com.youssef.gamal.ecommerce.microservice.product.command.mappers.ProductMapper;
@@ -38,7 +39,12 @@ public class ProductServiceImpl implements ProductServiceIfc {
         if (existingProduct.isPresent()) {
             throw new AlreadyExistException(product.getName());
         }
-
+        
+        // SIMPLE: Just ensure bidirectional relationship before saving
+        if (product.getCategories() != null) {
+            product.getCategories().forEach(category -> category.setProduct(product));
+        }
+        
         Product newProduct = productRepo.save(product);
         log.info("Product created with snapshotId = {}", newProduct.getId());
 

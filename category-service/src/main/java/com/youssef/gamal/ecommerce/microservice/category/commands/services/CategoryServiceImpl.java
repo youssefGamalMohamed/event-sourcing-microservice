@@ -1,19 +1,17 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.services;
 
-import java.util.NoSuchElementException;
-
-import org.springframework.stereotype.Service;
-
 import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
-import com.youssef.gamal.ecommerce.microservice.category.commands.events.producers.CategoryCommandEventProducerIfc;
+import com.youssef.gamal.ecommerce.microservice.category.commands.events.producers.CommandEventProducerIfc;
 import com.youssef.gamal.ecommerce.microservice.category.commands.mappers.CategoryMapper;
 import com.youssef.gamal.ecommerce.microservice.category.commands.repos.CategoryRepo;
-import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
-import com.youssef.gamal.ecommerce.microservice.category.common.exceptions.AlreadyExistException;
-
+import com.youssef.gamal.ecommerce.microservice.category.shared.enums.CategoryEventType;
+import com.youssef.gamal.ecommerce.microservice.category.shared.exceptions.AlreadyExistException;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.NoSuchElementException;
 
 @Service
 @AllArgsConstructor
@@ -22,7 +20,7 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
 
     private final CategoryRepo categoryRepo;
     private final CategoryMapper categoryMapper;
-    private final CategoryCommandEventProducerIfc categoryCommandEventProducerIfc;
+    private final CommandEventProducerIfc categoryCommandEventProducerIfc;
 
     @Override
     @Transactional(Transactional.TxType.REQUIRED) // default
@@ -39,7 +37,7 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
         Category savedCategory = categoryRepo.save(category);
         log.info("Category Saved Successfully: newCategory={}", savedCategory);
 
-        // publish event to kafka
+        // publish event to Kafka
         categoryCommandEventProducerIfc.publish(categoryMapper.toEvent(savedCategory, CategoryEventType.CREATED.toString()));
         return savedCategory;
     }
@@ -67,7 +65,7 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
         Category savedCategory = categoryRepo.save(existingCategory);
         log.info("Category Updated Successfully: {}", savedCategory);
 
-        // publish event to kafka
+        // publish event to Kafka
         categoryCommandEventProducerIfc.publish(categoryMapper.toEvent(savedCategory, CategoryEventType.UPDATED.toString()));
         return savedCategory;
     }
@@ -84,7 +82,7 @@ public class CategoryServiceImpl implements CategoryServiceIfc {
         // delete by reference
         categoryRepo.delete(category);
 
-        // publish event to kafka
+        // publish event to Kafka
         categoryCommandEventProducerIfc.publish(categoryMapper.toEvent(category, CategoryEventType.DELETED.toString()));
     }
 }

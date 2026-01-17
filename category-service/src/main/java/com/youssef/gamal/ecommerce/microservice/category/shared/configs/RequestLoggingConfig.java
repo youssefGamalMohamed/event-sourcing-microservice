@@ -1,4 +1,4 @@
-package com.youssef.gamal.ecommerce.microservice.category.common.configs;
+package com.youssef.gamal.ecommerce.microservice.category.shared.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

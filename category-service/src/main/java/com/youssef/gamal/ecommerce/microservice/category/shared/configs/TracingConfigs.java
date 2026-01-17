@@ -1,9 +1,8 @@
-package com.youssef.gamal.ecommerce.microservice.category.common.configs;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+package com.youssef.gamal.ecommerce.microservice.category.shared.configs;
 
 import feign.RequestInterceptor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class TracingConfigs {

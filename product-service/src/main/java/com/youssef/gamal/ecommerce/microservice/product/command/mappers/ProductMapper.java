@@ -12,7 +12,6 @@ import org.mapstruct.factory.Mappers;
 
 import com.youssef.gamal.ecommerce.microservice.product.command.entities.Product;
 import com.youssef.gamal.ecommerce.microservice.product.infrastructure.kafka.events.ProductEvent;
-import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.commands.CategoryCommand;
 import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryQueryResponse;
 import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.product.commands.ProductCommand;
 

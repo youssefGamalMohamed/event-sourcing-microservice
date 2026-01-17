@@ -1,17 +1,15 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.events.consumers;
 
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.stereotype.Service;
-
-import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
 import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
 import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
 import com.youssef.gamal.ecommerce.microservice.category.query.mappers.CategoryViewMapper;
 import com.youssef.gamal.ecommerce.microservice.category.query.services.CategoryViewServiceIfc;
-
+import com.youssef.gamal.ecommerce.microservice.category.shared.enums.CategoryEventType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j

@@ -1,16 +1,16 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.mappers;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-
+import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
+import com.youssef.gamal.ecommerce.microservice.category.commands.models.CreateCommand;
+import com.youssef.gamal.ecommerce.microservice.category.commands.models.UpdateCommand;
+import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
-import com.youssef.gamal.ecommerce.microservice.category.commands.entities.Category;
-import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
-import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.commands.CategoryCommand;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 
 @Mapper(componentModel = "spring")
@@ -21,11 +21,22 @@ public interface CategoryMapper {
     @Mapping(target = "createdBy", ignore = true)
     @Mapping(target = "lastModifiedDate", ignore = true)
     @Mapping(target = "lastModifiedBy", ignore = true)
-    Category toEntity(CategoryCommand categoryCommand);
+	@Mapping(target = "version", ignore = true)
+    Category toEntity(CreateCommand categoryCommand);
 
+	@Mapping(target = "id", ignore = true)
+    @Mapping(target = "creationDate", ignore = true)
+    @Mapping(target = "createdBy", ignore = true)
+    @Mapping(target = "lastModifiedDate", ignore = true)
+    @Mapping(target = "lastModifiedBy", ignore = true)
+	@Mapping(target = "version", ignore = true)
+    Category toEntity(UpdateCommand categoryCommand);
+	
 
-    CategoryCommand toDto(Category category);
-
+    CreateCommand toCreateCommandResponse(Category category);
+   
+    UpdateCommand toUpdateCommand(Category category);
+   
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "creationDate", ignore = true)
     @Mapping(target = "createdBy", ignore = true)

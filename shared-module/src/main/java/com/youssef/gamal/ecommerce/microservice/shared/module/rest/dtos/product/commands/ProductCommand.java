@@ -11,7 +11,6 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.commands.CategoryCommand;
 import com.youssef.gamal.ecommerce.microservice.shared.module.rest.dtos.category.query.CategoryQueryResponse;
 
 @Schema(description = "Represents the data transfer object for creating and updating a product.")

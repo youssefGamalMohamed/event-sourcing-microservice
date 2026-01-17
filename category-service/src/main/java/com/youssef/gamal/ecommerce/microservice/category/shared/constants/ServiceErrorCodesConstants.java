@@ -1,4 +1,4 @@
-package com.youssef.gamal.ecommerce.microservice.category.common.constants;
+package com.youssef.gamal.ecommerce.microservice.category.shared.constants;
 
 public class ServiceErrorCodesConstants {
 

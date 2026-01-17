@@ -1,22 +1,22 @@
 package com.youssef.gamal.ecommerce.microservice.category.commands.events.producers;
 
-import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
-
+import brave.Tracer;
+import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
+import io.micrometer.observation.annotation.Observed;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 
-import com.youssef.gamal.ecommerce.microservice.category.infrastructure.kafka.events.CategoryEvent;
-
-import brave.Tracer;
-import io.micrometer.observation.annotation.Observed;
-import lombok.extern.slf4j.Slf4j;
+import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 @Slf4j
 @Service
-public class CategoryCommandEventProducerImpl implements CategoryCommandEventProducerIfc {
+@RequiredArgsConstructor
+public class CommandEventProducerImpl implements CommandEventProducerIfc {
 
     @Value("${messaging-queues.kafka.topics.categories.name}")
     private String categoriesTopic;
@@ -25,10 +25,6 @@ public class CategoryCommandEventProducerImpl implements CategoryCommandEventPro
     
     private final KafkaTemplate<String, CategoryEvent> kafkaTemplate;
 
-    public CategoryCommandEventProducerImpl(KafkaTemplate<String, CategoryEvent> kafkaTemplate, Tracer tracer) {
-        this.tracer = tracer;
-		this.kafkaTemplate = kafkaTemplate;
-    }
 
     @Override
     @Observed(name = "kafka.produce.category", contextualName = "publish-category-event")
@@ -40,7 +36,8 @@ public class CategoryCommandEventProducerImpl implements CategoryCommandEventPro
         log.info("Event Message Key = {}", messageKey);
         
         // add to distributed tracing current span for pushing event with the message-key
-        tracer.currentSpan().annotate("Push Event to Kafka in " + categoriesTopic + " Topic With Message-Key = " + messageKey);
+        tracer.currentSpan()
+        	  .annotate("Push Event to Kafka in " + categoriesTopic + " Topic With Message-Key = " + messageKey);
         
         CompletableFuture<SendResult<String, CategoryEvent>> future =
                 kafkaTemplate.send(categoriesTopic, messageKey, categoryEvent);

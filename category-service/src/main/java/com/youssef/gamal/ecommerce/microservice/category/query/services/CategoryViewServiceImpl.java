@@ -1,24 +1,18 @@
 package com.youssef.gamal.ecommerce.microservice.category.query.services;
 
-import java.util.NoSuchElementException;
-
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.Caching;
+import com.youssef.gamal.ecommerce.microservice.category.query.configs.CachingConfigs;
+import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
+import com.youssef.gamal.ecommerce.microservice.category.query.repos.CategoryViewRepo;
+import com.youssef.gamal.ecommerce.microservice.category.shared.enums.CategoryEventType;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.youssef.gamal.ecommerce.microservice.category.common.enums.CategoryEventType;
-import com.youssef.gamal.ecommerce.microservice.category.query.configs.CachingConfigs;
-import com.youssef.gamal.ecommerce.microservice.category.query.entities.CategoryView;
-import com.youssef.gamal.ecommerce.microservice.category.query.repos.CategoryViewRepo;
-
-import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
