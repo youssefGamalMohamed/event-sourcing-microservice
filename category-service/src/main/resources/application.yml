@@ -20,7 +20,7 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         hbm2ddl:
           create_namespaces: true
-        default_schema: category_schema   # 👈 ensure schema isolation
+        default_schema: category_schema
 
   # --- Mongo DB Query DB --------
   data:
@@ -40,44 +40,65 @@ spring:
   cache:
     type: redis
 
-  # --- Kafka Configuration (merged producer + consumer) ---
+  # --- Kafka Configuration ---
   kafka:
     bootstrap-servers: "localhost:9092"
 
-    # Producer (from command service)
+    properties:
+      schema.registry.url: "http://localhost:8081"
+
     producer:
       key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
       value-serializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
+      retries: 1  # ✅ CHANGED FROM 0 to 1
+      acks: all
       properties:
-        schema:
-          registry:
-            url: "http://localhost:8081"
+        max.in.flight.requests.per.connection: 5
+        enable.idempotence: true
+        compression.type: snappy
+        # ✅ Add these for fast failure
+        retry.backoff.ms: 100
+        delivery.timeout.ms: 5000
+        request.timeout.ms: 5000
 
-    # Consumer (from query service)
     consumer:
       group-id: "category-query-consumer-group"
-      keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
-      valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
+      key-deserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+      value-deserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
+      auto-offset-reset: earliest
+      enable-auto-commit: true
       properties:
-        schema:
-          registry:
-            url: "http://localhost:8081"
-        specific:
-          avro:
-            reader: "true"
+        specific.avro.reader: "true"
 
-# Messaging Queues ( Kafka , RabbitMQ , etc )
+# Messaging Queues
 messaging-queues:
   kafka:
     topics:
       categories:
         name: categories-topic
-        partitions: 1
+        partitions: 3  # ✅ Consider more partitions for scalability
         replicas: 1
       products:
         name: products-topic
-        partitions: 1
+        partitions: 3
         replicas: 1
+
+# ✅ Kafka Producer Timeout
+kafka:
+  producer:
+    timeout-seconds: 10
+
+# ----- Retry configuration -----
+retry:
+  kafka:
+    max-attempts: 3
+    initial-interval: 2000  # 2 seconds
+    multiplier: 2.0
+    max-interval: 10000  # 10 seconds max
+  # Exception handler retry-after values
+  exception:
+    event-publish-retry-after: 30  # Retry after 30 seconds for event publish failures
+    exhausted-retry-after: 60      # Retry after 60 seconds for exhausted retries
 
 
 # ----- Server Configs -----
@@ -86,7 +107,6 @@ server:
   servlet:
     context-path: /ecommerce/api/v1
 
-
 # Swagger UI
 springdoc:
   swagger-ui:
@@ -94,32 +114,40 @@ springdoc:
   api-docs:
     path: /v3/api-docs
 
-
 # ---- Zipkin and Tracing Configs ----
 management:
   tracing:
     enabled: true
     sampling:
-      probability: 1.0 # 100% traces (adjust for production, e.g. 0.1)
+      probability: 1.0  # ⚠️ Use 0.1 in production
   zipkin:
     tracing:
-      endpoint: http://localhost:9411/api/v2/spans # Zipkin server URL
-
+      endpoint: http://localhost:9411/api/v2/spans
+  # ✅ Add metrics export
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
 
 # ----- Eureka Discovery Client -----
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
+    register-with-eureka: true
+    fetch-registry: true
 
 # --- Logging ---
 logging:
   level:
+    root: INFO
+    com.youssef.gamal.ecommerce: DEBUG  # ✅ Your package
     org.springframework.kafka: INFO
-    org.springframework.cache: TRACE
+    org.springframework.retry: DEBUG  # ✅ See retry attempts
+    org.springframework.cache: DEBUG
     org.springframework.data.mongodb.core.MongoTemplate: DEBUG
-    org.springframework.data.mongodb.repository.query: DEBUG
     org.mongodb.driver.protocol.command: DEBUG
-    org.mongodb.driver.connection: DEBUG
-    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG

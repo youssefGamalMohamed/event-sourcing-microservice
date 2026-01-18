@@ -2,10 +2,7 @@ package com.youssef.gamal.ecommerce.microservice.category.commands.controllers;
 
 import com.youssef.gamal.ecommerce.microservice.category.commands.models.CreateCommand;
 import com.youssef.gamal.ecommerce.microservice.category.commands.models.UpdateCommand;
-import com.youssef.gamal.ecommerce.microservice.category.shared.exceptions.ConflictErrorResponse;
-import com.youssef.gamal.ecommerce.microservice.category.shared.exceptions.InternalServerErrorResponse;
-import com.youssef.gamal.ecommerce.microservice.category.shared.exceptions.NotFoundResponse;
-import com.youssef.gamal.ecommerce.microservice.category.shared.exceptions.ValidationErrorResponse;
+import com.youssef.gamal.ecommerce.microservice.category.shared.exceptions.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.headers.Header;
@@ -66,6 +63,11 @@ public interface RESTCommandControllerIfc {
                     responseCode = "500",
                     description = "Internal server error",
                     content = @Content(schema = @Schema(implementation = InternalServerErrorResponse.class))
+            ),
+            @ApiResponse(
+                    responseCode = "503",
+                    description = "Service Unavailable",
+                    content = @Content(schema = @Schema(implementation = ServiceUnavailableResponse.class))
             )
     })
     ResponseEntity<CreateCommand> save(
@@ -99,6 +101,16 @@ public interface RESTCommandControllerIfc {
                     responseCode = "409",
                     description = "Category already exists",
                     content = @Content(schema = @Schema(implementation = ConflictErrorResponse.class))
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Internal server error",
+                    content = @Content(schema = @Schema(implementation = InternalServerErrorResponse.class))
+            ),
+            @ApiResponse(
+                    responseCode = "503",
+                    description = "Service Unavailable",
+                    content = @Content(schema = @Schema(implementation = ServiceUnavailableResponse.class))
             )
     })
     ResponseEntity<UpdateCommand> update(
@@ -123,6 +135,16 @@ public interface RESTCommandControllerIfc {
                     responseCode = "404",
                     description = "Category not found",
                     content = @Content(schema = @Schema(implementation = NotFoundResponse.class))
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Internal server error",
+                    content = @Content(schema = @Schema(implementation = InternalServerErrorResponse.class))
+            ),
+            @ApiResponse(
+                    responseCode = "503",
+                    description = "Service Unavailable",
+                    content = @Content(schema = @Schema(implementation = ServiceUnavailableResponse.class))
             )
     })
     ResponseEntity<Void> delete(
