@@ -41,7 +41,7 @@ public class RestExceptionHandler {
                 .detailedMessage(UNABLE_TO_PROCESS_REQUEST_SYSTEM_CURRENTLY_UNAVAILABLE)
                 .userMessage(PLEASE_TRY_AGAIN_LATER)
                 .retryAfter(eventPublishRetryAfter)  // ✅ From @Value
-                .errorCode(ERROR_CODE_MAX_RETRIES_FAILED_ON_KAFKA)
+                .serviceErrorCode(ERROR_CODE_MAX_RETRIES_FAILED_ON_KAFKA)
                 .build();
 
         return ResponseEntity
@@ -61,7 +61,7 @@ public class RestExceptionHandler {
                 .detailedMessage(UNABLE_TO_PROCESS_REQUEST_SYSTEM_CURRENTLY_UNAVAILABLE)
                 .userMessage(PLEASE_TRY_AGAIN_LATER)
                 .retryAfter(exhaustedRetryAfter)  // ✅ From @Value
-                .errorCode(ERROR_CODE_MAX_RETRIES_FAILED_ON_KAFKA)
+                .serviceErrorCode(ERROR_CODE_MAX_RETRIES_FAILED_ON_KAFKA)
                 .build();
 
         return ResponseEntity

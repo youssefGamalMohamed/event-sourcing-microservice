@@ -40,5 +40,5 @@ public class ServiceUnavailableResponse extends ErrorResponse {
             description = "Error code for categorizing the error",
             example = ServiceErrorCodesConstants.ERROR_CODE_MAX_RETRIES_FAILED_ON_KAFKA
     )
-    private String errorCode;
+    private String serviceErrorCode;
 }
