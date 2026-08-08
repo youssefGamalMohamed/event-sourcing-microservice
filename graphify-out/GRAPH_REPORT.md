@@ -1,47 +1,55 @@
-# Graph Report - .  (2026-08-08)
+# Graph Report - event-sourcing-microservice  (2026-08-09)
 
 ## Corpus Check
-- Corpus is ~25,986 words - fits in a single context window. You may not need a graph.
+- 68 files · ~27,381 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 496 nodes · 940 edges · 36 communities (22 shown, 14 thin omitted)
+- 525 nodes · 976 edges · 38 communities (24 shown, 14 thin omitted)
 - Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 54 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
+## Graph Freshness
+- Built from commit: `0a26f4a8`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
+
 ## Community Hubs (Navigation)
-- Category Service Domain & Query Views
-- Product Avro Event Builder
-- Product Kafka Event Publisher
-- API Gateway & Security Auditing
-- Category Avro Event Builder
-- MapStruct Data Mappers
-- Category Event Enums & Types
-- Category Event Producer Service
-- Category Command REST Controller
-- Docker Infrastructure & Persistence Stores
-- Spring Boot Microservice Applications
-- Category Avro Decoder & Serializers
-- API Gateway Maven Wrapper
-- Category Service Maven Wrapper
-- Root Maven Wrapper
-- Product Service Maven Wrapper
-- Category Avro Event Storage Methods
-- Event Sourcing Architecture Diagram
-- Graphify Knowledge Graph Instructions
-- CQRS & Event Sourcing Documentation
-- Category Kafka Event Publisher Impl
-- Category Avro ByteBuffer Conversion
-- Avro SpecificData Record Utilities
-- API Gateway Update Route Config
-- API Gateway Get Route Config
-- Category Kafka Topic Config
-- API Gateway Package Space
-- Category Service Package Space
-- Ecommerce Microservice Root Package
-- Product Service Package Space
-- Product Kafka Topic Config
-- API Gateway Overview Doc
-- Ecommerce Root Application Config
+- Product
+- Builder
+- ProductEvent
+- org.springframework.context.annotation.Configuration
+- Builder
+- ProductMapper
+- lombok.extern.slf4j.Slf4j
+- CategoryEvent
+- org.mapstruct.Mapping
+- Product Service Configuration
+- org.springframework.boot.autoconfigure.SpringBootApplication
+- org.apache.avro.message.BinaryMessageDecoder
+- api-gateway/mvnw
+- category-service/mvnw
+- mvnw
+- product-service/mvnw
+- .build
+- product-query-service
+- Graphify Rule Directive
+- CQRS Architecture Rationale
+- .publish
+- .fromByteBuffer
+- org.apache.avro.specific.SpecificData
+- product_command_service_put_update route
+- product_query_service_get_one route
+- categories-topic configuration
+- com.youssef.gamal.ecommerce.microservice:api-gateway
+- com.youssef.gamal.ecommerce.microservice:category-service
+- com.youssef.gamal.ecommerce.microservice:ecommerce-microservice
+- com.youssef.gamal.ecommerce.microservice:product-service
+- products-topic configuration
+- API Gateway Service Overview
+- Ecommerce Microservice Root Configuration
+- 3. Component Details & Modifications
+- Global Constraints
 
 ## God Nodes (most connected - your core abstractions)
 1. `ProductEvent` - 58 edges
@@ -74,103 +82,111 @@
 - **Event-Driven Kafka Messaging Cluster** — compose_broker, compose_schema_registry, product_service_src_main_resources_application_products_topic, category_service_src_main_resources_application_categories_topic [INFERRED 0.85]
 - **CQRS Dual Data Store Setup** — product_service_compose_postgres, product_service_compose_mongodb, readme_cqrs_architecture [INFERRED 0.85]
 
-## Communities (36 total, 14 thin omitted)
+## Communities (38 total, 14 thin omitted)
 
-### Community 0 - "Category Service Domain & Query Views"
-Cohesion: 0.07
-Nodes (36): Category, CategoryViewController, CategoryViewMapper, CategoryView, CategoryViewRepo, CategoryEventConsumerServiceImpl, CategoryViewServiceIfc, CategoryViewServiceImpl (+28 more)
+### Community 0 - "Product"
+Cohesion: 0.09
+Nodes (33): Category, CategoryRepo, CategoryViewController, CategoryView, CategoryViewRepo, CategoryViewServiceIfc, Override, jakarta.persistence.Entity (+25 more)
 
-### Community 2 - "Product Kafka Event Publisher"
+### Community 2 - "ProductEvent"
 Cohesion: 0.05
-Nodes (11): Override, ByteBuffer, DatumReader, DatumWriter, ObjectInput, ObjectOutput, org.apache.avro.specific.AvroGenerated, Override (+3 more)
+Nodes (12): Override, Override, ByteBuffer, DatumReader, DatumWriter, ObjectInput, ObjectOutput, org.apache.avro.specific.AvroGenerated (+4 more)
 
-### Community 3 - "API Gateway & Security Auditing"
-Cohesion: 0.11
-Nodes (22): RateLimitingConfigs, Override, SecurityAuditorAware, JpaConfig, CachingConfigs, RedisTemplate, MongoDBConfigs, org.springframework.cache.annotation.EnableCaching (+14 more)
+### Community 3 - "org.springframework.context.annotation.Configuration"
+Cohesion: 0.09
+Nodes (27): RateLimitingConfigs, Override, SecurityAuditorAware, CorsConfig, WebMvcConfigurer, JpaConfig, CachingConfigs, RedisTemplate (+19 more)
 
-### Community 4 - "Category Avro Event Builder"
+### Community 4 - "Builder"
 Cohesion: 0.05
 Nodes (4): Builder, org.apache.avro.specific.AvroGenerated, RecordBuilder, SpecificRecordBuilderBase
 
-### Community 5 - "MapStruct Data Mappers"
-Cohesion: 0.11
-Nodes (16): io.swagger.v3.oas.annotations.media.Schema, org.mapstruct.Mapper, org.mapstruct.Mapping, PostMapping, PutMapping, ResponseStatus, RestController, ProductController (+8 more)
+### Community 5 - "ProductMapper"
+Cohesion: 0.17
+Nodes (9): io.swagger.v3.oas.annotations.media.Schema, PostMapping, PutMapping, ResponseStatus, RestController, ProductController, ProductDto, ProductMapper (+1 more)
 
-### Community 6 - "Category Event Enums & Types"
-Cohesion: 0.12
-Nodes (21): CategoryEventType, CREATED, DELETED, UPDATED, CategoryRepo, CategoryEventProducerIfc, CategoryServiceImpl, KafkaCategoryEventProducerImpl (+13 more)
+### Community 6 - "lombok.extern.slf4j.Slf4j"
+Cohesion: 0.07
+Nodes (30): CategoryController, PostMapping, PutMapping, RestController, CategoryDto, CategoryEventType, CREATED, DELETED (+22 more)
 
-### Community 7 - "Category Event Producer Service"
+### Community 7 - "CategoryEvent"
 Cohesion: 0.09
 Nodes (6): CategoryEvent, DatumReader, DatumWriter, Schema, SpecificRecord, SpecificRecordBase
 
-### Community 8 - "Category Command REST Controller"
-Cohesion: 0.14
-Nodes (9): CategoryController, PostMapping, PutMapping, RestController, CategoryDto, CategoryMapper, CategoryServiceIfc, Override (+1 more)
+### Community 8 - "org.mapstruct.Mapping"
+Cohesion: 0.12
+Nodes (9): CategoryViewMapper, org.mapstruct.Mapper, org.mapstruct.Mapping, org.springframework.kafka.annotation.KafkaListener, ProductViewController, ProductViewDto, ProductViewMapper, ProductEventConsumerServiceImpl (+1 more)
 
-### Community 9 - "Docker Infrastructure & Persistence Stores"
+### Community 9 - "Product Service Configuration"
 Cohesion: 0.13
 Nodes (16): api-gateway-redis service, product_command_service_post_create route, product_query_service_get_history route, mongodb-category-query service, postgresdb-category-command service, redis-cache-category-query service, Category Service Configuration, Kafka Broker service (+8 more)
 
-### Community 10 - "Spring Boot Microservice Applications"
+### Community 10 - "org.springframework.boot.autoconfigure.SpringBootApplication"
 Cohesion: 0.21
 Nodes (5): ApiGatewayApplication, CategoryServiceApplication, org.springframework.boot.autoconfigure.SpringBootApplication, ProductServiceApplication, EcommerceMicroserviceApplication
 
-### Community 11 - "Category Avro Decoder & Serializers"
+### Community 11 - "org.apache.avro.message.BinaryMessageDecoder"
 Cohesion: 0.21
 Nodes (5): BinaryMessageDecoder, org.apache.avro.message.BinaryMessageDecoder, org.apache.avro.message.BinaryMessageEncoder, org.apache.avro.message.SchemaStore, BinaryMessageDecoder
 
-### Community 12 - "API Gateway Maven Wrapper"
+### Community 12 - "api-gateway/mvnw"
 Cohesion: 0.33
 Nodes (6): mvnw script, clean(), die(), exec_maven(), set_java_home(), verbose()
 
-### Community 13 - "Category Service Maven Wrapper"
+### Community 13 - "category-service/mvnw"
 Cohesion: 0.33
 Nodes (6): mvnw script, clean(), die(), exec_maven(), set_java_home(), verbose()
 
-### Community 14 - "Root Maven Wrapper"
+### Community 14 - "mvnw"
 Cohesion: 0.33
 Nodes (6): mvnw script, clean(), die(), exec_maven(), set_java_home(), verbose()
 
-### Community 15 - "Product Service Maven Wrapper"
+### Community 15 - "product-service/mvnw"
 Cohesion: 0.33
 Nodes (6): mvnw script, clean(), die(), exec_maven(), set_java_home(), verbose()
 
-### Community 16 - "Category Avro Event Storage Methods"
+### Community 16 - ".build"
 Cohesion: 0.22
 Nodes (4): ObjectInput, ObjectOutput, Override, SuppressWarnings
 
-### Community 17 - "Event Sourcing Architecture Diagram"
+### Community 17 - "product-query-service"
 Cohesion: 0.33
 Nodes (7): API Gateway (Spring Cloud), Kafka, MongoDB, PostgreSQL, product-command-service, product-query-service, Redis
 
-### Community 18 - "Graphify Knowledge Graph Instructions"
+### Community 18 - "Graphify Rule Directive"
 Cohesion: 0.50
 Nodes (4): graphify query CLI, graphify update CLI, Graphify Rule Directive, Graphify Workflow
 
-### Community 19 - "CQRS & Event Sourcing Documentation"
+### Community 19 - "CQRS Architecture Rationale"
 Cohesion: 0.67
 Nodes (4): CQRS Architecture Rationale, Kafka Integration Pattern, Product Command Service Overview, Product Query Service Overview
 
+### Community 36 - "3. Component Details & Modifications"
+Cohesion: 0.15
+Nodes (12): 1. Executive Summary, 2. Architecture & Service Overview, 3.1 `api-gateway` Dependencies (`api-gateway/pom.xml`), 3.2 Downstream Services OpenAPI Configuration, 3.3.1 Downstream OpenAPI Specs Routing, 3.3.2 Category Service Application Gateway Routes, 3.3.3 Centralized Swagger UI Configuration, 3.3 API Gateway Routing & Swagger UI Aggregation (`api-gateway/src/main/resources/application.yml`) (+4 more)
+
+### Community 37 - "Global Constraints"
+Cohesion: 0.29
+Nodes (6): API Gateway Swagger Aggregation & Distributed Tracing Implementation Plan, Global Constraints, Task 1: Add WebFlux OpenAPI and Micrometer Tracing Dependencies to `api-gateway`, Task 2: Configure OpenAPI & Swagger Settings in Downstream Services, Task 3: Configure Category Service Routes, OpenAPI Spec Proxying, Swagger UI Aggregation, and Tracing in `api-gateway`, Task 4: End-to-End Build & Functional Verification
+
 ## Knowledge Gaps
-- **32 isolated node(s):** `com.youssef.gamal.ecommerce.microservice:api-gateway`, `com.youssef.gamal.ecommerce.microservice:category-service`, `CREATED`, `UPDATED`, `DELETED` (+27 more)
+- **45 isolated node(s):** `Task 1: Add WebFlux OpenAPI and Micrometer Tracing Dependencies to `api-gateway``, `Task 2: Configure OpenAPI & Swagger Settings in Downstream Services`, `Task 3: Configure Category Service Routes, OpenAPI Spec Proxying, Swagger UI Aggregation, and Tracing in `api-gateway``, `Task 4: End-to-End Build & Functional Verification`, `1. Executive Summary` (+40 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ProductEvent` connect `Product Kafka Event Publisher` to `Category Service Domain & Query Views`, `Product Avro Event Builder`, `MapStruct Data Mappers`, `Category Event Enums & Types`, `Category Event Producer Service`, `Category Avro Decoder & Serializers`, `Avro SpecificData Record Utilities`?**
-  _High betweenness centrality (0.248) - this node is a cross-community bridge._
-- **Why does `CategoryEvent` connect `Category Event Producer Service` to `Category Service Domain & Query Views`, `Category Avro Event Builder`, `MapStruct Data Mappers`, `Category Event Enums & Types`, `Category Command REST Controller`, `Category Avro Decoder & Serializers`, `Category Avro Event Storage Methods`, `Category Kafka Event Publisher Impl`, `Category Avro ByteBuffer Conversion`, `Avro SpecificData Record Utilities`?**
-  _High betweenness centrality (0.219) - this node is a cross-community bridge._
-- **Why does `Builder` connect `Product Avro Event Builder` to `Product Kafka Event Publisher`, `Category Avro Event Builder`?**
-  _High betweenness centrality (0.143) - this node is a cross-community bridge._
-- **What connects `com.youssef.gamal.ecommerce.microservice:api-gateway`, `com.youssef.gamal.ecommerce.microservice:category-service`, `CREATED` to the rest of the system?**
-  _32 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Category Service Domain & Query Views` be split into smaller, more focused modules?**
-  _Cohesion score 0.06905671466353218 - nodes in this community are weakly interconnected._
-- **Should `Product Avro Event Builder` be split into smaller, more focused modules?**
+- **Why does `ProductEvent` connect `ProductEvent` to `Builder`, `lombok.extern.slf4j.Slf4j`, `CategoryEvent`, `org.mapstruct.Mapping`, `org.apache.avro.message.BinaryMessageDecoder`, `org.apache.avro.specific.SpecificData`?**
+  _High betweenness centrality (0.228) - this node is a cross-community bridge._
+- **Why does `CategoryEvent` connect `CategoryEvent` to `Builder`, `lombok.extern.slf4j.Slf4j`, `org.mapstruct.Mapping`, `org.apache.avro.message.BinaryMessageDecoder`, `.build`, `.publish`, `.fromByteBuffer`, `org.apache.avro.specific.SpecificData`?**
+  _High betweenness centrality (0.201) - this node is a cross-community bridge._
+- **Why does `Builder` connect `Builder` to `ProductEvent`, `Builder`?**
+  _High betweenness centrality (0.131) - this node is a cross-community bridge._
+- **What connects `Task 1: Add WebFlux OpenAPI and Micrometer Tracing Dependencies to `api-gateway``, `Task 2: Configure OpenAPI & Swagger Settings in Downstream Services`, `Task 3: Configure Category Service Routes, OpenAPI Spec Proxying, Swagger UI Aggregation, and Tracing in `api-gateway`` to the rest of the system?**
+  _45 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Product` be split into smaller, more focused modules?**
+  _Cohesion score 0.09011776753712238 - nodes in this community are weakly interconnected._
+- **Should `Builder` be split into smaller, more focused modules?**
   _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
-- **Should `Product Kafka Event Publisher` be split into smaller, more focused modules?**
-  _Cohesion score 0.05391120507399577 - nodes in this community are weakly interconnected._
+- **Should `ProductEvent` be split into smaller, more focused modules?**
+  _Cohesion score 0.050170068027210885 - nodes in this community are weakly interconnected._

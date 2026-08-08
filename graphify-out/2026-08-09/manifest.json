@@ -325,9 +325,9 @@
     "semantic_hash": "25bb59c9aa2f1d40928613d70a30c554"
   },
   "api-gateway/src/main/resources/application.yml": {
-    "mtime": 1786222776.0818503,
-    "ast_hash": "5b3d2f17cd321c83d2292cdbbe3bf0bd",
-    "semantic_hash": ""
+    "mtime": 1786212546.2987177,
+    "ast_hash": "10ef520dfed05f5ab1eb77c1e6c96d23",
+    "semantic_hash": "10ef520dfed05f5ab1eb77c1e6c96d23"
   },
   "category-service/compose.yaml": {
     "mtime": 1786212546.2989326,
@@ -335,9 +335,9 @@
     "semantic_hash": "dc933adc26be410072b58243c572c5b6"
   },
   "category-service/src/main/resources/application.yml": {
-    "mtime": 1786222788.6578982,
-    "ast_hash": "4eb736533965af30a7797659ed1d8626",
-    "semantic_hash": ""
+    "mtime": 1786212546.3004088,
+    "ast_hash": "b728cf20bb0a0f58ccc54be67f589498",
+    "semantic_hash": "b728cf20bb0a0f58ccc54be67f589498"
   },
   "compose.yml": {
     "mtime": 1786212546.3008692,
@@ -350,9 +350,9 @@
     "semantic_hash": "14f2d5a3fbb8d0d4443924b99ea4c9f8"
   },
   "product-service/src/main/resources/application.yml": {
-    "mtime": 1786222792.8499143,
-    "ast_hash": "ce67d917f8978e31d4e3afd6921ad261",
-    "semantic_hash": ""
+    "mtime": 1786212546.302641,
+    "ast_hash": "b94c998383812f2b018b2ecf1d0a0980",
+    "semantic_hash": "b94c998383812f2b018b2ecf1d0a0980"
   },
   "src/main/resources/application.yml": {
     "mtime": 1786212546.302994,
@@ -364,6 +364,11 @@
     "ast_hash": "19e13511d3eb25f3e459d59af7288a34",
     "semantic_hash": "19e13511d3eb25f3e459d59af7288a34"
   },
+  ".superpowers/sdd/2026-08-08-api-gateway-swagger-tracing/progress.md": {
+    "mtime": 1786221916.8396664,
+    "ast_hash": "917b54da212cab75815318f5e206fd7f",
+    "semantic_hash": ""
+  },
   "docs/superpowers/plans/2026-08-08-api-gateway-swagger-tracing.md": {
     "mtime": 1786221821.0744543,
     "ast_hash": "d20a186ee1b563d0644acf21943de6c2",
@@ -372,16 +377,6 @@
   "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md": {
     "mtime": 1786221777.0720541,
     "ast_hash": "d3d2213e483582e9297374b24c8448a2",
-    "semantic_hash": ""
-  },
-  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/CorsConfig.java": {
-    "mtime": 1786222854.7511477,
-    "ast_hash": "0b325427bf3266d8e933d34e896ebd27",
-    "semantic_hash": ""
-  },
-  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/CorsConfig.java": {
-    "mtime": 1786222862.4451764,
-    "ast_hash": "e62907a5f90c539b22e6e6757d362581",
     "semantic_hash": ""
   }
 }
