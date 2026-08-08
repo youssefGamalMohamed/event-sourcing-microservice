@@ -51,6 +51,13 @@
     </repositories>
 
     <dependencies>
+        <!-- Shared Common Web module -->
+        <dependency>
+            <groupId>com.youssef.gamal.ecommerce.microservice</groupId>
+            <artifactId>common-web</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!-- RabbitMQ messaging -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
