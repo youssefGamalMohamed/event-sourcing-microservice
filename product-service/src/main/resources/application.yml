@@ -82,6 +82,13 @@ broker:
    products-topic: products-topic
 
    
+# Swagger UI & OpenAPI docs
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
 # ---- Zipkin and Tracing Configs ----    
 management:
   tracing:
