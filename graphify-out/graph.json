@@ -34,15 +34,325 @@
   },
   "nodes": [
     {
+      "label": "gateway/configs/TraceIdResponseHeaderFilter.java",
+      "file_type": "code",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "gateway/configs/traceidresponseheaderfilter.java"
+    },
+    {
+      "label": "TraceIdResponseHeaderFilter",
+      "file_type": "code",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L12",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "traceidresponseheaderfilter"
+    },
+    {
+      "label": ".TraceIdResponseHeaderFilter()",
+      "file_type": "code",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L17",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": ".traceidresponseheaderfilter()"
+    },
+    {
+      "label": ".filter()",
+      "file_type": "code",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L21",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_filter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": ".filter()"
+    },
+    {
+      "label": "Override",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_java_override",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "override"
+    },
+    {
+      "label": ".getOrder()",
+      "file_type": "code",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L36",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_getorder",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": ".getorder()"
+    },
+    {
+      "label": "commands/configs/TraceIdResponseHeaderFilter.java",
+      "file_type": "code",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "commands/configs/traceidresponseheaderfilter.java"
+    },
+    {
+      "label": "TraceIdResponseHeaderFilter",
+      "file_type": "code",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L14",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "traceidresponseheaderfilter"
+    },
+    {
+      "label": ".TraceIdResponseHeaderFilter()",
+      "file_type": "code",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L19",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": ".traceidresponseheaderfilter()"
+    },
+    {
+      "label": ".doFilterInternal()",
+      "file_type": "code",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": ".dofilterinternal()"
+    },
+    {
+      "label": "Override",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_java_override",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "override"
+    },
+    {
+      "label": "command/configs/TraceIdResponseHeaderFilter.java",
+      "file_type": "code",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "command/configs/traceidresponseheaderfilter.java"
+    },
+    {
+      "label": "TraceIdResponseHeaderFilter",
+      "file_type": "code",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L14",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "traceidresponseheaderfilter"
+    },
+    {
+      "label": ".TraceIdResponseHeaderFilter()",
+      "file_type": "code",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L19",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": ".traceidresponseheaderfilter()"
+    },
+    {
+      "label": ".doFilterInternal()",
+      "file_type": "code",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": ".dofilterinternal()"
+    },
+    {
+      "label": "Override",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_java_override",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "override"
+    },
+    {
+      "label": "io.micrometer.tracing.Tracer",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "io_micrometer_tracing_tracer",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "io.micrometer.tracing.tracer"
+    },
+    {
+      "label": "org.springframework.cloud.gateway.filter.GatewayFilterChain",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "org_springframework_cloud_gateway_filter_gatewayfilterchain",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "org.springframework.cloud.gateway.filter.gatewayfilterchain"
+    },
+    {
+      "label": "org.springframework.cloud.gateway.filter.GlobalFilter",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "org_springframework_cloud_gateway_filter_globalfilter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "org.springframework.cloud.gateway.filter.globalfilter"
+    },
+    {
+      "label": "org.springframework.core.Ordered",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "org_springframework_core_ordered",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "org.springframework.core.ordered"
+    },
+    {
+      "label": "org.springframework.stereotype.Component",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "org_springframework_stereotype_component",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "org.springframework.stereotype.component"
+    },
+    {
+      "label": "org.springframework.web.server.ServerWebExchange",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "org_springframework_web_server_serverwebexchange",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "org.springframework.web.server.serverwebexchange"
+    },
+    {
+      "label": "reactor.core.publisher.Mono",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "reactor_core_publisher_mono",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "reactor.core.publisher.mono"
+    },
+    {
+      "label": "jakarta.servlet.FilterChain",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "jakarta_servlet_filterchain",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "jakarta.servlet.filterchain"
+    },
+    {
+      "label": "jakarta.servlet.http.HttpServletRequest",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "jakarta_servlet_http_httpservletrequest",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "jakarta.servlet.http.httpservletrequest"
+    },
+    {
+      "label": "jakarta.servlet.http.HttpServletResponse",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "jakarta_servlet_http_httpservletresponse",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "jakarta.servlet.http.httpservletresponse"
+    },
+    {
+      "label": "org.springframework.web.filter.OncePerRequestFilter",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "org_springframework_web_filter_onceperrequestfilter",
+      "community": 20,
+      "community_name": "io.micrometer.tracing.Tracer",
+      "norm_label": "org.springframework.web.filter.onceperrequestfilter"
+    },
+    {
       "label": "commands/configs/CorsConfig.java",
       "file_type": "code",
       "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/CorsConfig.java",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig",
       "community": 3,
       "community_name": "org.springframework.context.annotation.Configuration",
-      "norm_label": "commands/configs/corsconfig.java"
+      "norm_label": "commands/configs/corsconfig.java",
+      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig"
     },
     {
       "label": "CorsConfig",
@@ -52,10 +362,10 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig",
       "community": 3,
       "community_name": "org.springframework.context.annotation.Configuration",
-      "norm_label": "corsconfig"
+      "norm_label": "corsconfig",
+      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig"
     },
     {
       "label": ".corsConfigurer()",
@@ -64,10 +374,10 @@
       "source_location": "L11",
       "_callable": true,
       "_origin": "ast",
-      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig_corsconfigurer",
       "community": 3,
       "community_name": "org.springframework.context.annotation.Configuration",
-      "norm_label": ".corsconfigurer()"
+      "norm_label": ".corsconfigurer()",
+      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig_corsconfigurer"
     },
     {
       "label": "WebMvcConfigurer",
@@ -75,10 +385,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_java_webmvcconfigurer",
       "community": 3,
       "community_name": "org.springframework.context.annotation.Configuration",
-      "norm_label": "webmvcconfigurer"
+      "norm_label": "webmvcconfigurer",
+      "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_java_webmvcconfigurer"
     },
     {
       "label": "2026-08-08-api-gateway-swagger-tracing.md",
@@ -86,10 +396,10 @@
       "source_file": "docs/superpowers/plans/2026-08-08-api-gateway-swagger-tracing.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing",
       "community": 37,
       "community_name": "Global Constraints",
-      "norm_label": "2026-08-08-api-gateway-swagger-tracing.md"
+      "norm_label": "2026-08-08-api-gateway-swagger-tracing.md",
+      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing"
     },
     {
       "label": "API Gateway Swagger Aggregation & Distributed Tracing Implementation Plan",
@@ -97,10 +407,10 @@
       "source_file": "docs/superpowers/plans/2026-08-08-api-gateway-swagger-tracing.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_api_gateway_swagger_aggregation_distributed_tracing_implementation_plan",
       "community": 37,
       "community_name": "Global Constraints",
-      "norm_label": "api gateway swagger aggregation & distributed tracing implementation plan"
+      "norm_label": "api gateway swagger aggregation & distributed tracing implementation plan",
+      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_api_gateway_swagger_aggregation_distributed_tracing_implementation_plan"
     },
     {
       "label": "Global Constraints",
@@ -108,10 +418,10 @@
       "source_file": "docs/superpowers/plans/2026-08-08-api-gateway-swagger-tracing.md",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_global_constraints",
       "community": 37,
       "community_name": "Global Constraints",
-      "norm_label": "global constraints"
+      "norm_label": "global constraints",
+      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_global_constraints"
     },
     {
       "label": "Task 1: Add WebFlux OpenAPI and Micrometer Tracing Dependencies to `api-gateway`",
@@ -119,10 +429,10 @@
       "source_file": "docs/superpowers/plans/2026-08-08-api-gateway-swagger-tracing.md",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_1_add_webflux_openapi_and_micrometer_tracing_dependencies_to_api_gateway",
       "community": 37,
       "community_name": "Global Constraints",
-      "norm_label": "task 1: add webflux openapi and micrometer tracing dependencies to `api-gateway`"
+      "norm_label": "task 1: add webflux openapi and micrometer tracing dependencies to `api-gateway`",
+      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_1_add_webflux_openapi_and_micrometer_tracing_dependencies_to_api_gateway"
     },
     {
       "label": "Task 2: Configure OpenAPI & Swagger Settings in Downstream Services",
@@ -130,10 +440,10 @@
       "source_file": "docs/superpowers/plans/2026-08-08-api-gateway-swagger-tracing.md",
       "source_location": "L67",
       "_origin": "ast",
-      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_2_configure_openapi_swagger_settings_in_downstream_services",
       "community": 37,
       "community_name": "Global Constraints",
-      "norm_label": "task 2: configure openapi & swagger settings in downstream services"
+      "norm_label": "task 2: configure openapi & swagger settings in downstream services",
+      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_2_configure_openapi_swagger_settings_in_downstream_services"
     },
     {
       "label": "Task 3: Configure Category Service Routes, OpenAPI Spec Proxying, Swagger UI Aggregation, and Tracing in `api-gateway`",
@@ -141,10 +451,10 @@
       "source_file": "docs/superpowers/plans/2026-08-08-api-gateway-swagger-tracing.md",
       "source_location": "L114",
       "_origin": "ast",
-      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_3_configure_category_service_routes_openapi_spec_proxying_swagger_ui_aggregation_and_tracing_in_api_gateway",
       "community": 37,
       "community_name": "Global Constraints",
-      "norm_label": "task 3: configure category service routes, openapi spec proxying, swagger ui aggregation, and tracing in `api-gateway`"
+      "norm_label": "task 3: configure category service routes, openapi spec proxying, swagger ui aggregation, and tracing in `api-gateway`",
+      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_3_configure_category_service_routes_openapi_spec_proxying_swagger_ui_aggregation_and_tracing_in_api_gateway"
     },
     {
       "label": "Task 4: End-to-End Build & Functional Verification",
@@ -152,10 +462,10 @@
       "source_file": "docs/superpowers/plans/2026-08-08-api-gateway-swagger-tracing.md",
       "source_location": "L325",
       "_origin": "ast",
-      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_4_end_to_end_build_functional_verification",
       "community": 37,
       "community_name": "Global Constraints",
-      "norm_label": "task 4: end-to-end build & functional verification"
+      "norm_label": "task 4: end-to-end build & functional verification",
+      "id": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_4_end_to_end_build_functional_verification"
     },
     {
       "label": "2026-08-08-api-gateway-swagger-tracing-design.md",
@@ -163,10 +473,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "2026-08-08-api-gateway-swagger-tracing-design.md"
+      "norm_label": "2026-08-08-api-gateway-swagger-tracing-design.md",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design"
     },
     {
       "label": "Design Specification: API Gateway Swagger Aggregation & Distributed Tracing",
@@ -174,10 +484,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_design_specification_api_gateway_swagger_aggregation_distributed_tracing",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "design specification: api gateway swagger aggregation & distributed tracing"
+      "norm_label": "design specification: api gateway swagger aggregation & distributed tracing",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_design_specification_api_gateway_swagger_aggregation_distributed_tracing"
     },
     {
       "label": "1. Executive Summary",
@@ -185,10 +495,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_1_executive_summary",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "1. executive summary"
+      "norm_label": "1. executive summary",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_1_executive_summary"
     },
     {
       "label": "2. Architecture & Service Overview",
@@ -196,10 +506,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_2_architecture_service_overview",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "2. architecture & service overview"
+      "norm_label": "2. architecture & service overview",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_2_architecture_service_overview"
     },
     {
       "label": "3. Component Details & Modifications",
@@ -207,10 +517,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_component_details_modifications",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "3. component details & modifications"
+      "norm_label": "3. component details & modifications",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_component_details_modifications"
     },
     {
       "label": "3.1 `api-gateway` Dependencies (`api-gateway/pom.xml`)",
@@ -218,10 +528,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L42",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_1_api_gateway_dependencies_api_gateway_pom_xml",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "3.1 `api-gateway` dependencies (`api-gateway/pom.xml`)"
+      "norm_label": "3.1 `api-gateway` dependencies (`api-gateway/pom.xml`)",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_1_api_gateway_dependencies_api_gateway_pom_xml"
     },
     {
       "label": "3.2 Downstream Services OpenAPI Configuration",
@@ -229,10 +539,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L47",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_2_downstream_services_openapi_configuration",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "3.2 downstream services openapi configuration"
+      "norm_label": "3.2 downstream services openapi configuration",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_2_downstream_services_openapi_configuration"
     },
     {
       "label": "3.3 API Gateway Routing & Swagger UI Aggregation (`api-gateway/src/main/resources/application.yml`)",
@@ -240,10 +550,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L60",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_api_gateway_routing_swagger_ui_aggregation_api_gateway_src_main_resources_application_yml",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "3.3 api gateway routing & swagger ui aggregation (`api-gateway/src/main/resources/application.yml`)"
+      "norm_label": "3.3 api gateway routing & swagger ui aggregation (`api-gateway/src/main/resources/application.yml`)",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_api_gateway_routing_swagger_ui_aggregation_api_gateway_src_main_resources_application_yml"
     },
     {
       "label": "3.3.1 Downstream OpenAPI Specs Routing",
@@ -251,10 +561,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L62",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_1_downstream_openapi_specs_routing",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "3.3.1 downstream openapi specs routing"
+      "norm_label": "3.3.1 downstream openapi specs routing",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_1_downstream_openapi_specs_routing"
     },
     {
       "label": "3.3.2 Category Service Application Gateway Routes",
@@ -262,10 +572,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L72",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_2_category_service_application_gateway_routes",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "3.3.2 category service application gateway routes"
+      "norm_label": "3.3.2 category service application gateway routes",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_2_category_service_application_gateway_routes"
     },
     {
       "label": "3.3.3 Centralized Swagger UI Configuration",
@@ -273,10 +583,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L78",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_3_centralized_swagger_ui_configuration",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "3.3.3 centralized swagger ui configuration"
+      "norm_label": "3.3.3 centralized swagger ui configuration",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_3_centralized_swagger_ui_configuration"
     },
     {
       "label": "3.4 Distributed Tracing & Trace ID Logging Configuration",
@@ -284,10 +594,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L90",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_4_distributed_tracing_trace_id_logging_configuration",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "3.4 distributed tracing & trace id logging configuration"
+      "norm_label": "3.4 distributed tracing & trace id logging configuration",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_4_distributed_tracing_trace_id_logging_configuration"
     },
     {
       "label": "4. Verification Plan",
@@ -295,10 +605,10 @@
       "source_file": "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md",
       "source_location": "L112",
       "_origin": "ast",
-      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_4_verification_plan",
       "community": 36,
       "community_name": "3. Component Details & Modifications",
-      "norm_label": "4. verification plan"
+      "norm_label": "4. verification plan",
+      "id": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_4_verification_plan"
     },
     {
       "label": "command/configs/CorsConfig.java",
@@ -306,10 +616,10 @@
       "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/CorsConfig.java",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig",
       "community": 3,
       "community_name": "org.springframework.context.annotation.Configuration",
-      "norm_label": "command/configs/corsconfig.java"
+      "norm_label": "command/configs/corsconfig.java",
+      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig"
     },
     {
       "label": "CorsConfig",
@@ -319,10 +629,10 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig",
       "community": 3,
       "community_name": "org.springframework.context.annotation.Configuration",
-      "norm_label": "corsconfig"
+      "norm_label": "corsconfig",
+      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig"
     },
     {
       "label": ".corsConfigurer()",
@@ -331,10 +641,10 @@
       "source_location": "L11",
       "_callable": true,
       "_origin": "ast",
-      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig_corsconfigurer",
       "community": 3,
       "community_name": "org.springframework.context.annotation.Configuration",
-      "norm_label": ".corsconfigurer()"
+      "norm_label": ".corsconfigurer()",
+      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig_corsconfigurer"
     },
     {
       "label": "WebMvcConfigurer",
@@ -342,10 +652,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_java_webmvcconfigurer",
       "community": 3,
       "community_name": "org.springframework.context.annotation.Configuration",
-      "norm_label": "webmvcconfigurer"
+      "norm_label": "webmvcconfigurer",
+      "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_java_webmvcconfigurer"
     },
     {
       "label": "org.springframework.context.annotation.Bean",
@@ -353,10 +663,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "org_springframework_context_annotation_bean",
       "community": 3,
       "community_name": "org.springframework.context.annotation.Configuration",
-      "norm_label": "org.springframework.context.annotation.bean"
+      "norm_label": "org.springframework.context.annotation.bean",
+      "id": "org_springframework_context_annotation_bean"
     },
     {
       "label": "org.springframework.context.annotation.Configuration",
@@ -364,10 +674,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "org_springframework_context_annotation_configuration",
       "community": 3,
       "community_name": "org.springframework.context.annotation.Configuration",
-      "norm_label": "org.springframework.context.annotation.configuration"
+      "norm_label": "org.springframework.context.annotation.configuration",
+      "id": "org_springframework_context_annotation_configuration"
     },
     {
       "label": "org.springframework.web.servlet.config.annotation.WebMvcConfigurer",
@@ -375,10 +685,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "org_springframework_web_servlet_config_annotation_webmvcconfigurer",
       "community": 3,
       "community_name": "org.springframework.context.annotation.Configuration",
-      "norm_label": "org.springframework.web.servlet.config.annotation.webmvcconfigurer"
+      "norm_label": "org.springframework.web.servlet.config.annotation.webmvcconfigurer",
+      "id": "org_springframework_web_servlet_config_annotation_webmvcconfigurer"
     },
     {
       "label": "api-gateway/mvnw",
@@ -906,7 +1216,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "categorycontroller.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_controllers_categorycontroller"
     },
@@ -919,7 +1229,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "categorycontroller",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_controllers_categorycontroller_categorycontroller"
     },
@@ -930,7 +1240,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "restcontroller",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_controllers_categorycontroller_java_restcontroller"
     },
@@ -942,7 +1252,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".save()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_controllers_categorycontroller_categorycontroller_save"
     },
@@ -953,7 +1263,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "postmapping",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_controllers_categorycontroller_java_postmapping"
     },
@@ -965,7 +1275,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".update()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_controllers_categorycontroller_categorycontroller_update"
     },
@@ -976,7 +1286,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "putmapping",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_controllers_categorycontroller_java_putmapping"
     },
@@ -986,7 +1296,7 @@
       "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/dtos/CategoryDto.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "categorydto.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_dtos_categorydto"
@@ -999,7 +1309,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "categorydto",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_dtos_categorydto_categorydto"
@@ -1010,8 +1320,8 @@
       "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/entities/Category.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 6,
+      "community_name": "Category",
       "norm_label": "category.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_entities_category"
     },
@@ -1023,8 +1333,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 6,
+      "community_name": "Category",
       "norm_label": "category",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_entities_category_category"
     },
@@ -1035,7 +1345,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "categoryeventtype.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_enums_categoryeventtype"
     },
@@ -1048,7 +1358,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "categoryeventtype",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_enums_categoryeventtype_categoryeventtype"
     },
@@ -1059,7 +1369,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "created",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_enums_categoryeventtype_categoryeventtype_created"
     },
@@ -1070,7 +1380,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "updated",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_enums_categoryeventtype_categoryeventtype_updated"
     },
@@ -1081,7 +1391,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "deleted",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_enums_categoryeventtype_categoryeventtype_deleted"
     },
@@ -1092,7 +1402,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "categorymapper.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_mappers_categorymapper"
     },
@@ -1105,7 +1415,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "categorymapper",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_mappers_categorymapper_categorymapper"
     },
@@ -1117,7 +1427,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".toentity()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_mappers_categorymapper_categorymapper_toentity"
     },
@@ -1129,7 +1439,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".todto()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_mappers_categorymapper_categorymapper_todto"
     },
@@ -1141,7 +1451,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".updatefrom()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_mappers_categorymapper_categorymapper_updatefrom"
     },
@@ -1153,7 +1463,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".toevent()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_mappers_categorymapper_categorymapper_toevent"
     },
@@ -1165,7 +1475,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".map()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_mappers_categorymapper_categorymapper_map"
     },
@@ -1175,8 +1485,8 @@
       "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/repos/CategoryRepo.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "categoryrepo.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_repos_categoryrepo"
     },
@@ -1188,8 +1498,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "categoryrepo",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_repos_categoryrepo_categoryrepo"
     },
@@ -1199,8 +1509,8 @@
       "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/services/CategoryEventProducerIfc.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
-      "community_name": "CategoryEvent",
+      "community": 6,
+      "community_name": "Category",
       "norm_label": "categoryeventproducerifc.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryeventproducerifc"
     },
@@ -1213,7 +1523,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "categoryeventproducerifc",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryeventproducerifc_categoryeventproducerifc"
     },
@@ -1225,7 +1535,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".publish()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryeventproducerifc_categoryeventproducerifc_publish"
     },
@@ -1236,7 +1546,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "categoryserviceifc.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryserviceifc"
     },
@@ -1249,7 +1559,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "categoryserviceifc",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryserviceifc_categoryserviceifc"
     },
@@ -1261,7 +1571,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".save()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryserviceifc_categoryserviceifc_save"
     },
@@ -1273,7 +1583,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".update()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryserviceifc_categoryserviceifc_update"
     },
@@ -1284,7 +1594,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "categoryserviceimpl.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryserviceimpl"
     },
@@ -1297,7 +1607,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "categoryserviceimpl",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryserviceimpl_categoryserviceimpl"
     },
@@ -1309,7 +1619,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".save()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryserviceimpl_categoryserviceimpl_save"
     },
@@ -1320,7 +1630,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "override",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryserviceimpl_java_override"
     },
@@ -1332,7 +1642,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": ".update()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_categoryserviceimpl_categoryserviceimpl_update"
     },
@@ -1342,8 +1652,8 @@
       "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/services/KafkaCategoryEventProducerImpl.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 21,
+      "community_name": "org.springframework.stereotype.Service",
       "norm_label": "kafkacategoryeventproducerimpl.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_kafkacategoryeventproducerimpl"
     },
@@ -1355,8 +1665,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 21,
+      "community_name": "org.springframework.stereotype.Service",
       "norm_label": "kafkacategoryeventproducerimpl",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_kafkacategoryeventproducerimpl_kafkacategoryeventproducerimpl"
     },
@@ -1367,8 +1677,8 @@
       "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 21,
+      "community_name": "org.springframework.stereotype.Service",
       "norm_label": ".kafkacategoryeventproducerimpl()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_kafkacategoryeventproducerimpl_kafkacategoryeventproducerimpl_kafkacategoryeventproducerimpl"
     },
@@ -1379,8 +1689,8 @@
       "source_location": "L28",
       "_callable": true,
       "_origin": "ast",
-      "community": 20,
-      "community_name": ".publish",
+      "community": 7,
+      "community_name": "CategoryEvent",
       "norm_label": ".publish()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_kafkacategoryeventproducerimpl_kafkacategoryeventproducerimpl_publish"
     },
@@ -1390,8 +1700,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 20,
-      "community_name": ".publish",
+      "community": 7,
+      "community_name": "CategoryEvent",
       "norm_label": "override",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_services_kafkacategoryeventproducerimpl_java_override"
     },
@@ -1472,8 +1782,8 @@
       "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/controllers/CategoryViewController.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "categoryviewcontroller.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_controllers_categoryviewcontroller"
     },
@@ -1485,8 +1795,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "categoryviewcontroller",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_controllers_categoryviewcontroller_categoryviewcontroller"
     },
@@ -1497,8 +1807,8 @@
       "source_location": "L32",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".findallhistorybyoriginalid()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_controllers_categoryviewcontroller_categoryviewcontroller_findallhistorybyoriginalid"
     },
@@ -1509,8 +1819,8 @@
       "source_location": "L41",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".findbyoriginalidandwithlasthistory()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_controllers_categoryviewcontroller_categoryviewcontroller_findbyoriginalidandwithlasthistory"
     },
@@ -1521,7 +1831,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "categoryviewmapper.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_mappers_categoryviewmapper"
     },
@@ -1534,7 +1844,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "categoryviewmapper",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_mappers_categoryviewmapper_categoryviewmapper"
     },
@@ -1546,7 +1856,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".toview()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_mappers_categoryviewmapper_categoryviewmapper_toview"
     },
@@ -1557,8 +1867,8 @@
       "source_location": "L33",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".todto()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_mappers_categoryviewmapper_categoryviewmapper_todto"
     },
@@ -1570,7 +1880,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".map()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_mappers_categoryviewmapper_categoryviewmapper_map"
     },
@@ -1652,7 +1962,7 @@
       "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/services/CategoryEventConsumerServiceImpl.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "categoryeventconsumerserviceimpl.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_services_categoryeventconsumerserviceimpl"
@@ -1665,7 +1975,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "categoryeventconsumerserviceimpl",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_services_categoryeventconsumerserviceimpl_categoryeventconsumerserviceimpl"
@@ -1677,7 +1987,7 @@
       "source_location": "L22",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".initifunc()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_services_categoryeventconsumerserviceimpl_categoryeventconsumerserviceimpl_initifunc"
@@ -1690,7 +2000,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".consumecategoryevent()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_services_categoryeventconsumerserviceimpl_categoryeventconsumerserviceimpl_consumecategoryevent"
     },
@@ -1713,8 +2023,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "categoryviewserviceifc",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_services_categoryviewserviceifc_categoryviewserviceifc"
     },
@@ -1726,7 +2036,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".addcategorytview()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_services_categoryviewserviceifc_categoryviewserviceifc_addcategorytview"
     },
@@ -1737,8 +2047,8 @@
       "source_location": "L13",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".findallbyoriginalid()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_services_categoryviewserviceifc_categoryviewserviceifc_findallbyoriginalid"
     },
@@ -1749,8 +2059,8 @@
       "source_location": "L15",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".findbyoriginalidandwithlasthistory()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_services_categoryviewserviceifc_categoryviewserviceifc_findbyoriginalidandwithlasthistory"
     },
@@ -1760,8 +2070,8 @@
       "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/services/CategoryViewServiceImpl.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 0,
+      "community_name": "Product",
       "norm_label": "categoryviewserviceimpl.java",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_services_categoryviewserviceimpl"
     },
@@ -1773,8 +2083,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 0,
+      "community_name": "Product",
       "norm_label": "categoryviewserviceimpl",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_query_services_categoryviewserviceimpl_categoryviewserviceimpl"
     },
@@ -1959,8 +2269,8 @@
       "source_location": "L64",
       "_callable": true,
       "_origin": "ast",
-      "community": 21,
-      "community_name": ".fromByteBuffer",
+      "community": 7,
+      "community_name": "CategoryEvent",
       "norm_label": ".tobytebuffer()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_shared_events_categoryevent_categoryevent_tobytebuffer"
     },
@@ -1970,8 +2280,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 21,
-      "community_name": ".fromByteBuffer",
+      "community": 7,
+      "community_name": "CategoryEvent",
       "norm_label": "bytebuffer",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_shared_events_categoryevent_java_bytebuffer"
     },
@@ -1982,8 +2292,8 @@
       "source_location": "L74",
       "_callable": true,
       "_origin": "ast",
-      "community": 21,
-      "community_name": ".fromByteBuffer",
+      "community": 7,
+      "community_name": "CategoryEvent",
       "norm_label": ".frombytebuffer()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_shared_events_categoryevent_categoryevent_frombytebuffer"
     },
@@ -2006,8 +2316,8 @@
       "source_location": "L117",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
-      "community_name": "org.apache.avro.specific.SpecificData",
+      "community": 11,
+      "community_name": "org.apache.avro.message.BinaryMessageDecoder",
       "norm_label": ".getspecificdata()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_shared_events_categoryevent_categoryevent_getspecificdata"
     },
@@ -2065,8 +2375,8 @@
       "source_location": "L154",
       "_callable": true,
       "_origin": "ast",
-      "community": 20,
-      "community_name": ".publish",
+      "community": 7,
+      "community_name": "CategoryEvent",
       "norm_label": ".getid()",
       "id": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_shared_events_categoryevent_categoryevent_getid"
     },
@@ -3376,8 +3686,8 @@
       "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/enums/ProductEventType.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "producteventtype.java",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_enums_producteventtype"
     },
@@ -3389,8 +3699,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "producteventtype",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_enums_producteventtype_producteventtype"
     },
@@ -3400,8 +3710,8 @@
       "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/enums/ProductEventType.java",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "created",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_enums_producteventtype_producteventtype_created"
     },
@@ -3411,8 +3721,8 @@
       "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/enums/ProductEventType.java",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "updated",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_enums_producteventtype_producteventtype_updated"
     },
@@ -3422,8 +3732,8 @@
       "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/enums/ProductEventType.java",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "deleted",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_enums_producteventtype_producteventtype_deleted"
     },
@@ -3482,8 +3792,8 @@
       "source_location": "L30",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": ".updatefrom()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_mappers_productmapper_productmapper_updatefrom"
     },
@@ -3494,8 +3804,8 @@
       "source_location": "L39",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": ".toevent()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_mappers_productmapper_productmapper_toevent"
     },
@@ -3574,8 +3884,8 @@
       "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/repos/ProductRepo.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "productrepo.java",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_repos_productrepo"
     },
@@ -3587,8 +3897,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "productrepo",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_repos_productrepo_productrepo"
     },
@@ -3598,8 +3908,8 @@
       "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/services/KafkaProductEventProducerImpl.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 21,
+      "community_name": "org.springframework.stereotype.Service",
       "norm_label": "kafkaproducteventproducerimpl.java",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_kafkaproducteventproducerimpl"
     },
@@ -3611,8 +3921,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 21,
+      "community_name": "org.springframework.stereotype.Service",
       "norm_label": "kafkaproducteventproducerimpl",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_kafkaproducteventproducerimpl_kafkaproducteventproducerimpl"
     },
@@ -3623,8 +3933,8 @@
       "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 21,
+      "community_name": "org.springframework.stereotype.Service",
       "norm_label": ".kafkaproducteventproducerimpl()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_kafkaproducteventproducerimpl_kafkaproducteventproducerimpl_kafkaproducteventproducerimpl"
     },
@@ -3635,8 +3945,8 @@
       "source_location": "L28",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 21,
+      "community_name": "org.springframework.stereotype.Service",
       "norm_label": ".publish()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_kafkaproducteventproducerimpl_kafkaproducteventproducerimpl_publish"
     },
@@ -3646,8 +3956,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 21,
+      "community_name": "org.springframework.stereotype.Service",
       "norm_label": "override",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_kafkaproducteventproducerimpl_java_override"
     },
@@ -3657,8 +3967,8 @@
       "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/services/ProductEventProducerIfc.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "producteventproducerifc.java",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_producteventproducerifc"
     },
@@ -3670,8 +3980,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "producteventproducerifc",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_producteventproducerifc_producteventproducerifc"
     },
@@ -3682,8 +3992,8 @@
       "source_location": "L7",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": ".publish()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_producteventproducerifc_producteventproducerifc_publish"
     },
@@ -3741,8 +4051,8 @@
       "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/services/ProductServiceImpl.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "productserviceimpl.java",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_productserviceimpl"
     },
@@ -3754,8 +4064,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "productserviceimpl",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_productserviceimpl_productserviceimpl"
     },
@@ -3766,8 +4076,8 @@
       "source_location": "L26",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": ".productserviceimpl()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_productserviceimpl_productserviceimpl_productserviceimpl"
     },
@@ -3778,8 +4088,8 @@
       "source_location": "L32",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": ".createproduct()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_productserviceimpl_productserviceimpl_createproduct"
     },
@@ -3789,8 +4099,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "override",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_productserviceimpl_java_override"
     },
@@ -3801,8 +4111,8 @@
       "source_location": "L48",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": ".updateproduct()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_services_productserviceimpl_productserviceimpl_updateproduct"
     },
@@ -3894,8 +4204,8 @@
       "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/controllers/ProductViewController.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "productviewcontroller.java",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_controllers_productviewcontroller"
     },
@@ -3908,7 +4218,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "productviewcontroller",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_controllers_productviewcontroller_productviewcontroller"
     },
@@ -3920,7 +4230,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".productviewcontroller()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_controllers_productviewcontroller_productviewcontroller_productviewcontroller"
     },
@@ -3931,8 +4241,8 @@
       "source_location": "L32",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".findallhistorybyoriginalid()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_controllers_productviewcontroller_productviewcontroller_findallhistorybyoriginalid"
     },
@@ -3944,7 +4254,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".findbyoriginalidandwithlasthistory()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_controllers_productviewcontroller_productviewcontroller_findbyoriginalidandwithlasthistory"
     },
@@ -3955,7 +4265,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "productviewdto.java",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_dtos_productviewdto"
     },
@@ -3968,7 +4278,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "productviewdto",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_dtos_productviewdto_productviewdto"
     },
@@ -3979,7 +4289,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "productviewmapper.java",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_mappers_productviewmapper"
     },
@@ -3992,7 +4302,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "productviewmapper",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_mappers_productviewmapper_productviewmapper"
     },
@@ -4004,7 +4314,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".toproductview()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_mappers_productviewmapper_productviewmapper_toproductview"
     },
@@ -4016,7 +4326,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".todto()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_mappers_productviewmapper_productviewmapper_todto"
     },
@@ -4028,7 +4338,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".map()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_mappers_productviewmapper_productviewmapper_map"
     },
@@ -4111,7 +4421,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "producteventconsumerserviceimpl.java",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_services_producteventconsumerserviceimpl"
     },
@@ -4124,7 +4434,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "producteventconsumerserviceimpl",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_services_producteventconsumerserviceimpl_producteventconsumerserviceimpl"
     },
@@ -4136,7 +4446,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".producteventconsumerserviceimpl()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_services_producteventconsumerserviceimpl_producteventconsumerserviceimpl_producteventconsumerserviceimpl"
     },
@@ -4148,7 +4458,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".consumeproductevent()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_services_producteventconsumerserviceimpl_producteventconsumerserviceimpl_consumeproductevent"
     },
@@ -4158,8 +4468,8 @@
       "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/services/ProductViewService.java",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community": 0,
+      "community_name": "Product",
       "norm_label": "productviewservice.java",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_services_productviewservice"
     },
@@ -4172,7 +4482,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "productviewservice",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_services_productviewservice_productviewservice"
     },
@@ -4184,7 +4494,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".addproductview()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_services_productviewservice_productviewservice_addproductview"
     },
@@ -4195,8 +4505,8 @@
       "source_location": "L12",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".findallbyoriginalid()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_services_productviewservice_productviewservice_findallbyoriginalid"
     },
@@ -4208,7 +4518,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": ".findbyoriginalidandwithlasthistory()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_query_services_productviewservice_productviewservice_findbyoriginalidandwithlasthistory"
     },
@@ -4453,8 +4763,8 @@
       "source_location": "L96",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 22,
+      "community_name": ".build",
       "norm_label": ".productevent()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_shared_events_productevent_productevent_productevent"
     },
@@ -4465,8 +4775,8 @@
       "source_location": "L126",
       "_callable": true,
       "_origin": "ast",
-      "community": 22,
-      "community_name": "org.apache.avro.specific.SpecificData",
+      "community": 11,
+      "community_name": "org.apache.avro.message.BinaryMessageDecoder",
       "norm_label": ".getspecificdata()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_shared_events_productevent_productevent_getspecificdata"
     },
@@ -4501,8 +4811,8 @@
       "source_location": "L147",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 22,
+      "community_name": ".build",
       "norm_label": ".put()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_shared_events_productevent_productevent_put"
     },
@@ -4512,8 +4822,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 22,
+      "community_name": ".build",
       "norm_label": "suppresswarnings",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_shared_events_productevent_java_suppresswarnings"
     },
@@ -4524,8 +4834,8 @@
       "source_location": "L169",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 21,
+      "community_name": "org.springframework.stereotype.Service",
       "norm_label": ".getid()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_shared_events_productevent_productevent_getid"
     },
@@ -5353,8 +5663,8 @@
       "source_location": "L951",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 22,
+      "community_name": ".build",
       "norm_label": ".build()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_shared_events_productevent_builder_build"
     },
@@ -5364,8 +5674,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 22,
+      "community_name": ".build",
       "norm_label": "override",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_shared_events_productevent_java_override"
     },
@@ -5387,8 +5697,8 @@
       "source_location": "L980",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 22,
+      "community_name": ".build",
       "norm_label": ".writeexternal()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_shared_events_productevent_productevent_writeexternal"
     },
@@ -5398,8 +5708,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 22,
+      "community_name": ".build",
       "norm_label": "objectoutput",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_shared_events_productevent_java_objectoutput"
     },
@@ -5421,8 +5731,8 @@
       "source_location": "L989",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 22,
+      "community_name": ".build",
       "norm_label": ".readexternal()",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_shared_events_productevent_productevent_readexternal"
     },
@@ -5432,8 +5742,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "ProductEvent",
+      "community": 22,
+      "community_name": ".build",
       "norm_label": "objectinput",
       "id": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_shared_events_productevent_java_objectinput"
     },
@@ -5535,7 +5845,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community_name": "Category",
       "norm_label": "org.springframework.http.responseentity",
       "id": "org_springframework_http_responseentity"
     },
@@ -5545,7 +5855,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "lombok.requiredargsconstructor",
       "id": "lombok_requiredargsconstructor"
@@ -5556,7 +5866,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "lombok.extern.slf4j.slf4j",
       "id": "lombok_extern_slf4j_slf4j"
@@ -5567,8 +5877,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 6,
+      "community_name": "Category",
       "norm_label": "jakarta.persistence.entity",
       "id": "jakarta_persistence_entity"
     },
@@ -5578,8 +5888,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 6,
+      "community_name": "Category",
       "norm_label": "jakarta.persistence.entitylisteners",
       "id": "jakarta_persistence_entitylisteners"
     },
@@ -5623,7 +5933,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "org.mapstruct.mapper",
       "id": "org_mapstruct_mapper"
     },
@@ -5634,7 +5944,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "org.mapstruct.mapping",
       "id": "org_mapstruct_mapping"
     },
@@ -5644,8 +5954,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "org.springframework.data.jpa.repository.jparepository",
       "id": "org_springframework_data_jpa_repository_jparepository"
     },
@@ -5655,8 +5965,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 5,
+      "community_name": "ProductMapper",
       "norm_label": "org.springframework.stereotype.repository",
       "id": "org_springframework_stereotype_repository"
     },
@@ -5666,8 +5976,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 21,
+      "community_name": "org.springframework.stereotype.Service",
       "norm_label": "org.springframework.stereotype.service",
       "id": "org_springframework_stereotype_service"
     },
@@ -5677,8 +5987,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "lombok.extern.slf4j.Slf4j",
+      "community": 21,
+      "community_name": "org.springframework.stereotype.Service",
       "norm_label": "org.springframework.kafka.core.kafkatemplate",
       "id": "org_springframework_kafka_core_kafkatemplate"
     },
@@ -5754,8 +6064,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "org.springframework.web.bind.annotation.getmapping",
       "id": "org_springframework_web_bind_annotation_getmapping"
     },
@@ -5765,8 +6075,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "org.springframework.web.bind.annotation.responsestatus",
       "id": "org_springframework_web_bind_annotation_responsestatus"
     },
@@ -5776,8 +6086,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Product",
+      "community": 8,
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "org.springframework.web.bind.annotation.restcontroller",
       "id": "org_springframework_web_bind_annotation_restcontroller"
     },
@@ -5810,7 +6120,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 8,
-      "community_name": "org.mapstruct.Mapping",
+      "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "org.springframework.kafka.annotation.kafkalistener",
       "id": "org_springframework_kafka_annotation_kafkalistener"
     },
@@ -5820,7 +6130,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "community_name": "lombok.extern.slf4j.Slf4j",
       "norm_label": "jakarta.annotation.postconstruct",
       "id": "jakarta_annotation_postconstruct"
@@ -5853,8 +6163,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 22,
-      "community_name": "org.apache.avro.specific.SpecificData",
+      "community": 11,
+      "community_name": "org.apache.avro.message.BinaryMessageDecoder",
       "norm_label": "org.apache.avro.specific.specificdata",
       "id": "org_apache_avro_specific_specificdata"
     },
@@ -6462,13 +6772,659 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter",
+      "target": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter",
+      "target": "io_micrometer_tracing_tracer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter",
+      "target": "org_springframework_cloud_gateway_filter_gatewayfilterchain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter",
+      "target": "org_springframework_cloud_gateway_filter_globalfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter",
+      "target": "org_springframework_core_ordered",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter",
+      "target": "org_springframework_stereotype_component",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter",
+      "target": "org_springframework_web_server_serverwebexchange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter",
+      "target": "reactor_core_publisher_mono",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_filter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_getorder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "field",
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "io_micrometer_tracing_tracer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "org_springframework_cloud_gateway_filter_globalfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "org_springframework_core_ordered",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "attribute",
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "org_springframework_stereotype_component",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "io_micrometer_tracing_tracer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "attribute",
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_filter",
+      "target": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_java_override",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_filter",
+      "target": "org_springframework_cloud_gateway_filter_gatewayfilterchain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_filter",
+      "target": "org_springframework_web_server_serverwebexchange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "return_type",
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_filter",
+      "target": "reactor_core_publisher_mono",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "attribute",
+      "_origin": "ast",
+      "source": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_getorder",
+      "target": "api_gateway_src_main_java_com_youssef_gamal_ecommerce_microservice_api_gateway_configs_traceidresponseheaderfilter_java_override",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter",
+      "target": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter",
+      "target": "io_micrometer_tracing_tracer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter",
+      "target": "jakarta_servlet_filterchain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter",
+      "target": "jakarta_servlet_http_httpservletrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter",
+      "target": "jakarta_servlet_http_httpservletresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter",
+      "target": "org_springframework_stereotype_component",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter",
+      "target": "org_springframework_web_filter_onceperrequestfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "field",
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "io_micrometer_tracing_tracer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "attribute",
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "org_springframework_stereotype_component",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "org_springframework_web_filter_onceperrequestfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "io_micrometer_tracing_tracer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "attribute",
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "target": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_java_override",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "target": "jakarta_servlet_filterchain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "target": "jakarta_servlet_http_httpservletrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "target": "jakarta_servlet_http_httpservletresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter",
+      "target": "io_micrometer_tracing_tracer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter",
+      "target": "jakarta_servlet_filterchain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter",
+      "target": "jakarta_servlet_http_httpservletrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter",
+      "target": "jakarta_servlet_http_httpservletresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter",
+      "target": "org_springframework_stereotype_component",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter",
+      "target": "org_springframework_web_filter_onceperrequestfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter",
+      "target": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "field",
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "io_micrometer_tracing_tracer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "attribute",
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "org_springframework_stereotype_component",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "org_springframework_web_filter_onceperrequestfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_traceidresponseheaderfilter",
+      "target": "io_micrometer_tracing_tracer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "target": "jakarta_servlet_filterchain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "target": "jakarta_servlet_http_httpservletrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "target": "jakarta_servlet_http_httpservletresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "attribute",
+      "_origin": "ast",
+      "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_traceidresponseheaderfilter_dofilterinternal",
+      "target": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_traceidresponseheaderfilter_java_override",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/CorsConfig.java",
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig",
-      "target": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig",
-      "confidence_score": 1.0
+      "target": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig"
     },
     {
       "relation": "imports",
@@ -6478,9 +7434,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig",
-      "target": "org_springframework_context_annotation_bean",
-      "confidence_score": 1.0
+      "target": "org_springframework_context_annotation_bean"
     },
     {
       "relation": "imports",
@@ -6490,9 +7446,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig",
-      "target": "org_springframework_context_annotation_configuration",
-      "confidence_score": 1.0
+      "target": "org_springframework_context_annotation_configuration"
     },
     {
       "relation": "imports",
@@ -6502,9 +7458,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig",
-      "target": "org_springframework_web_servlet_config_annotation_webmvcconfigurer",
-      "confidence_score": 1.0
+      "target": "org_springframework_web_servlet_config_annotation_webmvcconfigurer"
     },
     {
       "relation": "method",
@@ -6513,9 +7469,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig",
-      "target": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig_corsconfigurer",
-      "confidence_score": 1.0
+      "target": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig_corsconfigurer"
     },
     {
       "relation": "references",
@@ -6525,9 +7481,9 @@
       "weight": 1.0,
       "context": "attribute",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig",
-      "target": "org_springframework_context_annotation_configuration",
-      "confidence_score": 1.0
+      "target": "org_springframework_context_annotation_configuration"
     },
     {
       "relation": "calls",
@@ -6537,9 +7493,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig_corsconfigurer",
-      "target": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_java_webmvcconfigurer",
-      "confidence_score": 1.0
+      "target": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_java_webmvcconfigurer"
     },
     {
       "relation": "references",
@@ -6549,9 +7505,9 @@
       "weight": 1.0,
       "context": "attribute",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig_corsconfigurer",
-      "target": "org_springframework_context_annotation_bean",
-      "confidence_score": 1.0
+      "target": "org_springframework_context_annotation_bean"
     },
     {
       "relation": "references",
@@ -6561,9 +7517,9 @@
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "category_service_src_main_java_com_youssef_gamal_ecommerce_microservice_category_commands_configs_corsconfig_corsconfig_corsconfigurer",
-      "target": "org_springframework_web_servlet_config_annotation_webmvcconfigurer",
-      "confidence_score": 1.0
+      "target": "org_springframework_web_servlet_config_annotation_webmvcconfigurer"
     },
     {
       "relation": "contains",
@@ -6572,9 +7528,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing",
-      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_api_gateway_swagger_aggregation_distributed_tracing_implementation_plan",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_api_gateway_swagger_aggregation_distributed_tracing_implementation_plan"
     },
     {
       "relation": "contains",
@@ -6583,9 +7539,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_api_gateway_swagger_aggregation_distributed_tracing_implementation_plan",
-      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_global_constraints",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_global_constraints"
     },
     {
       "relation": "contains",
@@ -6594,9 +7550,9 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_global_constraints",
-      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_1_add_webflux_openapi_and_micrometer_tracing_dependencies_to_api_gateway",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_1_add_webflux_openapi_and_micrometer_tracing_dependencies_to_api_gateway"
     },
     {
       "relation": "contains",
@@ -6605,9 +7561,9 @@
       "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_global_constraints",
-      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_2_configure_openapi_swagger_settings_in_downstream_services",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_2_configure_openapi_swagger_settings_in_downstream_services"
     },
     {
       "relation": "contains",
@@ -6616,9 +7572,9 @@
       "source_location": "L114",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_global_constraints",
-      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_3_configure_category_service_routes_openapi_spec_proxying_swagger_ui_aggregation_and_tracing_in_api_gateway",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_3_configure_category_service_routes_openapi_spec_proxying_swagger_ui_aggregation_and_tracing_in_api_gateway"
     },
     {
       "relation": "contains",
@@ -6627,9 +7583,9 @@
       "source_location": "L325",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_global_constraints",
-      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_4_end_to_end_build_functional_verification",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_plans_2026_08_08_api_gateway_swagger_tracing_task_4_end_to_end_build_functional_verification"
     },
     {
       "relation": "contains",
@@ -6638,9 +7594,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_design_specification_api_gateway_swagger_aggregation_distributed_tracing",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_design_specification_api_gateway_swagger_aggregation_distributed_tracing"
     },
     {
       "relation": "contains",
@@ -6649,9 +7605,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_design_specification_api_gateway_swagger_aggregation_distributed_tracing",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_1_executive_summary",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_1_executive_summary"
     },
     {
       "relation": "contains",
@@ -6660,9 +7616,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_design_specification_api_gateway_swagger_aggregation_distributed_tracing",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_2_architecture_service_overview",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_2_architecture_service_overview"
     },
     {
       "relation": "contains",
@@ -6671,9 +7627,9 @@
       "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_design_specification_api_gateway_swagger_aggregation_distributed_tracing",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_component_details_modifications",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_component_details_modifications"
     },
     {
       "relation": "contains",
@@ -6682,9 +7638,9 @@
       "source_location": "L112",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_design_specification_api_gateway_swagger_aggregation_distributed_tracing",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_4_verification_plan",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_4_verification_plan"
     },
     {
       "relation": "contains",
@@ -6693,9 +7649,9 @@
       "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_component_details_modifications",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_1_api_gateway_dependencies_api_gateway_pom_xml",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_1_api_gateway_dependencies_api_gateway_pom_xml"
     },
     {
       "relation": "contains",
@@ -6704,9 +7660,9 @@
       "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_component_details_modifications",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_2_downstream_services_openapi_configuration",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_2_downstream_services_openapi_configuration"
     },
     {
       "relation": "contains",
@@ -6715,9 +7671,9 @@
       "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_component_details_modifications",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_api_gateway_routing_swagger_ui_aggregation_api_gateway_src_main_resources_application_yml",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_api_gateway_routing_swagger_ui_aggregation_api_gateway_src_main_resources_application_yml"
     },
     {
       "relation": "contains",
@@ -6726,9 +7682,9 @@
       "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_component_details_modifications",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_4_distributed_tracing_trace_id_logging_configuration",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_4_distributed_tracing_trace_id_logging_configuration"
     },
     {
       "relation": "contains",
@@ -6737,9 +7693,9 @@
       "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_api_gateway_routing_swagger_ui_aggregation_api_gateway_src_main_resources_application_yml",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_1_downstream_openapi_specs_routing",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_1_downstream_openapi_specs_routing"
     },
     {
       "relation": "contains",
@@ -6748,9 +7704,9 @@
       "source_location": "L72",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_api_gateway_routing_swagger_ui_aggregation_api_gateway_src_main_resources_application_yml",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_2_category_service_application_gateway_routes",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_2_category_service_application_gateway_routes"
     },
     {
       "relation": "contains",
@@ -6759,9 +7715,9 @@
       "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_api_gateway_routing_swagger_ui_aggregation_api_gateway_src_main_resources_application_yml",
-      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_3_centralized_swagger_ui_configuration",
-      "confidence_score": 1.0
+      "target": "docs_superpowers_specs_2026_08_08_api_gateway_swagger_tracing_design_3_3_3_centralized_swagger_ui_configuration"
     },
     {
       "relation": "imports",
@@ -6771,9 +7727,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig",
-      "target": "org_springframework_context_annotation_bean",
-      "confidence_score": 1.0
+      "target": "org_springframework_context_annotation_bean"
     },
     {
       "relation": "imports",
@@ -6783,9 +7739,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig",
-      "target": "org_springframework_context_annotation_configuration",
-      "confidence_score": 1.0
+      "target": "org_springframework_context_annotation_configuration"
     },
     {
       "relation": "imports",
@@ -6795,9 +7751,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig",
-      "target": "org_springframework_web_servlet_config_annotation_webmvcconfigurer",
-      "confidence_score": 1.0
+      "target": "org_springframework_web_servlet_config_annotation_webmvcconfigurer"
     },
     {
       "relation": "contains",
@@ -6806,9 +7762,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig",
-      "target": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig",
-      "confidence_score": 1.0
+      "target": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig"
     },
     {
       "relation": "references",
@@ -6818,9 +7774,9 @@
       "weight": 1.0,
       "context": "attribute",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig",
-      "target": "org_springframework_context_annotation_configuration",
-      "confidence_score": 1.0
+      "target": "org_springframework_context_annotation_configuration"
     },
     {
       "relation": "method",
@@ -6829,9 +7785,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig",
-      "target": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig_corsconfigurer",
-      "confidence_score": 1.0
+      "target": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig_corsconfigurer"
     },
     {
       "relation": "references",
@@ -6841,9 +7797,9 @@
       "weight": 1.0,
       "context": "attribute",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig_corsconfigurer",
-      "target": "org_springframework_context_annotation_bean",
-      "confidence_score": 1.0
+      "target": "org_springframework_context_annotation_bean"
     },
     {
       "relation": "references",
@@ -6853,9 +7809,9 @@
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig_corsconfigurer",
-      "target": "org_springframework_web_servlet_config_annotation_webmvcconfigurer",
-      "confidence_score": 1.0
+      "target": "org_springframework_web_servlet_config_annotation_webmvcconfigurer"
     },
     {
       "relation": "calls",
@@ -6865,9 +7821,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_corsconfig_corsconfigurer",
-      "target": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_java_webmvcconfigurer",
-      "confidence_score": 1.0
+      "target": "product_service_src_main_java_com_youssef_gamal_ecommerce_microservice_product_command_configs_corsconfig_java_webmvcconfigurer"
     },
     {
       "relation": "imports",
@@ -17861,5 +18817,5 @@
       "source_file": "README.md"
     }
   ],
-  "built_at_commit": "0a26f4a81ede1442368f05538a8d3b0151095923"
+  "built_at_commit": "85d0de82ec11aee7aff6f30c5ceae8fd5c042f84"
 }

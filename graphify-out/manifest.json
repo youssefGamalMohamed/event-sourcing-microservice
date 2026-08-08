@@ -325,8 +325,8 @@
     "semantic_hash": "25bb59c9aa2f1d40928613d70a30c554"
   },
   "api-gateway/src/main/resources/application.yml": {
-    "mtime": 1786222776.0818503,
-    "ast_hash": "5b3d2f17cd321c83d2292cdbbe3bf0bd",
+    "mtime": 1786223268.74812,
+    "ast_hash": "1783595d15a03a9709f355a68655d7a2",
     "semantic_hash": ""
   },
   "category-service/compose.yaml": {
@@ -382,6 +382,21 @@
   "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/CorsConfig.java": {
     "mtime": 1786222862.4451764,
     "ast_hash": "e62907a5f90c539b22e6e6757d362581",
+    "semantic_hash": ""
+  },
+  "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/TraceIdResponseHeaderFilter.java": {
+    "mtime": 1786223664.9057183,
+    "ast_hash": "851a1432d127c78296d439414c83c155",
+    "semantic_hash": ""
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/TraceIdResponseHeaderFilter.java": {
+    "mtime": 1786223668.4996388,
+    "ast_hash": "848a94e598b9641a36bdd938c44dd83d",
+    "semantic_hash": ""
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/TraceIdResponseHeaderFilter.java": {
+    "mtime": 1786223678.7494144,
+    "ast_hash": "b26d4375d07dbdcc85573b4b23412ed5",
     "semantic_hash": ""
   }
 }
