@@ -73,6 +73,7 @@ spring:
 # --- Server Config ---
 server:
   port: 8088  # kept from command service
+  forward-headers-strategy: framework
   servlet:
     context-path: /ecommerce/api/v1
 

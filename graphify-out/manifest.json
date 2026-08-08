@@ -1,0 +1,382 @@
+{
+  "api-gateway/mvnw": {
+    "mtime": 1786212546.2982655,
+    "ast_hash": "2fe09837c0b4dfabab4c4b206bcd0850",
+    "semantic_hash": "2fe09837c0b4dfabab4c4b206bcd0850"
+  },
+  "api-gateway/pom.xml": {
+    "mtime": 1786222078.6856506,
+    "ast_hash": "c83d26b87302c043b8b7c16a2083d7ec",
+    "semantic_hash": ""
+  },
+  "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/ApiGatewayApplication.java": {
+    "mtime": 1786212546.2986414,
+    "ast_hash": "d54606afcf778f305eedde821219326e",
+    "semantic_hash": "d54606afcf778f305eedde821219326e"
+  },
+  "api-gateway/src/main/java/com/youssef/gamal/ecommerce/microservice/api/gateway/configs/RateLimitingConfigs.java": {
+    "mtime": 1786212546.2987177,
+    "ast_hash": "f5e41994235ad2055e39295606c6bd77",
+    "semantic_hash": "f5e41994235ad2055e39295606c6bd77"
+  },
+  "category-service/mvnw": {
+    "mtime": 1786212546.2989326,
+    "ast_hash": "2fe09837c0b4dfabab4c4b206bcd0850",
+    "semantic_hash": "2fe09837c0b4dfabab4c4b206bcd0850"
+  },
+  "category-service/pom.xml": {
+    "mtime": 1786212546.2989326,
+    "ast_hash": "d70aef2f8626bdb3cea1b61c6d3ac183",
+    "semantic_hash": "d70aef2f8626bdb3cea1b61c6d3ac183"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/CategoryServiceApplication.java": {
+    "mtime": 1786212546.2992802,
+    "ast_hash": "43e87fbd625112ac97fcb1025e326af8",
+    "semantic_hash": "43e87fbd625112ac97fcb1025e326af8"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/auditing/SecurityAuditorAware.java": {
+    "mtime": 1786212546.2993562,
+    "ast_hash": "72ed43dbfa21e10b348af02fa70e3b8d",
+    "semantic_hash": "72ed43dbfa21e10b348af02fa70e3b8d"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/configs/JpaConfig.java": {
+    "mtime": 1786212546.2993562,
+    "ast_hash": "69c25dbbfaad8534b6bbdb57da54550c",
+    "semantic_hash": "69c25dbbfaad8534b6bbdb57da54550c"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/controllers/CategoryController.java": {
+    "mtime": 1786212546.2993562,
+    "ast_hash": "14b8253fb099715cc612af058b140521",
+    "semantic_hash": "14b8253fb099715cc612af058b140521"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/dtos/CategoryDto.java": {
+    "mtime": 1786212546.2993562,
+    "ast_hash": "559f0d464204d9f34497610d88078b24",
+    "semantic_hash": "559f0d464204d9f34497610d88078b24"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/entities/Category.java": {
+    "mtime": 1786212546.2993562,
+    "ast_hash": "306bd435b74bf19948815e1de1c89b18",
+    "semantic_hash": "306bd435b74bf19948815e1de1c89b18"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/enums/CategoryEventType.java": {
+    "mtime": 1786212546.2993562,
+    "ast_hash": "0fea7f75421fd4aaa239f70949548f17",
+    "semantic_hash": "0fea7f75421fd4aaa239f70949548f17"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/mappers/CategoryMapper.java": {
+    "mtime": 1786212546.2993562,
+    "ast_hash": "9408f87dffff6f492564c98b921568b2",
+    "semantic_hash": "9408f87dffff6f492564c98b921568b2"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/repos/CategoryRepo.java": {
+    "mtime": 1786212546.2993562,
+    "ast_hash": "c80bf76ebdb752a8eaf3ee2e3557549a",
+    "semantic_hash": "c80bf76ebdb752a8eaf3ee2e3557549a"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/services/CategoryEventProducerIfc.java": {
+    "mtime": 1786212546.2993562,
+    "ast_hash": "228e1396d17459fef47db3385cc7cae1",
+    "semantic_hash": "228e1396d17459fef47db3385cc7cae1"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/services/CategoryServiceIfc.java": {
+    "mtime": 1786212546.2998447,
+    "ast_hash": "6010f2a44ebd8f0cec5ebbd2e2d46c6c",
+    "semantic_hash": "6010f2a44ebd8f0cec5ebbd2e2d46c6c"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/services/CategoryServiceImpl.java": {
+    "mtime": 1786212546.2998447,
+    "ast_hash": "31d15f728fe8b3172f19e9afae7379ac",
+    "semantic_hash": "31d15f728fe8b3172f19e9afae7379ac"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/commands/services/KafkaCategoryEventProducerImpl.java": {
+    "mtime": 1786212546.2998447,
+    "ast_hash": "63a4376cd2e3d8042cf291b316332940",
+    "semantic_hash": "63a4376cd2e3d8042cf291b316332940"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/configs/CachingConfigs.java": {
+    "mtime": 1786212546.2999585,
+    "ast_hash": "9bfaaf1f37fa44002debd7807a189d37",
+    "semantic_hash": "9bfaaf1f37fa44002debd7807a189d37"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/configs/MongoDBConfigs.java": {
+    "mtime": 1786212546.3000114,
+    "ast_hash": "a11a437b292c06ae3408499277d0882b",
+    "semantic_hash": "a11a437b292c06ae3408499277d0882b"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/controllers/CategoryViewController.java": {
+    "mtime": 1786212546.3000114,
+    "ast_hash": "7956addcab294ee8a9b3c452ece45ed6",
+    "semantic_hash": "7956addcab294ee8a9b3c452ece45ed6"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/mappers/CategoryViewMapper.java": {
+    "mtime": 1786212546.3000114,
+    "ast_hash": "dd7d7e795f7d1916cfaa950010892e65",
+    "semantic_hash": "dd7d7e795f7d1916cfaa950010892e65"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/models/CategoryView.java": {
+    "mtime": 1786212546.3000114,
+    "ast_hash": "ee514b6bc9e26d7ed3331416d3be6b1f",
+    "semantic_hash": "ee514b6bc9e26d7ed3331416d3be6b1f"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/repos/CategoryViewRepo.java": {
+    "mtime": 1786212546.3000114,
+    "ast_hash": "d6b02890743bc73c65ec394d7877c831",
+    "semantic_hash": "d6b02890743bc73c65ec394d7877c831"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/services/CategoryEventConsumerServiceImpl.java": {
+    "mtime": 1786212546.3000114,
+    "ast_hash": "8f11c35bd37a969fe5532d196bd469ea",
+    "semantic_hash": "8f11c35bd37a969fe5532d196bd469ea"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/services/CategoryViewServiceIfc.java": {
+    "mtime": 1786212546.3003206,
+    "ast_hash": "cb5788c3ffd28924539d2ff001721570",
+    "semantic_hash": "cb5788c3ffd28924539d2ff001721570"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/query/services/CategoryViewServiceImpl.java": {
+    "mtime": 1786212546.3003206,
+    "ast_hash": "cb068af7819b62def925ea45051b713f",
+    "semantic_hash": "cb068af7819b62def925ea45051b713f"
+  },
+  "category-service/src/main/java/com/youssef/gamal/ecommerce/microservice/category/shared/events/CategoryEvent.java": {
+    "mtime": 1786212546.3004088,
+    "ast_hash": "4ec4e0d799cac33872e4f98069385005",
+    "semantic_hash": "4ec4e0d799cac33872e4f98069385005"
+  },
+  "category-service/src/test/java/com/youssef/gamal/ecommerce/microservice/category/CategoryServiceApplicationTests.java": {
+    "mtime": 1786212546.3008692,
+    "ast_hash": "20fe05d7516b8bc254da4426e6e0d6f6",
+    "semantic_hash": "20fe05d7516b8bc254da4426e6e0d6f6"
+  },
+  "mvnw": {
+    "mtime": 1786212546.3008692,
+    "ast_hash": "2fe09837c0b4dfabab4c4b206bcd0850",
+    "semantic_hash": "2fe09837c0b4dfabab4c4b206bcd0850"
+  },
+  "pom.xml": {
+    "mtime": 1786212546.3008692,
+    "ast_hash": "9d43cf86ffdf31b114140ca0b2695cb8",
+    "semantic_hash": "9d43cf86ffdf31b114140ca0b2695cb8"
+  },
+  "product-service/mvnw": {
+    "mtime": 1786212546.301178,
+    "ast_hash": "2fe09837c0b4dfabab4c4b206bcd0850",
+    "semantic_hash": "2fe09837c0b4dfabab4c4b206bcd0850"
+  },
+  "product-service/pom.xml": {
+    "mtime": 1786212546.301178,
+    "ast_hash": "a9c213315b088d923ea705e2defe0f3b",
+    "semantic_hash": "a9c213315b088d923ea705e2defe0f3b"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/ProductServiceApplication.java": {
+    "mtime": 1786212546.3014946,
+    "ast_hash": "be25dbf2bd5ab2081f5b4341ec1c81ea",
+    "semantic_hash": "be25dbf2bd5ab2081f5b4341ec1c81ea"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/auditing/SecurityAuditorAware.java": {
+    "mtime": 1786212546.3015778,
+    "ast_hash": "9f860849f2f608fcd6db79567d9dd8aa",
+    "semantic_hash": "9f860849f2f608fcd6db79567d9dd8aa"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/configs/JpaConfig.java": {
+    "mtime": 1786212546.3015778,
+    "ast_hash": "0c5bd11a27f94a6eaff640c059c93cae",
+    "semantic_hash": "0c5bd11a27f94a6eaff640c059c93cae"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/controllers/ProductController.java": {
+    "mtime": 1786212546.3015778,
+    "ast_hash": "18f1af65e0ea0d7800e702af7c54974a",
+    "semantic_hash": "18f1af65e0ea0d7800e702af7c54974a"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/dtos/ProductDto.java": {
+    "mtime": 1786212546.3015778,
+    "ast_hash": "2679ce9b0b8b197adbfbb3e731b70cd6",
+    "semantic_hash": "2679ce9b0b8b197adbfbb3e731b70cd6"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/enums/ProductEventType.java": {
+    "mtime": 1786212546.3015778,
+    "ast_hash": "1778092321d5a89c9dd9bb22becbd141",
+    "semantic_hash": "1778092321d5a89c9dd9bb22becbd141"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/mappers/ProductMapper.java": {
+    "mtime": 1786212546.3015778,
+    "ast_hash": "9dcb316da1578b4aca977ba476f98028",
+    "semantic_hash": "9dcb316da1578b4aca977ba476f98028"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/models/Product.java": {
+    "mtime": 1786212546.3015778,
+    "ast_hash": "0bb04dff6a6814636c1a73140bc0b6d4",
+    "semantic_hash": "0bb04dff6a6814636c1a73140bc0b6d4"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/repos/ProductRepo.java": {
+    "mtime": 1786212546.3015778,
+    "ast_hash": "948325365f4fd4e97a82e0b5e984117f",
+    "semantic_hash": "948325365f4fd4e97a82e0b5e984117f"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/services/KafkaProductEventProducerImpl.java": {
+    "mtime": 1786212546.3015778,
+    "ast_hash": "f7515655add7cd5d505a227c71259dce",
+    "semantic_hash": "f7515655add7cd5d505a227c71259dce"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/services/ProductEventProducerIfc.java": {
+    "mtime": 1786212546.3020623,
+    "ast_hash": "a79bfe0948205c3222bc53735dbd6b5f",
+    "semantic_hash": "a79bfe0948205c3222bc53735dbd6b5f"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/services/ProductServiceIfc.java": {
+    "mtime": 1786212546.3020623,
+    "ast_hash": "80d452b5cdd8c17e5927591655149999",
+    "semantic_hash": "80d452b5cdd8c17e5927591655149999"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/services/ProductServiceImpl.java": {
+    "mtime": 1786212546.3020623,
+    "ast_hash": "f8a9727f63a9131ea637c31d8ccd309d",
+    "semantic_hash": "f8a9727f63a9131ea637c31d8ccd309d"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/command/services/RabbitMQProductEventProducerImpl.java": {
+    "mtime": 1786212546.3020623,
+    "ast_hash": "b62a4aaf5c15e4986d6dfa1a729677d4",
+    "semantic_hash": "b62a4aaf5c15e4986d6dfa1a729677d4"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/configs/CachingConfigs.java": {
+    "mtime": 1786212546.3021975,
+    "ast_hash": "aad22f1593430b954474819e3edb002a",
+    "semantic_hash": "aad22f1593430b954474819e3edb002a"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/configs/MongoDBConfigs.java": {
+    "mtime": 1786212546.3022492,
+    "ast_hash": "f6be6fca4f17af4628c4b4b56f12bdd5",
+    "semantic_hash": "f6be6fca4f17af4628c4b4b56f12bdd5"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/controllers/ProductViewController.java": {
+    "mtime": 1786212546.3022492,
+    "ast_hash": "3f7d5a860c03676736921be4bfdf8ccc",
+    "semantic_hash": "3f7d5a860c03676736921be4bfdf8ccc"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/dtos/ProductViewDto.java": {
+    "mtime": 1786212546.3022492,
+    "ast_hash": "a71a1e29fe220c990759cff82f37ed78",
+    "semantic_hash": "a71a1e29fe220c990759cff82f37ed78"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/mappers/ProductViewMapper.java": {
+    "mtime": 1786212546.3022492,
+    "ast_hash": "68665c14a585e65485f20af70e13a728",
+    "semantic_hash": "68665c14a585e65485f20af70e13a728"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/models/ProductView.java": {
+    "mtime": 1786212546.3022492,
+    "ast_hash": "99bdb547c6f987ad9dd1fca954a53d6a",
+    "semantic_hash": "99bdb547c6f987ad9dd1fca954a53d6a"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/repos/ProductViewRepo.java": {
+    "mtime": 1786212546.3022492,
+    "ast_hash": "15453bc1ad5996dcfa6e52cb4bab089d",
+    "semantic_hash": "15453bc1ad5996dcfa6e52cb4bab089d"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/services/ProductEventConsumerServiceImpl.java": {
+    "mtime": 1786212546.3022492,
+    "ast_hash": "d28227d9746a846baed7e97f3e35fe8d",
+    "semantic_hash": "d28227d9746a846baed7e97f3e35fe8d"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/services/ProductViewService.java": {
+    "mtime": 1786212546.3025708,
+    "ast_hash": "669e7e5feece3641eee98821c82e8b3a",
+    "semantic_hash": "669e7e5feece3641eee98821c82e8b3a"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/query/services/ProductViewServiceImpl.java": {
+    "mtime": 1786212546.3025708,
+    "ast_hash": "31f69a819994229e4e2a719ce6051b47",
+    "semantic_hash": "31f69a819994229e4e2a719ce6051b47"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/shared/configs/RabbitMQConfig.java": {
+    "mtime": 1786212546.302641,
+    "ast_hash": "ff4c797b668910ac00a8aaf6605ea698",
+    "semantic_hash": "ff4c797b668910ac00a8aaf6605ea698"
+  },
+  "product-service/src/main/java/com/youssef/gamal/ecommerce/microservice/product/shared/events/ProductEvent.java": {
+    "mtime": 1786212546.302641,
+    "ast_hash": "1cab780d09848b66fde14b54b8a4e34d",
+    "semantic_hash": "1cab780d09848b66fde14b54b8a4e34d"
+  },
+  "src/main/java/com/youssef/gamal/ecommerce/microservice/EcommerceMicroserviceApplication.java": {
+    "mtime": 1786212546.302994,
+    "ast_hash": "bf666e510adea057205eae648f9eddf8",
+    "semantic_hash": "bf666e510adea057205eae648f9eddf8"
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1786220759.6853042,
+    "ast_hash": "f1e53ecc9194573d3c28fc116c743a2e",
+    "semantic_hash": "f1e53ecc9194573d3c28fc116c743a2e"
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1786220759.685538,
+    "ast_hash": "6d73634a678cf1e1c71930adf80bd1f0",
+    "semantic_hash": "6d73634a678cf1e1c71930adf80bd1f0"
+  },
+  "README.md": {
+    "mtime": 1786212546.296904,
+    "ast_hash": "f756637a7b9fc2c357a71e393360cdee",
+    "semantic_hash": "f756637a7b9fc2c357a71e393360cdee"
+  },
+  "api-gateway/compose.yml": {
+    "mtime": 1786212546.2982655,
+    "ast_hash": "25bb59c9aa2f1d40928613d70a30c554",
+    "semantic_hash": "25bb59c9aa2f1d40928613d70a30c554"
+  },
+  "api-gateway/src/main/resources/application.yml": {
+    "mtime": 1786212546.2987177,
+    "ast_hash": "10ef520dfed05f5ab1eb77c1e6c96d23",
+    "semantic_hash": "10ef520dfed05f5ab1eb77c1e6c96d23"
+  },
+  "category-service/compose.yaml": {
+    "mtime": 1786212546.2989326,
+    "ast_hash": "dc933adc26be410072b58243c572c5b6",
+    "semantic_hash": "dc933adc26be410072b58243c572c5b6"
+  },
+  "category-service/src/main/resources/application.yml": {
+    "mtime": 1786212546.3004088,
+    "ast_hash": "b728cf20bb0a0f58ccc54be67f589498",
+    "semantic_hash": "b728cf20bb0a0f58ccc54be67f589498"
+  },
+  "compose.yml": {
+    "mtime": 1786212546.3008692,
+    "ast_hash": "901bf4dd9d41dbec23aa68e91555dde2",
+    "semantic_hash": "901bf4dd9d41dbec23aa68e91555dde2"
+  },
+  "product-service/compose.yaml": {
+    "mtime": 1786220154.0671568,
+    "ast_hash": "14f2d5a3fbb8d0d4443924b99ea4c9f8",
+    "semantic_hash": "14f2d5a3fbb8d0d4443924b99ea4c9f8"
+  },
+  "product-service/src/main/resources/application.yml": {
+    "mtime": 1786212546.302641,
+    "ast_hash": "b94c998383812f2b018b2ecf1d0a0980",
+    "semantic_hash": "b94c998383812f2b018b2ecf1d0a0980"
+  },
+  "src/main/resources/application.yml": {
+    "mtime": 1786212546.302994,
+    "ast_hash": "03c9c8f1ce9259ad0cf3525ca3dc2021",
+    "semantic_hash": "03c9c8f1ce9259ad0cf3525ca3dc2021"
+  },
+  "Event-Sourcing-Architecre.png": {
+    "mtime": 1786212546.296904,
+    "ast_hash": "19e13511d3eb25f3e459d59af7288a34",
+    "semantic_hash": "19e13511d3eb25f3e459d59af7288a34"
+  },
+  ".superpowers/sdd/2026-08-08-api-gateway-swagger-tracing/progress.md": {
+    "mtime": 1786221916.8396664,
+    "ast_hash": "917b54da212cab75815318f5e206fd7f",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-08-api-gateway-swagger-tracing.md": {
+    "mtime": 1786221821.0744543,
+    "ast_hash": "d20a186ee1b563d0644acf21943de6c2",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-08-08-api-gateway-swagger-tracing-design.md": {
+    "mtime": 1786221777.0720541,
+    "ast_hash": "d3d2213e483582e9297374b24c8448a2",
+    "semantic_hash": ""
+  }
+}

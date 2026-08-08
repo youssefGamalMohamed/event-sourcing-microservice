@@ -78,6 +78,7 @@ broker:
 # ----- Server Configs -----
 server:
   port: 7070
+  forward-headers-strategy: framework
   servlet:
     context-path: /ecommerce/api/v1
 
