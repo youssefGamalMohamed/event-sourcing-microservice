@@ -68,6 +68,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- Common Web Shared Module -->
+        <dependency>
+            <groupId>com.youssef.gamal.ecommerce.microservice</groupId>
+            <artifactId>common-web</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!-- Docker Compose integration for Spring Boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
