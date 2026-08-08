@@ -11,9 +11,18 @@
 	<groupId>com.youssef.gamal.ecommerce.microservice</groupId>
 	<artifactId>ecommerce-microservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>ecommerce-microservice</name>
 	<description>Microservice Architecture for Ecommerce Application</description>
 	<url/>
+
+	<modules>
+		<module>common-web</module>
+		<module>category-service</module>
+		<module>product-service</module>
+		<module>api-gateway</module>
+	</modules>
+
 	<licenses>
 		<license/>
 	</licenses>
