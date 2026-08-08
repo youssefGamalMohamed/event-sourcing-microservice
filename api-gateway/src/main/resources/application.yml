@@ -154,6 +154,18 @@ spring:
                 redis-rate-limiter.burstCapacity: 10
                 redis-rate-limiter.requestedTokens: 1
 
+        # --- Direct Category Service Route (Swagger UI & Direct Calls) ---
+        - id: category_service_direct
+          uri: http://localhost:7070
+          predicates:
+            - Path=/ecommerce/api/v1/categories, /ecommerce/api/v1/categories/**
+
+        # --- Direct Product Service Route (Swagger UI & Direct Calls) ---
+        - id: product_service_direct
+          uri: http://localhost:8088
+          predicates:
+            - Path=/ecommerce/api/v1/products, /ecommerce/api/v1/products/**
+
   data:
     redis:
       host: localhost
