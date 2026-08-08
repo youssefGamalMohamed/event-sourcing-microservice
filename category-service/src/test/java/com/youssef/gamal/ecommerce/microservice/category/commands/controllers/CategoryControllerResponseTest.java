@@ -49,4 +49,25 @@ class CategoryControllerResponseTest {
                 .andExpect(jsonPath("$.data.id").value("cat-100"))
                 .andExpect(jsonPath("$.path").value("/categories"));
     }
+
+    @Test
+    void testUnhandledExceptionReturnsApiResponseWithErrorStatus() throws Exception {
+        when(categoryService.save(any(Category.class))).thenThrow(new RuntimeException("Database error"));
+
+        String jsonPayload = """
+                {
+                    "id": "cat-100",
+                    "name": "Electronics"
+                }
+                """;
+
+        mockMvc.perform(post("/categories")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(jsonPayload))
+                .andExpect(status().isInternalServerError())
+                .andExpect(jsonPath("$.status").value(500))
+                .andExpect(jsonPath("$.message").value("Database error"))
+                .andExpect(jsonPath("$.path").value("/categories"));
+    }
 }
+
